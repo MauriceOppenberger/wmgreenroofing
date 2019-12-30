@@ -69,8 +69,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://wmgreenroofingv2.netlify.com/",
-        sitemap: "https://wmgreenroofingv2.netlify.com/sitemap.xml",
+        host: `${process.env.API_PROTOCOL}://${process.env.API_URL}`,
+        sitemap: `${process.env.API_PROTOCOL}://${process.env.API_URL}/sitemap.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
