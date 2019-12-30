@@ -10,7 +10,7 @@ module.exports = {
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",
     author: `Maurice Oppenberger`,
-    siteUrl: "http://localhost:8000/",
+    siteUrl: "https://wmgreenroofingv2.netlify.com/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -69,8 +69,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "http://localhost:8000/",
-        sitemap: "http://localhost:8000/sitemap.xml",
+        host: "https://wmgreenroofingv2.netlify.com/",
+        sitemap: "https://wmgreenroofingv2.netlify.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

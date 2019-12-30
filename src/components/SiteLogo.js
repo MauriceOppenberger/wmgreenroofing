@@ -40,7 +40,7 @@ const SiteLogo = ({ className }) => {
     }
   `)
   const { node } = logo.wpgraphql.logo.edges[0]
-  console.log(node)
+
   return (
     <SiteLogoWrapper>
       <Link to="/">

@@ -31,7 +31,6 @@ const TestemonyWrapper = styled.div`
 `
 
 const Slide = ({ testemony, active }) => {
-  console.log(testemony)
   return (
     <TestemonyWrapper className={active ? "active" : ""}>
       <div className="testemony__card">
