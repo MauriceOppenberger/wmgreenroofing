@@ -2,12 +2,48 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  min-height: 100%;
 }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
 }
+:root {
+  --primaryColor: #340610;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #afafaf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 4px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  min-width: 100px;
+  width: max-content;
+  margin: 1rem auto;
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+}
+.page__title {
+  box-shadow: var(--lightShadow);
+  text-align: center;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  padding: 0.5rem 0;
+}
+.page__title h1 {
+  margin: 0;
+}
+
 article,
 aside,
 details,
@@ -42,6 +78,9 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
 }
 a:active,
 a:hover {
@@ -333,14 +372,14 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   list-style-position: outside;
   list-style-image: none;
 }

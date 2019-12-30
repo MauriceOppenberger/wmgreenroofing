@@ -1,35 +1,29 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Nav from "./Nav"
+import SiteLogo from "./SiteLogo"
+import SocialNav from "./SocialNav"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import { HeaderWrapper } from "./Styles/HeaderStyles"
+
+const Header = ({ siteTitle }) => {
+  return (
+    <HeaderWrapper>
+      <div className="header__container">
+        <SiteLogo className="header" />
+        <div className="nav__container">
+          <div className="contact__info">
+            <span>(519) 822-6414</span>
+
+            <span>info@wmgreenroofing.ca</span>
+            <SocialNav className="header" />
+          </div>
+          <Nav className="header" />
+        </div>
+      </div>
+    </HeaderWrapper>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

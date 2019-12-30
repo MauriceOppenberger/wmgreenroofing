@@ -8,15 +8,23 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import OverlayMenu from "./OverlayMenu"
 
-import Header from "./header"
+import Header from "./Header"
+import Footer from "./Footer"
 import "./layout.css"
+import Hamburger from "./Hamburger"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
+  const [menuOpen, setMenuOpen] = React.useState(false)
+
+  const handleOverlayMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+  const res = useStaticQuery(graphql`
+    query MySettingsQuery {
+      wpgraphql {
+        generalSettings {
           title
         }
       }
@@ -25,21 +33,18 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Hamburger handleOverlayMenu={handleOverlayMenu} />
+      <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
+      <Header siteTitle={res.wpgraphql.generalSettings.title} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
+          padding: `0`,
           paddingTop: 0,
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </>
   )
