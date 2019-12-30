@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import OverlayMenu from "./OverlayMenu"
 
 import Header from "./Header"
@@ -21,21 +20,12 @@ const Layout = ({ children }) => {
   const handleOverlayMenu = () => {
     setMenuOpen(!menuOpen)
   }
-  const res = useStaticQuery(graphql`
-    query MySettingsQuery {
-      wpgraphql {
-        generalSettings {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
       <Hamburger handleOverlayMenu={handleOverlayMenu} />
       <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
-      <Header siteTitle={res.wpgraphql.generalSettings.title} />
+      <Header />
       <div
         style={{
           margin: `0 auto`,
