@@ -41,12 +41,11 @@ const FormWrapper = styled.div`
     display: inline;
   }
   .landing__form .btn__submit {
-    background: var(--darkGrey);
+    background: var(--mainWhite);
     width: 100%;
-    color: var(--offWhite);
+    color: var(--darkGrey);
   }
   .landing__form .btn__submit:hover {
-    background: var(--mainWhite);
     color: var(--mainBlack);
   }
   .contact__form .btn__submit {

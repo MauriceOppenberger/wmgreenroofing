@@ -22,13 +22,13 @@ const ContactWrapper = styled.div`
   .contact__info {
     /* margin: 2rem 0; */
     flex: 1;
-    max-width: 350px;
+    max-width: 30%;
     text-align: center;
   }
   .contact__icon {
     margin: 1rem auto;
     width: max-content;
-    background: var(--primaryColor);
+    /* background: var(--primaryColor); */
     padding: 1.5rem 2rem;
     border-radius: 20px;
     transition: all 0.2s ease-in-out;
@@ -50,9 +50,23 @@ const ContactWrapper = styled.div`
   .map__container {
     flex: 1;
     max-width: 450px;
-    height: 400px;
-    margin-left: auto;
-    /* margin: 3rem 0 auto auto; */
+    height: 300px;
+    margin: 0 auto;
+    margin-left: 2rem;
+  }
+  @media screen and (max-width: 776px) {
+    .map__container,
+    .form__container {
+      flex: 1 100%;
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .contact__info {
+      /* margin: 2rem 0; */
+      flex: 1 100%;
+      max-width: 100%;
+    }
   }
 `
 const ContactTemplate = ({ data: { wpgraphql } }) => (
@@ -77,20 +91,20 @@ const ContactTemplate = ({ data: { wpgraphql } }) => (
           <div className="info__section">
             <div className="contact__info email">
               <div className="contact__icon">
-                <MdEmail size={44} color="#fff" />
+                <MdEmail size={44} color="#340610" />
               </div>
 
               <p>info@wmgreenroofing.ca</p>
             </div>
             <div className="contact__info phone">
               <div className="contact__icon">
-                <MdPhone size={44} color="#fff" />
+                <MdPhone size={44} color="#340610" />
               </div>
               <p>Tel: (519) 822-6414</p>
             </div>
             <div className="contact__info location">
               <div className="contact__icon">
-                <MdLocationOn size={44} color="#fff" />
+                <MdLocationOn size={44} color="#340610" />
               </div>
               <p>45 Dawson Rd, Guelph, ON N1H 1B1</p>
             </div>

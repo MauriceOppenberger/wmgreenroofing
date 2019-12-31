@@ -57,7 +57,7 @@ export const pageQuery = graphql`
             altText
             imageFile {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 500, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

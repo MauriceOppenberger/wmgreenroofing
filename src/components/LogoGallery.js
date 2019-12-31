@@ -46,7 +46,7 @@ const LogoGallery = () => {
               mediaItemUrl
               imageFile {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 500, quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }

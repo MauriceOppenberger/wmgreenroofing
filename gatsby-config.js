@@ -48,6 +48,7 @@ module.exports = {
       options: {
         wordPressUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}/`,
         uploadsUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}/wp-content/uploads/`,
+
         processPostTypes: ["Page", "Post", "CustomPost"],
         graphqlTypeName: "WPGraphQL",
         generateWebp: true,
