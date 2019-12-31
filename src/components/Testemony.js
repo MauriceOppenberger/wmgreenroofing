@@ -16,6 +16,7 @@ const TestemonyWrapper = styled.div`
   .testemony__card {
     width: 400px;
     margin: auto;
+    max-width: 100%;
     text-align: center;
   }
   .card__content {

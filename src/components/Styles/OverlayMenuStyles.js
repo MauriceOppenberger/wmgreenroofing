@@ -21,10 +21,10 @@ export const Overlay = styled.div`
       props.menuOpen ? "translateX(0%)" : "translateX(-100%)"};
     justify-content: center;
     background: #000;
-    width: 70%;
+    width: 60%;
     height: 100%;
     color: #fff;
-    padding: 40px;
+    padding: 20px;
     transition: all 0.3s ease;
 
     .overlayMenu {

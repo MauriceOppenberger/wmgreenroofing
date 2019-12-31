@@ -47,6 +47,21 @@ const StyledInnerWrapper = styled.div`
 
     margin-bottom: 2rem;
   }
+  @media screen and (max-width: 550px) {
+    .landing__container {
+      padding: 0px !important;
+    }
+    .landing__submission {
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+    .badge__container {
+      height: 0 !important;
+      width: 0 !important;
+      min-width: 0 !important;
+      flex: 0 !important;
+    }
+  }
 
   @media screen and (max-width: 776px) {
     .badge__container {
@@ -81,6 +96,10 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
+
+  @media screen and (max-width: 667px) {
+    background-size: none;
+  }
 `
 StyledBackgroundSection.propTypes = {
   imageData: PropTypes.object.isRequired,
