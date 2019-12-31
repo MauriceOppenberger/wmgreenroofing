@@ -23,7 +23,12 @@ body {
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
-
+@media (max-width: 550px) {
+  .background-section:before,
+  :after {
+    display: none !important;
+  }
+}
 .btn {
   min-width: 100px;
   width: max-content;

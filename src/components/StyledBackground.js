@@ -96,10 +96,6 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
-
-  @media screen and (max-width: 667px) {
-    background-size: none;
-  }
 `
 StyledBackgroundSection.propTypes = {
   imageData: PropTypes.object.isRequired,
