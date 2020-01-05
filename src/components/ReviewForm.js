@@ -9,7 +9,14 @@ const ReviewForm = () => {
           Our Client’s opinion is extremely important to us and is always
           appreciated.
         </h3>
-        <form action="#" method="POST" className="review__form">
+        <form
+          id="myForm"
+          // action="#"
+          method="POST"
+          // data-netlify="true"
+          // netlify-honeypot="bot-field"
+          // data-netlify-recaptcha="true"
+        >
           <label>
             Name:
             <input type="text" name="name" />
@@ -22,6 +29,7 @@ const ReviewForm = () => {
             Message:
             <textarea type="text" name="message" placeholder="Your Review" />
           </label>
+          <div data-netlify-recaptcha="true"></div>
 
           <button type="submit" value="Send" className="btn__submit btn">
             Submit

@@ -61,6 +61,7 @@ const TestemonySlider = () => {
           edges {
             node {
               title
+
               content
               featuredImage {
                 sourceUrl
@@ -117,7 +118,7 @@ const TestemonySlider = () => {
     <SliderWrapper>
       {testemonies.map((testemony, i) => (
         <Testemony
-          key={testemony.node.id}
+          key={i}
           testemony={testemony.node}
           active={state.activeIndex === i}
         />

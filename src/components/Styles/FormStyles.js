@@ -5,7 +5,7 @@ const FormWrapper = styled.div`
   }
   label {
     display: grid;
-    margin: 0.75rem 0;
+    /* margin: 0.75rem 0 0 0; */
   }
   label input {
     padding: 8px 16px;
@@ -18,6 +18,27 @@ const FormWrapper = styled.div`
     border: 2px solid lightgray;
     border-radius: 10px;
   }
+  .error {
+    min-height: 1.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .error p {
+    margin: auto;
+    position: absolute;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+  .error p.err {
+    color: #bf1650;
+  }
+  .error p::before {
+    display: inline;
+    content: "⚠ ";
+  }
+  .error p.warn {
+    color: yellow;
+  }
   .review {
     max-width: 650px;
   }
@@ -25,7 +46,7 @@ const FormWrapper = styled.div`
   .selection {
     display: flex;
     flex-flow: row wrap;
-    margin: 0.75rem 0;
+    /* margin: 0.75rem 0 0 0; */
   }
   .selection p {
     flex: 1;
