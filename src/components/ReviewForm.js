@@ -10,7 +10,6 @@ const ReviewForm = () => {
           appreciated.
         </h3>
         <form
-          id="myForm"
           // action="#"
           method="POST"
           data-netlify="true"
