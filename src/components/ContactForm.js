@@ -4,6 +4,12 @@ import PropTypes from "prop-types"
 import { useForm } from "react-hook-form"
 import { useValidate } from "../hooks/useValidate"
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const ContactForm = ({ className }) => {
   const { register, handleSubmit, errors } = useForm()
   console.log(errors)
