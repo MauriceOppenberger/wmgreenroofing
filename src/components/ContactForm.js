@@ -34,7 +34,6 @@ const ContactForm = ({ className }) => {
         id="myForm"
         onSubmit={handleSubmit(onSubmit)}
         // action="#"
-
         className={`${className}__form`}
         data-netlify="true"
         netlify-honeypot="bot-field"
