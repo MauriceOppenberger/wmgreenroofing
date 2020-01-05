@@ -13,8 +13,9 @@ const ContactForm = ({ className }) => {
   return (
     <FormWrapper>
       <form
+        name="contact"
+        method="post"
         id="myForm"
-        method="POST"
         onSubmit={handleSubmit(onSubmit)}
         // action="#"
 
