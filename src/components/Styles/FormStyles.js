@@ -18,6 +18,9 @@ const FormWrapper = styled.div`
     border: 2px solid lightgray;
     border-radius: 10px;
   }
+  .hidden {
+    display: none;
+  }
   .error {
     min-height: 1.75rem;
     display: flex;

@@ -13,10 +13,15 @@ const ReviewForm = () => {
           id="myForm"
           // action="#"
           method="POST"
-          // data-netlify="true"
-          // netlify-honeypot="bot-field"
-          // data-netlify-recaptcha="true"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
         >
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
           <label>
             Name:
             <input type="text" name="name" />

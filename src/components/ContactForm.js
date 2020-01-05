@@ -14,7 +14,7 @@ const ContactForm = ({ className }) => {
     <FormWrapper>
       <form
         name="contact"
-        method="post"
+        method="POST"
         id="myForm"
         onSubmit={handleSubmit(onSubmit)}
         // action="#"
@@ -24,6 +24,11 @@ const ContactForm = ({ className }) => {
         netlify-honeypot="bot-field"
         data-netlify-recaptcha="true"
       >
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <label>
           Name:
           <input
@@ -32,8 +37,7 @@ const ContactForm = ({ className }) => {
             ref={register({ required: true, minLength: 2 })}
           />
         </label>
-
-        <div className="error">{useValidate(errors.name)}</div>
+        <div className="error">{useValidate(errors.name)} </div>
         <label>
           Email:
           <input
