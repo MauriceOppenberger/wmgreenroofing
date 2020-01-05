@@ -9,7 +9,19 @@ const ReviewForm = () => {
           Our Client’s opinion is extremely important to us and is always
           appreciated.
         </h3>
-        <form action="#" method="POST" className="review__form">
+        <form
+          // action="#"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
+          className="review__form"
+        >
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
           <label>
             Name:
             <input type="text" name="name" />
