@@ -10,7 +10,7 @@ module.exports = {
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",
     author: `Maurice Oppenberger`,
-    siteUrl: "https://wmgreenroofingv2.netlify.com/",
+    siteUrl: "https://wmgreenroofingv2.netlify.com",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: "gatsby-wpgraphql-inline-images",
       options: {
-        wordPressUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}/`,
+        wordPressUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}`,
         uploadsUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}/wp-content/uploads/`,
 
         processPostTypes: ["Page", "Post", "CustomPost"],

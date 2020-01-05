@@ -8,7 +8,7 @@ import SEO from "../components/Seo"
 import PageWrapper from "./templateStyles/PageStyle"
 
 const pluginOptions = {
-  wordPressUrl: "https://wordpress.oppenberger.com/",
+  wordPressUrl: "https://wordpress.oppenberger.com",
   uploadsUrl: "https://wordpress.oppenberger.com/wp-content/uploads/",
 }
 
