@@ -18,6 +18,9 @@ const FormWrapper = styled.div`
     border: 2px solid lightgray;
     border-radius: 10px;
   }
+  .hidden {
+    display: none;
+  }
   .review {
     max-width: 650px;
   }

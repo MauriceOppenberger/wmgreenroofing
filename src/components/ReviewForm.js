@@ -10,6 +10,7 @@ const ReviewForm = () => {
           appreciated.
         </h3>
         <form
+          name="review"
           // action="#"
           method="POST"
           data-netlify="true"
@@ -34,6 +35,7 @@ const ReviewForm = () => {
             Message:
             <textarea type="text" name="message" placeholder="Your Review" />
           </label>
+          <div data-netlify-recaptcha="true"></div>
 
           <button type="submit" value="Send" className="btn__submit btn">
             Submit
