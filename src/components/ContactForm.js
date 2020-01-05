@@ -8,13 +8,13 @@ const ContactForm = ({ className }) => {
   const { register, handleSubmit, errors } = useForm()
   console.log(errors)
   const onSubmit = (data, e) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", data }),
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error))
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({ "form-name": "contact", data }),
+    // })
+    //   .then(() => alert("Success!"))
+    //   .catch(error => alert(error))
 
     e.preventDefault()
 
