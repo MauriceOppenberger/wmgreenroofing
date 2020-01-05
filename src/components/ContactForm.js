@@ -7,7 +7,17 @@ import { useValidate } from "../hooks/useValidate"
 const ContactForm = ({ className }) => {
   const { register, handleSubmit, errors } = useForm()
   console.log(errors)
-  const onSubmit = () => {
+  const onSubmit = (data, e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", data }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+
     document.getElementById("myForm").reset()
   }
   return (
