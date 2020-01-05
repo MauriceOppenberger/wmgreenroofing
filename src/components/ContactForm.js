@@ -1,47 +1,130 @@
 import React from "react"
 import FormWrapper from "./Styles/FormStyles"
+import PropTypes from "prop-types"
+import { useForm } from "react-hook-form"
+import { useValidate } from "../hooks/useValidate"
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 
 const ContactForm = ({ className }) => {
+  const { register, handleSubmit, errors } = useForm()
+  console.log(errors)
+  const onSubmit = (data, e) => {
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({ "form-name": "contact", data }),
+    // })
+    //   .then(() => alert("Success!"))
+    //   .catch(error => alert(error))
+
+    e.preventDefault()
+
+    document.getElementById("myForm").reset()
+  }
   return (
     <FormWrapper>
-      <form action="#" method="POST" className={`${className}__form`}>
+      <form
+        name="contact"
+        method="POST"
+        id="myForm"
+        onSubmit={handleSubmit(onSubmit)}
+        // action="#"
+
+        className={`${className}__form`}
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <label>
           Name:
-          <input type="text" name="name" />
+          <input
+            type="text"
+            name="name"
+            ref={register({ required: true, minLength: 2 })}
+          />
         </label>
-
+        <div className="error">{useValidate(errors.name)} </div>
         <label>
           Email:
-          <input type="email" name="email" />
+          <input
+            type="email"
+            name="email"
+            ref={register({
+              required: true,
+              pattern: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i,
+            })}
+          />
         </label>
+
+        <div className="error">{useValidate(errors.email)}</div>
+
         <label>
           Phone:
-          <input type="text" name="phone" />
+          <input
+            type="number"
+            name="phone"
+            ref={register({
+              required: true,
+            })}
+          />
         </label>
+        <div className="error">{useValidate(errors.phone)}</div>
         <label>
           Message:
           <textarea
             type="text"
             name="message"
-            placeholder="Tell us about your project"
+            placeholder="Let us know what we can help you with"
+            ref={register({ required: true, minLength: 25 })}
           />
         </label>
+        <div className="error">{useValidate(errors.message)}</div>
+
         <div className="selection">
-          <p>Choose your Roof typ:</p>
+          <p>Choose your Roof-Typ:</p>
           <span>
-            <input type="checkbox" id="sloped" name="sloped" />
-            <label for="sloped">Sloped</label>
+            <input
+              type="radio"
+              value="sloped"
+              name="roofTyp"
+              ref={register({ required: true })}
+            />
+            <label htmlFor="sloped">Sloped</label>
           </span>
           <span>
-            <input type="checkbox" id="flat" name="flat" />
-            <label for="flat">Flat</label>
+            <input
+              id="flat"
+              type="radio"
+              value="flat"
+              name="roofTyp"
+              ref={register({ required: true })}
+            />
+            <label htmlFor="flat">Flat</label>
           </span>
         </div>
+
+        <div className="error">{useValidate(errors.roofTyp)}</div>
+
+        <div data-netlify-recaptcha="true"></div>
         <button type="submit" value="Send" className="btn__submit btn">
           Submit
         </button>
       </form>
     </FormWrapper>
   )
+}
+ContactForm.propTypes = {
+  className: PropTypes.string,
 }
 export default ContactForm
