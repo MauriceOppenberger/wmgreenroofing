@@ -17,7 +17,7 @@ const ReviewForm = () => {
           data-netlify-recaptcha="true"
         >
           <input type="hidden" name="form-name" value="review" />
-          <p class="hidden">
+          <p className="hidden">
             <label>
               Don’t fill this out if you're human: <input name="bot-field" />
             </label>
