@@ -14,14 +14,14 @@ function encode(data) {
 const ReviewForm = () => {
   const [state, setState] = React.useState({})
 
-  handleChange = e => {
+  const handleChange = e => {
     setState({ [e.target.name]: e.target.value })
   }
-  handleRecaptcha = value => {
+  const handleRecaptcha = value => {
     setState({ "g-recaptcha-response": value })
   }
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
     fetch("/", {
