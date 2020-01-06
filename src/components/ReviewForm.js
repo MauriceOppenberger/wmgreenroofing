@@ -1,7 +1,41 @@
 import React from "react"
 import FormWrapper from "./Styles/FormStyles"
+import { navigateTo } from "gatsby-link"
+import Recaptcha from "react-google-recaptcha"
 
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+
+function encode(data) {
+  console.log("encode:", data)
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 const ReviewForm = () => {
+  const [state, setState] = React.useState({})
+
+  handleChange = e => {
+    setState({ [e.target.name]: e.target.value })
+  }
+  handleRecaptcha = value => {
+    setState({ "g-recaptcha-response": value })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        state,
+      }),
+    })
+      .then(() => console.log("Thank you for submission"))
+      .catch(error => alert(error))
+  }
+  console.log("state:", state)
   return (
     <FormWrapper>
       <div className="review">
@@ -14,7 +48,8 @@ const ReviewForm = () => {
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          // data-netlify-recaptcha="true"
+          data-netlify-recaptcha="true"
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="review" />
           <p className="hidden">
@@ -25,22 +60,31 @@ const ReviewForm = () => {
           <p>
             <label>
               Name:
-              <input type="text" name="name" />
+              <input type="text" name="name" onChange={handleChange} />
             </label>
           </p>
           <p>
             <label>
               Email:
-              <input type="email" name="email" />
+              <input type="email" name="email" onChange={handleChange} />
             </label>
           </p>
           <p>
             <label>
               Message:
-              <textarea type="text" name="message" placeholder="Your Review" />
+              <textarea
+                type="text"
+                name="message"
+                placeholder="Your Review"
+                onChange={handleChange}
+              />
             </label>
           </p>
-          {/* <div data-netlify-recaptcha="true"></div> */}
+          <Recaptcha
+            ref="recaptcha"
+            sitekey={RECAPTCHA_KEY}
+            onChange={handleRecaptcha}
+          />
 
           <button type="submit" value="Send" className="btn__submit btn">
             Submit
