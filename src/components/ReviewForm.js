@@ -17,11 +17,14 @@ const ReviewForm = () => {
   const handleChange = e => {
     setState({ [e.target.name]: e.target.value })
   }
-  const handleRecaptcha = value => {
-    setState({ "g-recaptcha-response": value })
-  }
+  // const handleRecaptcha = value => {
+  //   setState({ "g-recaptcha-response": value })
+  // }
+  const recaptchaRef = React.createRef()
 
   const handleSubmit = e => {
+    const value = recaptchaRef.current.execute()
+    console.log(value)
     e.preventDefault()
     const form = e.target
     fetch("/", {
@@ -81,9 +84,9 @@ const ReviewForm = () => {
             </label>
           </p>
           <Recaptcha
-            ref="recaptcha"
+            ref={recaptchaRef}
             sitekey={RECAPTCHA_KEY}
-            onChange={handleRecaptcha}
+            // onChange={handleRecaptcha}
           />
 
           <button type="submit" value="Send" className="btn__submit btn">
