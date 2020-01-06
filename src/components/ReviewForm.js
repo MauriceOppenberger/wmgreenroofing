@@ -1,7 +1,6 @@
 import React from "react"
 import FormWrapper from "./Styles/FormStyles"
 import { navigateTo } from "gatsby-link"
-import Recaptcha from "react-google-recaptcha"
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 
@@ -17,13 +16,8 @@ const ReviewForm = () => {
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
-  // const handleRecaptcha = value => {
-  //   setState({ "g-recaptcha-response": value })
-  // }
-  const recaptchaRef = React.createRef()
 
   const handleSubmit = e => {
-    recaptchaRef.current.execute().then(data => console.log(data))
     e.preventDefault()
     const form = e.target
     fetch("/", {
@@ -82,12 +76,6 @@ const ReviewForm = () => {
               />
             </label>
           </p>
-          <Recaptcha
-            ref={recaptchaRef}
-            sitekey="6Lc1ncwUAAAAAH_l7v9zpev0FzEHw7ofrsxMozqq"
-            size="invisible"
-            // onChange={handleRecaptcha}
-          />
 
           <button type="submit" value="Send" className="btn__submit btn">
             Submit
