@@ -1,5 +1,6 @@
 import React from "react"
 import FormWrapper from "./Styles/FormStyles"
+import Recaptcha from "react-google-invisible-recaptcha"
 import { navigateTo } from "gatsby-link"
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
@@ -31,6 +32,8 @@ const ReviewForm = () => {
       .then(() => console.log("Thank you for submission"))
       .catch(error => alert(error))
   }
+
+  const recatpchaResolved = () => {}
   console.log("state:", state)
   return (
     <FormWrapper>
