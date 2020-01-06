@@ -14,7 +14,7 @@ const ReviewForm = () => {
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          data-netlify-recaptcha="true"
+          // data-netlify-recaptcha="true"
         >
           <input type="hidden" name="form-name" value="review" />
           <p className="hidden">
@@ -40,7 +40,7 @@ const ReviewForm = () => {
               <textarea type="text" name="message" placeholder="Your Review" />
             </label>
           </p>
-          <div data-netlify-recaptcha="true"></div>
+          {/* <div data-netlify-recaptcha="true"></div> */}
 
           <button type="submit" value="Send" className="btn__submit btn">
             Submit
