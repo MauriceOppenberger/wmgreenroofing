@@ -44,7 +44,6 @@ const ReviewForm = () => {
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          data-netlify-recaptcha="true"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="review" />
