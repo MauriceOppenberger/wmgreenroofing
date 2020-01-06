@@ -86,6 +86,7 @@ const ReviewForm = () => {
           <Recaptcha
             ref={recaptchaRef}
             sitekey={RECAPTCHA_KEY}
+            size="invisible"
             // onChange={handleRecaptcha}
           />
 
