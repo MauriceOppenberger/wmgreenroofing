@@ -24,7 +24,6 @@ const ReviewForm = () => {
 
   const handleSubmit = e => {
     recaptchaRef.current.execute().then(data => console.log(data))
-    console.log(value)
     e.preventDefault()
     const form = e.target
     fetch("/", {
