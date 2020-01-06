@@ -23,7 +23,7 @@ const ReviewForm = () => {
   const recaptchaRef = React.createRef()
 
   const handleSubmit = e => {
-    const value = recaptchaRef.current.execute()
+    recaptchaRef.current.execute().then(data => console.log(data))
     console.log(value)
     e.preventDefault()
     const form = e.target
