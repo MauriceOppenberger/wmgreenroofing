@@ -22,7 +22,7 @@ const ReviewForm = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           ...state,
-          "g-recaptcha-response": true,
+          "g-recaptcha-response": value,
         }),
       })
         .then(() => setState({ submitted: "true" }))

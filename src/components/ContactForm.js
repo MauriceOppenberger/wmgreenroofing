@@ -24,11 +24,10 @@ const ContactForm = ({ className }) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           ...state,
-          "g-recaptcha-response": true,
+          "g-recaptcha-response": value,
         }),
       })
-        // setState({ submitted: "true" })
-        .then(body => console.log(body))
+        .then(() => setState({ submitted: "true" }))
         .then(() => recaptchaRef.current.reset())
         .catch(error => alert(error))
     } else {
