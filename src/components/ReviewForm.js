@@ -5,8 +5,6 @@ import { navigateTo } from "gatsby-link"
 import { useForm } from "react-hook-form"
 import { useValidate } from "../hooks/useValidate"
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
-
 const recaptchaRef = React.createRef()
 function encode(data) {
   return Object.keys(data)
@@ -103,7 +101,7 @@ const ReviewForm = () => {
             ref={recaptchaRef}
             size="invisible"
             tabindex={-1}
-            sitekey={RECAPTCHA_KEY}
+            sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
             onChange={onResolved}
           />
           {state.submitted ? (
