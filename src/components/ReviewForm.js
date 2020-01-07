@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form"
 import { useValidate } from "../hooks/useValidate"
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+
 const recaptchaRef = React.createRef()
 function encode(data) {
   return Object.keys(data)
@@ -13,6 +14,7 @@ function encode(data) {
     .join("&")
 }
 const ReviewForm = () => {
+  console.log(RECAPTCHA_KEY)
   const [state, setState] = React.useState({})
   const { register, handleSubmit, errors } = useForm()
 
