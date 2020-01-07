@@ -41,7 +41,7 @@ const ContactForm = ({ className }) => {
     setState({ ...data, "form-name": e.target.getAttribute("name") })
     e.target.reset()
   }
-  console.log("renderd")
+
   return (
     <FormWrapper>
       <form
@@ -140,7 +140,7 @@ const ContactForm = ({ className }) => {
           ref={recaptchaRef}
           size="invisible"
           tabindex={-1}
-          sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
+          sitekey={RECAPTCHA_KEY}
           onChange={onResolved}
         />
         {state.submitted ? (

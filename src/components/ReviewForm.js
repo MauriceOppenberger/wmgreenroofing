@@ -17,7 +17,6 @@ const ReviewForm = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const onResolved = value => {
-    console.log(value)
     if (value) {
       fetch("/", {
         method: "POST",
@@ -40,7 +39,6 @@ const ReviewForm = () => {
     setState({ ...data, "form-name": e.target.getAttribute("name") })
     e.target.reset()
   }
-  console.log(state)
   return (
     <FormWrapper>
       <div className="review">
@@ -103,7 +101,7 @@ const ReviewForm = () => {
             ref={recaptchaRef}
             size="invisible"
             tabindex={-1}
-            sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
+            sitekey={RECAPTCHA_KEY}
             onChange={onResolved}
           />
           {state.submitted ? (
