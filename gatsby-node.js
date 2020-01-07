@@ -27,7 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
               status
               isFrontPage
-
               page_template {
                 template
               }
@@ -38,6 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   if (data.error) {
+    console.log(data.errors)
     throw new Error(data.errors)
   }
   const { pages } = data.page

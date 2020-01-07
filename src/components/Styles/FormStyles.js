@@ -3,6 +3,9 @@ const FormWrapper = styled.div`
   form {
     margin: 0;
   }
+  p {
+    margin: 0;
+  }
   label {
     display: grid;
     /* margin: 0.75rem 0 0 0; */
@@ -21,16 +24,13 @@ const FormWrapper = styled.div`
   .hidden {
     display: none;
   }
+
   .error {
-    min-height: 1.75rem;
-    display: flex;
-    align-items: center;
+    min-height: 0.5rem;
+    margin: 0.5rem;
   }
   .error p {
-    margin: auto;
-    position: absolute;
     font-size: 0.9em;
-    line-height: 1.5;
   }
   .error p.err {
     color: #bf1650;
@@ -40,7 +40,16 @@ const FormWrapper = styled.div`
     content: "⚠ ";
   }
   .error p.warn {
-    color: yellow;
+    color: #b79657;
+  }
+  .success {
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid green;
+    border-radius: 10px;
+  }
+  .success .pass {
+    margin: 0;
   }
   .review {
     max-width: 650px;
