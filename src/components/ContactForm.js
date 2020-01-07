@@ -1,11 +1,10 @@
 import React from "react"
-import FormWrapper from "./Styles/FormStyles"
+import FormWrapper from "./styles/FormStyles"
 import PropTypes from "prop-types"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useForm } from "react-hook-form"
 import { useValidate } from "../hooks/useValidate"
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 const recaptchaRef = React.createRef()
 
 function encode(data) {
@@ -25,7 +24,7 @@ const ContactForm = ({ className }) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           ...state,
-          "g-recaptcha-response": true,
+          "g-recaptcha-response": value,
         }),
       })
         .then(() => setState({ submitted: "true" }))
@@ -41,7 +40,7 @@ const ContactForm = ({ className }) => {
     setState({ ...data, "form-name": e.target.getAttribute("name") })
     e.target.reset()
   }
-  console.log("renderd")
+
   return (
     <FormWrapper>
       <form
@@ -61,7 +60,7 @@ const ContactForm = ({ className }) => {
           </label>
         </p>
         <p>
-          <label>
+          <label className="required">
             Name:
             <input
               type="text"
@@ -72,7 +71,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.name)} </div>
         <p>
-          <label>
+          <label className="required">
             Email:
             <input
               type="email"
@@ -86,7 +85,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.email)}</div>
         <p>
-          <label>
+          <label className="required">
             Phone:
             <input
               type="number"
@@ -99,7 +98,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.phone)}</div>
         <p>
-          <label>
+          <label className="required">
             Message:
             <textarea
               type="text"
@@ -112,7 +111,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.message)}</div>
 
         <div className="selection">
-          <p>Choose your Roof-Typ:</p>
+          <p className="required">Choose your Roof-Typ:</p>
           <span>
             <input
               type="radio"

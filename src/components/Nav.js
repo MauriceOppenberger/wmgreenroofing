@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { NavWrapper } from "./Styles/NavigationStyles"
+import { NavWrapper } from "./styles/NavigationStyles"
 import { useNavQuery } from "../hooks/useQuery"
 import { getSlug } from "../utils/helper"
 import PropTypes from "prop-types"

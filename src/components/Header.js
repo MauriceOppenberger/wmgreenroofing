@@ -3,7 +3,7 @@ import Nav from "./Nav"
 import SiteLogo from "./SiteLogo"
 import SocialNav from "./SocialNav"
 
-import { HeaderWrapper } from "./Styles/HeaderStyles"
+import { HeaderWrapper } from "./styles/HeaderStyles"
 
 const Header = () => {
   return (
@@ -12,9 +12,16 @@ const Header = () => {
         <SiteLogo className="header" />
         <div className="nav__container">
           <div className="contact__info">
-            <span>(519) 822-6414</span>
+            <span>
+              <a href="tel:(519) 822-6414">(519) 822-6414</a>
+            </span>
 
-            <span>info@wmgreenroofing.ca</span>
+            <span>
+              <a href="mailto:info@wmgreenroofing.ca">
+                {" "}
+                info@wmgreenroofing.ca
+              </a>
+            </span>
             <SocialNav className="header" />
           </div>
           <Nav className="header" />

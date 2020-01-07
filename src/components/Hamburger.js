@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { GiHamburgerMenu } from "react-icons/gi"
 
-import { HamburgerButton } from "./Styles/HamburgerStyles"
+import { HamburgerButton } from "./styles/HamburgerStyles"
 
 const Hamburger = ({ handleOverlayMenu }) => (
   <HamburgerButton onClick={handleOverlayMenu} tabIndex="0">

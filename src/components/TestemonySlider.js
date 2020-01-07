@@ -9,13 +9,13 @@ const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 450px;
-  margin: 0 0 60px 0;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   display: flex;
+
   position: relative;
   align-items: center;
-  background: var(--primaryColor);
 
   .active {
     z-index: 10;

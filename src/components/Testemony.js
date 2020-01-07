@@ -6,7 +6,6 @@ import styled from "styled-components"
 const TestemonyWrapper = styled.div`
   position: absolute;
   /* height: 800px; */
-  color: var(--mainWhite);
   width: 100%;
   margin: auto;
   opacity: 0;
@@ -20,7 +19,7 @@ const TestemonyWrapper = styled.div`
     text-align: center;
   }
   .card__content {
-    min-height: 200px;
+    min-height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,11 +1,10 @@
 import React from "react"
-import FormWrapper from "./Styles/FormStyles"
+import FormWrapper from "./styles/FormStyles"
 import ReCAPTCHA from "react-google-recaptcha"
 import { navigateTo } from "gatsby-link"
 import { useForm } from "react-hook-form"
 import { useValidate } from "../hooks/useValidate"
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 const recaptchaRef = React.createRef()
 function encode(data) {
   return Object.keys(data)
@@ -17,14 +16,13 @@ const ReviewForm = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const onResolved = value => {
-    console.log(value)
     if (value) {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           ...state,
-          "g-recaptcha-response": true,
+          "g-recaptcha-response": value,
         }),
       })
         .then(() => setState({ submitted: "true" }))
@@ -40,7 +38,6 @@ const ReviewForm = () => {
     setState({ ...data, "form-name": e.target.getAttribute("name") })
     e.target.reset()
   }
-  console.log(state)
   return (
     <FormWrapper>
       <div className="review">
@@ -49,6 +46,7 @@ const ReviewForm = () => {
           appreciated.
         </h3>
         <form
+          className="review__form"
           name="review"
           method="POST"
           data-netlify="true"
@@ -63,7 +61,7 @@ const ReviewForm = () => {
             </label>
           </p>
           <p>
-            <label>
+            <label className="required">
               Name:
               <input
                 type="text"
@@ -74,7 +72,7 @@ const ReviewForm = () => {
           </p>
           <div className="error">{useValidate(errors.name)} </div>
           <p>
-            <label>
+            <label className="required">
               Email:
               <input
                 type="email"
@@ -88,7 +86,7 @@ const ReviewForm = () => {
           </p>
           <div className="error">{useValidate(errors.email)}</div>
           <p>
-            <label>
+            <label className="required">
               Message:
               <textarea
                 type="text"

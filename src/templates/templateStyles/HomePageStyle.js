@@ -1,6 +1,14 @@
 import styled from "styled-components"
 
 const ContentWrapper = styled.div`
+  h2.title {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+  h3.title {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
   .wp-block-group__inner-container {
     display: flex;
     flex-flow: row wrap;
@@ -128,21 +136,40 @@ const ContentWrapper = styled.div`
   .service__item .item__icon {
     flex: 1;
     max-width: 125px;
-    margin: 0 1rem;
-    padding: 0 1rem;
+    /* margin: auto; */
+    text-align: end;
+  }
+  .service__item .item__icon img {
+    max-height: 75px;
+    max-width: 75px;
+    margin: 0;
   }
   .service__item .item__content {
+    /* border-top: 1px solid var(--primaryColor); */
     flex: 1;
     max-width: 550px;
   }
   .service__item .item__content .title {
     margin: 0.5rem 0;
+    flex: 1;
+    min-height: 150px;
+  }
+  .service__item .item__content .blurb {
+    padding-top: 1rem;
+    border-top: 1px solid var(--primaryColor);
   }
 
   @media screen and (min-width: 2100px) {
     .wp-block-group__inner-container {
       max-width: 1600px;
     }
+  }
+
+  .testimony__container {
+    background: var(--primaryColor);
+    color: var(--mainWhite);
+    text-align: center;
+    padding: 2rem;
   }
 `
 export default ContentWrapper
