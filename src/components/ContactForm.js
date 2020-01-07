@@ -27,7 +27,8 @@ const ContactForm = ({ className }) => {
           "g-recaptcha-response": true,
         }),
       })
-        .then(() => setState({ submitted: "true" }))
+        // setState({ submitted: "true" })
+        .then(body => console.log(body))
         .then(() => recaptchaRef.current.reset())
         .catch(error => alert(error))
     } else {
