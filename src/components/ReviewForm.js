@@ -12,7 +12,6 @@ function encode(data) {
     .join("&")
 }
 const ReviewForm = () => {
-  console.log(RECAPTCHA_KEY)
   const [state, setState] = React.useState({})
   const { register, handleSubmit, errors } = useForm()
 
