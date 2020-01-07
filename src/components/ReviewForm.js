@@ -1,5 +1,5 @@
 import React from "react"
-import FormWrapper from "./Styles/FormStyles"
+import FormWrapper from "./styles/FormStyles"
 import ReCAPTCHA from "react-google-recaptcha"
 import { navigateTo } from "gatsby-link"
 import { useForm } from "react-hook-form"
@@ -46,6 +46,7 @@ const ReviewForm = () => {
           appreciated.
         </h3>
         <form
+          className="review__form"
           name="review"
           method="POST"
           data-netlify="true"
@@ -60,7 +61,7 @@ const ReviewForm = () => {
             </label>
           </p>
           <p>
-            <label class="required">
+            <label className="required">
               Name:
               <input
                 type="text"
@@ -71,7 +72,7 @@ const ReviewForm = () => {
           </p>
           <div className="error">{useValidate(errors.name)} </div>
           <p>
-            <label class="required">
+            <label className="required">
               Email:
               <input
                 type="email"
@@ -85,7 +86,7 @@ const ReviewForm = () => {
           </p>
           <div className="error">{useValidate(errors.email)}</div>
           <p>
-            <label class="required">
+            <label className="required">
               Message:
               <textarea
                 type="text"

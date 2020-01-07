@@ -38,7 +38,7 @@ const HomepageTemplate = ({ data: { wpgraphql } }) => {
             </div>
 
             <div className="landing__submission">
-              <h2>Request an Estimate</h2>
+              <h2 className="title">Request an Estimate</h2>
               <ContactForm className="landing" />
             </div>
           </>
@@ -46,9 +46,13 @@ const HomepageTemplate = ({ data: { wpgraphql } }) => {
       </StyledBackgroundSection>
       <ContentWrapper>
         {contentParser({ content }, pluginOptions)}
+        <div className="testimony__container">
+          <h2 className="title">Testimonies</h2>
+          <TestemonySlider />
+        </div>
+
+        <LogoGallery />
       </ContentWrapper>
-      <TestemonySlider />
-      <LogoGallery />
     </Layout>
   )
 }

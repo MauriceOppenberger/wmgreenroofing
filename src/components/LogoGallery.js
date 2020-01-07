@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const LogoGalleryWrapper = styled.div`
   margin: 2rem;
-  h2 {
+  h2.title {
     text-align: center;
   }
   .logo__gallery {
@@ -59,7 +59,7 @@ const LogoGallery = () => {
   `)
   return (
     <LogoGalleryWrapper>
-      <h2>Brands we work with</h2>
+      <h2 className="title">Brands we work with</h2>
       <ul className="logo__gallery">
         {slides.map((slide, i) => (
           <li className="gallery__item" key={slide.node.id}>

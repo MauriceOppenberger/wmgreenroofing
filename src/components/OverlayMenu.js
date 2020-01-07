@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Overlay } from "./Styles/OverlayMenuStyles"
+import { Overlay } from "./styles/OverlayMenuStyles"
 import PropTypes from "prop-types"
 import { useNavQuery } from "../hooks/useQuery"
 import { getSlug } from "../utils/helper"

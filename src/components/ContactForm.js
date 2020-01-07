@@ -1,5 +1,5 @@
 import React from "react"
-import FormWrapper from "./Styles/FormStyles"
+import FormWrapper from "./styles/FormStyles"
 import PropTypes from "prop-types"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useForm } from "react-hook-form"
@@ -60,7 +60,7 @@ const ContactForm = ({ className }) => {
           </label>
         </p>
         <p>
-          <label class="required">
+          <label className="required">
             Name:
             <input
               type="text"
@@ -71,7 +71,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.name)} </div>
         <p>
-          <label class="required">
+          <label className="required">
             Email:
             <input
               type="email"
@@ -85,7 +85,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.email)}</div>
         <p>
-          <label class="required">
+          <label className="required">
             Phone:
             <input
               type="number"
@@ -98,7 +98,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.phone)}</div>
         <p>
-          <label class="required">
+          <label className="required">
             Message:
             <textarea
               type="text"
@@ -111,7 +111,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.message)}</div>
 
         <div className="selection">
-          <p class="required">Choose your Roof-Typ:</p>
+          <p className="required">Choose your Roof-Typ:</p>
           <span>
             <input
               type="radio"

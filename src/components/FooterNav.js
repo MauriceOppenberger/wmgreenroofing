@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { useNavQuery } from "../hooks/useQuery"
 import { getSlug } from "../utils/helper"
-import { NavWrapper } from "./Styles/NavigationStyles"
+import { NavWrapper } from "./styles/NavigationStyles"
 
 const FooterNav = ({ className }) => {
   const menu = useNavQuery()
