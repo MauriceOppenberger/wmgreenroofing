@@ -60,7 +60,7 @@ const ReviewForm = () => {
             </label>
           </p>
           <p>
-            <label>
+            <label class="required">
               Name:
               <input
                 type="text"
@@ -71,7 +71,7 @@ const ReviewForm = () => {
           </p>
           <div className="error">{useValidate(errors.name)} </div>
           <p>
-            <label>
+            <label class="required">
               Email:
               <input
                 type="email"
@@ -85,7 +85,7 @@ const ReviewForm = () => {
           </p>
           <div className="error">{useValidate(errors.email)}</div>
           <p>
-            <label>
+            <label class="required">
               Message:
               <textarea
                 type="text"

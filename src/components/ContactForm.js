@@ -60,7 +60,7 @@ const ContactForm = ({ className }) => {
           </label>
         </p>
         <p>
-          <label>
+          <label class="required">
             Name:
             <input
               type="text"
@@ -71,7 +71,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.name)} </div>
         <p>
-          <label>
+          <label class="required">
             Email:
             <input
               type="email"
@@ -85,7 +85,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.email)}</div>
         <p>
-          <label>
+          <label class="required">
             Phone:
             <input
               type="number"
@@ -98,7 +98,7 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.phone)}</div>
         <p>
-          <label>
+          <label class="required">
             Message:
             <textarea
               type="text"
@@ -111,7 +111,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.message)}</div>
 
         <div className="selection">
-          <p>Choose your Roof-Typ:</p>
+          <p class="required">Choose your Roof-Typ:</p>
           <span>
             <input
               type="radio"

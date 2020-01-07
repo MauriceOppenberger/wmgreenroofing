@@ -6,9 +6,14 @@ const FormWrapper = styled.div`
   p {
     margin: 0;
   }
+
   label {
     display: grid;
     /* margin: 0.75rem 0 0 0; */
+  }
+  .required::before {
+    content: "* ";
+    color: red;
   }
   label input {
     padding: 8px 16px;
