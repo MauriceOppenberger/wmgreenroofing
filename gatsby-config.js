@@ -24,6 +24,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify-cache`,
     {
       resolve: "gatsby-background-image",
       options: {
@@ -31,6 +32,7 @@ module.exports = {
         specialChars: "/:",
       },
     },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
