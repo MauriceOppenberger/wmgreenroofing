@@ -25,9 +25,6 @@ const LogoGalleryWrapper = styled.div`
     margin: 1rem 2rem;
     padding: 1rem 0;
   }
-  /* .gallery__item picture img {
-    object-fit: contain !important;
-  } */
 `
 const LogoGallery = () => {
   const {

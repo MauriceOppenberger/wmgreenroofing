@@ -36,8 +36,7 @@ const StyledInnerWrapper = styled.div`
   }
   .landing__submission {
     flex: 1;
-    /* background: var(--primaryColor); */
-    /* background-color: rgba(0, 0, 0, 0.9); */
+
     background: var(--mainBlack);
     box-shadow: var(--darkShadow);
     color: var(--mainWhite);

@@ -10,7 +10,7 @@ module.exports = {
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",
     author: `Maurice Oppenberger`,
-    siteUrl: "https://wmgreenroofingv2.netlify.com",
+    siteUrl: "https://wmgreenroofingv2.netlify.com/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,6 +24,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify-cache`,
     {
       resolve: "gatsby-background-image",
       options: {
@@ -31,6 +32,7 @@ module.exports = {
         specialChars: "/:",
       },
     },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,7 +41,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#340610`,
         theme_color: `#340610`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
@@ -49,7 +51,7 @@ module.exports = {
         wordPressUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}`,
         uploadsUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}/wp-content/uploads/`,
 
-        processPostTypes: ["Page", "Post", "CustomPost"],
+        processPostTypes: ["Page", "Post"],
         graphqlTypeName: "WPGraphQL",
         generateWebp: true,
       },
@@ -91,7 +93,7 @@ module.exports = {
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
 }

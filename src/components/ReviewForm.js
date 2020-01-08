@@ -1,7 +1,6 @@
 import React from "react"
 import FormWrapper from "./styles/FormStyles"
 import ReCAPTCHA from "react-google-recaptcha"
-import { navigateTo } from "gatsby-link"
 import { useForm } from "react-hook-form"
 import { useValidate } from "../hooks/useValidate"
 
