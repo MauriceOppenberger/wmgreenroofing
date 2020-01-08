@@ -15,7 +15,15 @@ function encode(data) {
 
 const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
+  const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
   const { register, handleSubmit, errors } = useForm()
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => setLoadRecaptcha(true), {
+      passive: true,
+      once: true,
+    })
+  }, [])
 
   const onResolved = value => {
     if (value) {
@@ -113,35 +121,43 @@ const ContactForm = ({ className }) => {
         <div className="selection">
           <p className="required">Choose your Roof-Typ:</p>
           <span>
-            <input
-              type="radio"
-              value="sloped"
-              name="roofTyp"
-              ref={register({ required: true })}
-            />
-            <label htmlFor="sloped">Sloped</label>
+            <label htmlFor="sloped">
+              {" "}
+              <input
+                type="radio"
+                value="sloped"
+                name="roofTyp"
+                ref={register({ required: true })}
+              />
+              Sloped
+            </label>
           </span>
           <span>
-            <input
-              id="flat"
-              type="radio"
-              value="flat"
-              name="roofTyp"
-              ref={register({ required: true })}
-            />
-            <label htmlFor="flat">Flat</label>
+            <label htmlFor="flat">
+              {" "}
+              <input
+                id="flat"
+                type="radio"
+                value="flat"
+                name="roofTyp"
+                ref={register({ required: true })}
+              />
+              Flat
+            </label>
           </span>
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
+        {loadRecaptcha ? (
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            tabindex={-1}
+            sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
+            onChange={onResolved}
+          />
+        ) : null}
 
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          size="invisible"
-          tabindex={-1}
-          sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
-          onChange={onResolved}
-        />
         {state.submitted ? (
           state.submitted === "false" ? (
             <div className="error">

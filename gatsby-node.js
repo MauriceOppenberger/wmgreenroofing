@@ -9,12 +9,7 @@
 const path = require("path")
 const slash = require("slash")
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const homePageTemplate = path.resolve(`./src/templates/homepage.js`)
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
-  const reviewTemplate = path.resolve(`./src/templates/review.js`)
-  const contactTemplate = path.resolve(`./src/templates/contact.js`)
-  const galleryTemplate = path.resolve(`./src/templates/gallery.js`)
+  const { createPage, createRedirect } = actions
 
   const { data } = await graphql(`
     query Get_Pages {
@@ -40,8 +35,12 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(data.errors)
     throw new Error(data.errors)
   }
+  const homePageTemplate = path.resolve(`./src/templates/homepage.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const reviewTemplate = path.resolve(`./src/templates/review.js`)
+  const contactTemplate = path.resolve(`./src/templates/contact.js`)
+  const galleryTemplate = path.resolve(`./src/templates/gallery.js`)
   const { pages } = data.page
-
   pages.edges.forEach(({ node }) => {
     if (node.status === "publish") {
       if (node.isFrontPage) {
@@ -51,7 +50,6 @@ exports.createPages = async ({ graphql, actions }) => {
           context: {
             pageId: node.pageId,
             id: node.id,
-            badge: node.badge,
           },
         })
       } else if (node.page_template.template === "gallery-template") {

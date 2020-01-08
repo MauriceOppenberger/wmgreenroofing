@@ -12,8 +12,15 @@ function encode(data) {
 }
 const ReviewForm = () => {
   const [state, setState] = React.useState({})
+  const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
   const { register, handleSubmit, errors } = useForm()
 
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => setLoadRecaptcha(true), {
+      passive: true,
+      once: true,
+    })
+  }, [])
   const onResolved = value => {
     if (value) {
       fetch("/", {
@@ -96,13 +103,15 @@ const ReviewForm = () => {
             </label>
           </p>
           <div className="error">{useValidate(errors.message)}</div>
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            size="invisible"
-            tabindex={-1}
-            sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
-            onChange={onResolved}
-          />
+          {loadRecaptcha ? (
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              size="invisible"
+              tabindex={-1}
+              sitekey="6LcO5swUAAAAAOGL9jxHtOHci93_mtz2jtTbereW"
+              onChange={onResolved}
+            />
+          ) : null}
           {state.submitted ? (
             state.submitted === "false" ? (
               <div className="error">
