@@ -9,12 +9,13 @@
 const path = require("path")
 const slash = require("slash")
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const homePageTemplate = path.resolve(`./src/templates/homepage.js`)
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
-  const reviewTemplate = path.resolve(`./src/templates/review.js`)
-  const contactTemplate = path.resolve(`./src/templates/contact.js`)
-  const galleryTemplate = path.resolve(`./src/templates/gallery.js`)
+  const { createPage, createRedirect } = actions
+  createRedirect({
+    fromPath: "/",
+    toPath: "/home",
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
 
   const { data } = await graphql(`
     query Get_Pages {
@@ -40,13 +41,17 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(data.errors)
     throw new Error(data.errors)
   }
+  const homePageTemplate = path.resolve(`./src/templates/homepage.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const reviewTemplate = path.resolve(`./src/templates/review.js`)
+  const contactTemplate = path.resolve(`./src/templates/contact.js`)
+  const galleryTemplate = path.resolve(`./src/templates/gallery.js`)
   const { pages } = data.page
-
   pages.edges.forEach(({ node }) => {
     if (node.status === "publish") {
       if (node.isFrontPage) {
         createPage({
-          path: "/",
+          path: "/home",
           component: slash(homePageTemplate),
           context: {
             pageId: node.pageId,
@@ -90,8 +95,6 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         })
       }
-    } else {
-      return
     }
   })
 }
