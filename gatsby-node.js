@@ -10,12 +10,6 @@ const path = require("path")
 const slash = require("slash")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
-  createRedirect({
-    fromPath: "/",
-    toPath: "/home",
-    redirectInBrowser: true,
-    isPermanent: true,
-  })
 
   const { data } = await graphql(`
     query Get_Pages {
@@ -51,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (node.status === "publish") {
       if (node.isFrontPage) {
         createPage({
-          path: "/home",
+          path: "/",
           component: slash(homePageTemplate),
           context: {
             pageId: node.pageId,
