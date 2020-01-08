@@ -42,6 +42,7 @@ module.exports = {
         background_color: `#340610`,
         theme_color: `#340610`,
         display: `standalone`,
+        crossOrigin: `use-credentials`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
@@ -67,6 +68,7 @@ module.exports = {
         fieldName: "wpgraphql",
         // Url to query from
         url: `${process.env.API_PROTOCOL}://${process.env.API_URL}/graphql`,
+        // url: `https://wordpress.oppenberger.com/graphql`,
       },
     },
     {
