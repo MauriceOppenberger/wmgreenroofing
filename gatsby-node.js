@@ -51,7 +51,6 @@ exports.createPages = async ({ graphql, actions }) => {
           context: {
             pageId: node.pageId,
             id: node.id,
-            badge: node.badge,
           },
         })
       } else if (node.page_template.template === "gallery-template") {
@@ -91,6 +90,8 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         })
       }
+    } else {
+      return
     }
   })
 }
