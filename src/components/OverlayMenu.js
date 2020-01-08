@@ -49,6 +49,7 @@ const OverlayMenu = ({ menuOpen, callback }) => {
           role="button"
           tabIndex="0"
           onKeyDown={callback}
+          name="closeButton"
         >
           <span role="img" alt="menu-button">
             {" "}
