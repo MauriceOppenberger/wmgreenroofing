@@ -145,14 +145,13 @@ const ContentWrapper = styled.div`
     margin: 0;
   }
   .service__item .item__content {
-    /* border-top: 1px solid var(--primaryColor); */
     flex: 1;
     max-width: 550px;
   }
   .service__item .item__content .title {
     margin: 0.5rem 0;
     flex: 1;
-    min-height: 150px;
+    min-height: 160px;
   }
   .service__item .item__content .blurb {
     padding-top: 1rem;

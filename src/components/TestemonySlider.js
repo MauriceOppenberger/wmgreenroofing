@@ -35,18 +35,6 @@ const SliderWrapper = styled.div`
     opacity: 1;
     transform: scale(1);
   }
-
-  /* @media (min-width: 768px) {
-    height: 600px;
-  }
-
-  @media (min-width: 992px) {
-    height: 400px;
-  }
-
-  @media (min-width: 1200px) {
-    height: 800px;
-  } */
 `
 
 const TestemonySlider = () => {
