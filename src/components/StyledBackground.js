@@ -2,6 +2,7 @@ import React from "react"
 import StyledInnerWrapper from "./styles/BackgroundSectionStyles"
 import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image"
+import styled from "styled-components"
 
 const BackgroundSection = ({ imageData, children }) => {
   return (
