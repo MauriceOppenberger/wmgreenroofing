@@ -7,18 +7,21 @@ import SEO from "../components/Seo"
 
 import PageWrapper from "./templateStyles/PageStyle"
 
-const pluginOptions = {
-  wordPressUrl: "https://wordpress.oppenberger.com",
-  uploadsUrl: "https://wordpress.oppenberger.com/wp-content/uploads/",
-}
+const ReviewTemplate = props => {
+  const {
+    data: {
+      wpgraphql: { currentPage },
+    },
+    pageContext: { pluginOptions },
+  } = props
 
-const ReviewTemplate = ({ data: { wpgraphql } }) => {
-  const content = wpgraphql.currentPage.content
+  const { title, content } = currentPage
+
   return (
     <Layout>
-      <SEO title={wpgraphql.currentPage.title} />
+      <SEO title={title} />
       <div className="page__title">
-        <h1 dangerouslySetInnerHTML={{ __html: wpgraphql.currentPage.title }} />
+        <h1 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
       <PageWrapper>
         <div className="page__container">

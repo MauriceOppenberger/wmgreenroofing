@@ -10,20 +10,22 @@ import TestemonySlider from "../components/TestemonySlider"
 import ContentWrapper from "./templateStyles/HomePageStyle"
 import SEO from "../components/Seo"
 
-const HomepageTemplate = ({ data: { wpgraphql } }) => {
-  const pluginOptions = {
-    wordPressUrl: "https://wordpress.oppenberger.com/",
-    uploadsUrl: "https://wordpress.oppenberger.com/wp-content/uploads/",
-  }
-  const content = wpgraphql.currentPage.content
+const HomepageTemplate = props => {
+  const {
+    data: {
+      wpgraphql: { currentPage },
+    },
+    pageContext: { pluginOptions },
+  } = props
+
+  const { title, content } = currentPage
+
   return (
     <Layout>
-      <SEO title={wpgraphql.currentPage.title} />
+      <SEO title={title} />
       <StyledBackgroundSection
-        imageData={
-          wpgraphql.currentPage.featuredImage.imageFile.childImageSharp.fluid
-        }
-        data={wpgraphql}
+        imageData={currentPage.featuredImage.imageFile.childImageSharp.fluid}
+        data={currentPage}
       >
         <div className="landing__container">
           <>
@@ -31,8 +33,8 @@ const HomepageTemplate = ({ data: { wpgraphql } }) => {
               <Img
                 className="badge"
                 fluid={
-                  wpgraphql.currentPage.badge.emergencyBadge.imageFile
-                    .childImageSharp.fluid
+                  currentPage.badge.emergencyBadge.imageFile.childImageSharp
+                    .fluid
                 }
               />
             </div>
@@ -82,7 +84,7 @@ export const pageQuery = graphql`
           sourceUrl
           imageFile {
             childImageSharp {
-              fluid(maxWidth: 1500, quality: 100) {
+              fluid(maxWidth: 1500, quality: 80) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

@@ -24,7 +24,8 @@ const Header = () => {
             </span>
             <SocialNav className="header" />
           </div>
-          <Nav className="header" />
+
+          <Nav className="primary__nav header" />
         </div>
       </div>
     </HeaderWrapper>

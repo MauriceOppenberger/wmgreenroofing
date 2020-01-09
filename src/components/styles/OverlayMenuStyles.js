@@ -32,7 +32,7 @@ export const Overlay = styled.div`
       list-style-type: none;
       margin: 0;
 
-      .overlayMenu__item {
+      .overlayMenu__nav__item {
         /* margin: 0 0 20px 0; */
         line-height: 1.5;
         padding: 5px 10px;
@@ -41,7 +41,8 @@ export const Overlay = styled.div`
           color: #d22e26;
         }
       }
-      .overlayMenu__item a {
+      .overlayMenu__nav__item a,
+      p {
         font-family: "Teko", Arial, Helvetica, sans-serif;
         font-size: 1.2rem;
         color: #fff;
@@ -57,7 +58,7 @@ export const Overlay = styled.div`
     .sub__nav {
       display: block;
       margin: 0;
-      padding: 10px;
+      padding: 0 10px;
 
       .sub__nav__item {
         list-style: inside;

@@ -7,13 +7,18 @@ import SEO from "../components/Seo"
 import PageWrapper from "./templateStyles/PageStyle"
 import GalleryWrapper from "./templateStyles/GalleryStyle"
 
-const GalleryTemplate = ({ data: { wpgraphql } }) => {
-  console.log(wpgraphql.images)
+const GalleryTemplate = props => {
+  const {
+    data: { wpgraphql },
+  } = props
+
+  const { title } = wpgraphql.currentPage
+
   return (
     <Layout>
-      <SEO title={wpgraphql.currentPage.title} />
+      <SEO title={title} />
       <div className="page__title">
-        <h1 dangerouslySetInnerHTML={{ __html: wpgraphql.currentPage.title }} />
+        <h1 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
       <PageWrapper>
         <div className="page__container">
