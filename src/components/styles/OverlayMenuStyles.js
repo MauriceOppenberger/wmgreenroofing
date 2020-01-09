@@ -22,6 +22,7 @@ export const Overlay = styled.div`
     justify-content: center;
     background: #000;
     width: 60%;
+    min-width: max-content;
     height: 100%;
     color: #fff;
     padding: 20px;

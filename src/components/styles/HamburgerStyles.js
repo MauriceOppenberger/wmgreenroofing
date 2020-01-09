@@ -7,7 +7,7 @@ export const HamburgerButton = styled.div`
   align-items: center;
   z-index: 1000;
   right: 20px;
-  top: 90px;
+  top: 40px;
   width: 40px;
   height: 40px;
   cursor: pointer;

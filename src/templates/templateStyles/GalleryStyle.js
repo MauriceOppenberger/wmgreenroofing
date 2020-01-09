@@ -21,5 +21,10 @@ const GalleryWrapper = styled.ul`
     transition: all 0.3s ease;
     opacity: 0.5;
   }
+  @media screen and (max-width: 448px) {
+    .gallery__item {
+      flex: 1 100% !important ;
+    }
+  }
 `
 export default GalleryWrapper

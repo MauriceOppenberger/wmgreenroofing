@@ -1,7 +1,6 @@
 import React from "react"
 
 export const useValidate = errorField => {
-  console.log(errorField)
   if (errorField) {
     const { name } = errorField.ref
     const { type } = errorField
@@ -53,6 +52,6 @@ export const useValidate = errorField => {
         break
     }
   } else {
-    return null
+    return
   }
 }
