@@ -10,7 +10,6 @@ const Nav = ({ className }) => {
 
   const [{ menuItems }] = menu.wpgraphql.mainMenu.nodes
   const wpurl = menu.wpgraphql.generalSettings.url
-  console.log(menuItems)
   return (
     <NavWrapper>
       <ul className={className}>
