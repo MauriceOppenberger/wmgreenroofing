@@ -29,12 +29,12 @@ const LogoGalleryWrapper = styled.div`
 const LogoGallery = () => {
   const {
     wpgraphql: {
-      slides: { edges: slides },
+      logos: { edges: logos },
     },
   } = useStaticQuery(graphql`
     query {
       wpgraphql {
-        slides: mediaItems(where: { title: "logo" }) {
+        logos: mediaItems(where: { title: "logo" }) {
           edges {
             node {
               sourceUrl
@@ -43,7 +43,7 @@ const LogoGallery = () => {
               mediaItemUrl
               imageFile {
                 childImageSharp {
-                  fluid(maxWidth: 500, quality: 100) {
+                  fluid(maxWidth: 300, quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -58,11 +58,11 @@ const LogoGallery = () => {
     <LogoGalleryWrapper>
       <h2 className="title">Brands we work with</h2>
       <ul className="logo__gallery">
-        {slides.map((slide, i) => (
-          <li className="gallery__item" key={slide.node.id}>
+        {logos.map(logo => (
+          <li className="gallery__item" key={logo.node.id}>
             <Img
               className="item__logo"
-              fluid={slide.node.imageFile.childImageSharp.fluid}
+              fluid={logo.node.imageFile.childImageSharp.fluid}
             />
           </li>
         ))}
