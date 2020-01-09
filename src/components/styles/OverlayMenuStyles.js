@@ -20,11 +20,11 @@ export const Overlay = styled.div`
     transform: ${props =>
       props.menuOpen ? "translateX(0%)" : "translateX(-100%)"};
     justify-content: center;
-    background: #000;
+    background: var(--mainBlack);
     width: 60%;
     min-width: max-content;
     height: 100%;
-    color: #fff;
+    background: var(--mainWhite);
     padding: 20px;
     transition: all 0.3s ease;
 

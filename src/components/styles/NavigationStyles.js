@@ -45,9 +45,9 @@ export const NavWrapper = styled.div`
     animation: fadeInMenu 0.3s all ease-in;
     display: none; /*defautl state */
     position: absolute;
-    margin: 0 0 0 0;
+    margin: 2rem 0;
     padding: 20px 10px;
-    background: #000;
+    background: var(--mainBlack);
     z-index: 1000;
   }
   .sub__nav__item {
