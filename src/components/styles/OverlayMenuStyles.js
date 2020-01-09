@@ -24,7 +24,7 @@ export const Overlay = styled.div`
     width: 60%;
     min-width: max-content;
     height: 100%;
-    background: var(--mainWhite);
+    color: var(--mainWhite);
     padding: 20px;
     transition: all 0.3s ease;
 
