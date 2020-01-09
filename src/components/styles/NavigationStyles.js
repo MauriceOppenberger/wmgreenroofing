@@ -28,6 +28,10 @@ export const NavWrapper = styled.div`
       text-decoration: none;
       color: #fff;
     }
+    p::after {
+      content: " ▾";
+      font-size: 13px;
+    }
     a:hover {
       color: #d22e26;
     }
