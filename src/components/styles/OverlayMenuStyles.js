@@ -97,4 +97,8 @@ export const Overlay = styled.div`
       width: 20px;
     }
   }
+  .overlayBtn {
+    border: none;
+    background: transparent;
+  }
 `
