@@ -5,94 +5,9 @@
  */
 
 // You can delete this file if you're not using it
-
+const createPages = require("./gatsby/createPages")
 const path = require("path")
 const slash = require("slash")
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions
-
-  const { data } = await graphql(`
-    query Get_Pages {
-      page: wpgraphql {
-        pages(first: 20) {
-          edges {
-            node {
-              id
-              pageId
-              slug
-              status
-              isFrontPage
-              page_template {
-                template
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  if (data.error) {
-    console.log(data.errors)
-    throw new Error(data.errors)
-  }
-  const homePageTemplate = path.resolve(`./src/templates/homepage.js`)
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
-  const reviewTemplate = path.resolve(`./src/templates/review.js`)
-  const contactTemplate = path.resolve(`./src/templates/contact.js`)
-  const galleryTemplate = path.resolve(`./src/templates/gallery.js`)
-  const { pages } = data.page
-  pages.edges.forEach(({ node }) => {
-    if (node.status === "publish") {
-      if (node.isFrontPage) {
-        createPage({
-          path: "/",
-          component: slash(homePageTemplate),
-          context: {
-            pageId: node.pageId,
-            id: node.id,
-          },
-        })
-      } else if (node.page_template.template === "gallery-template") {
-        createPage({
-          path: node.slug,
-          component: slash(galleryTemplate),
-          context: {
-            pageId: node.pageId,
-            id: node.id,
-          },
-        })
-      } else if (node.page_template.template === "contact-template") {
-        createPage({
-          path: node.slug,
-          component: slash(contactTemplate),
-          context: {
-            pageId: node.pageId,
-            id: node.id,
-          },
-        })
-      } else if (node.page_template.template === "review-template") {
-        createPage({
-          path: node.slug,
-          component: slash(reviewTemplate),
-          context: {
-            pageId: node.pageId,
-            id: node.id,
-          },
-        })
-      } else {
-        createPage({
-          path: node.slug,
-          component: slash(pageTemplate),
-          context: {
-            pageId: node.pageId,
-            id: node.id,
-          },
-        })
-      }
-    }
-  })
-}
-
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 exports.createResolvers = ({
@@ -121,4 +36,11 @@ exports.createResolvers = ({
       },
     },
   })
+}
+exports.createPages = async ({ graphql, actions }) => {
+  const pluginOptions = {
+    wordPressUrl: "https://wordpress.oppenberger.com/",
+    uploadsUrl: "https://wordpress.oppenberger.com/wp-content/uploads/",
+  }
+  await createPages({ actions, graphql }, pluginOptions)
 }

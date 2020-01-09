@@ -1,34 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import styled from "styled-components"
-
-// import { StyledImg, WbnSlide } from "./styles/HeroSliderStyles"
-const TestemonyWrapper = styled.div`
-  position: absolute;
-  /* height: 800px; */
-  width: 100%;
-  margin: auto;
-  opacity: 0;
-  transition: opacity 1s ease;
-  background-size: cover !important;
-  background-position: center !important;
-  .testemony__card {
-    width: 400px;
-    margin: auto;
-    max-width: 100%;
-    text-align: center;
-  }
-  .card__content {
-    min-height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .card__image {
-    max-width: 25px;
-    margin: 0 auto;
-  }
-`
+import { TestemonyWrapper } from "./styles/TestimonyStyles"
 
 const Slide = ({ testemony, active }) => {
   return (

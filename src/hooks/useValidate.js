@@ -52,6 +52,6 @@ export const useValidate = errorField => {
         break
     }
   } else {
-    return null
+    return
   }
 }

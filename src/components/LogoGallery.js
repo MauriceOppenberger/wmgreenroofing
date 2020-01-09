@@ -43,8 +43,8 @@ const LogoGallery = () => {
               mediaItemUrl
               imageFile {
                 childImageSharp {
-                  fluid(maxWidth: 300, quality: 100) {
-                    ...GatsbyImageSharpFluid_withWebp
+                  fluid(maxWidth: 250, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
               }

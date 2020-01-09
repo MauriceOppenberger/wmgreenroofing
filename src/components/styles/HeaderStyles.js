@@ -29,6 +29,7 @@ export const HeaderWrapper = styled.header`
     margin: 0 1rem;
     font-size: 0.9rem;
   }
+
   @media screen and (max-width: 776px) {
     .nav__container {
       display: none;
