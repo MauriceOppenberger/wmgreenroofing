@@ -26,16 +26,9 @@ const Layout = ({ children }) => {
       <Hamburger handleOverlayMenu={handleOverlayMenu} />
       <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          padding: `0`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <Footer />
-      </div>
+
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }

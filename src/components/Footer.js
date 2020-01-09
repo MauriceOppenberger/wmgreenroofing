@@ -9,7 +9,7 @@ import FooterWrapper from "./styles/FooterStyles"
 const Footer = () => (
   <FooterWrapper>
     <div className="footer__cta">
-      <button className="footer__btn btn">
+      <button className="footer__btn btn" name="cta-Button">
         <Link to="/contact-us">Get an Estimate Now </Link>
       </button>
     </div>

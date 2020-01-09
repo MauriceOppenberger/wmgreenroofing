@@ -17,7 +17,12 @@ const SocialNav = ({ className }) => {
           {menuItems.edges.map(({ node }) => {
             return (
               <li key={node.menuItemId} className="nav__item">
-                <a href={node.url} target="_blank" rel="noreferrer noopener">
+                <a
+                  href={node.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  title={node.label}
+                >
                   {node.label === "LinkedIn" ? (
                     <FaLinkedin size={22} />
                   ) : node.label === "Facebook" ? (

@@ -170,7 +170,12 @@ const ContactForm = ({ className }) => {
           )
         ) : null}
 
-        <button type="submit" value="Send" className="btn__submit btn">
+        <button
+          type="submit"
+          value="Send"
+          name="submit-button"
+          className="btn__submit btn"
+        >
           Submit
         </button>
       </form>

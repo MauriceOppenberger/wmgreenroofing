@@ -8,19 +8,23 @@ const OverlayMenu = ({ menuOpen, callback }) => {
     <Overlay menuOpen={menuOpen}>
       <div className="inner">
         <Nav className="overlayMenu" />
-        <div
-          className="closeButton"
+        <button
           onClick={callback}
-          role="button"
           tabIndex="0"
           onKeyDown={callback}
-          name="closeButton"
+          value="close"
+          name="close-button"
         >
-          <span role="img" alt="menu-button">
+          <span
+            className="closeButton"
+            role="img"
+            alt="menu-button"
+            name="close"
+          >
             {" "}
             ❌
           </span>
-        </div>
+        </button>
       </div>
     </Overlay>
   )

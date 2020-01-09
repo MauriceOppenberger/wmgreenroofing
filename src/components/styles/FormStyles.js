@@ -82,7 +82,7 @@ const FormWrapper = styled.div`
   .landing__form .btn__submit {
     background: var(--mainWhite);
     width: 100%;
-    color: var(--darkGrey);
+    color: var(--mainBlack);
   }
   .landing__form .btn__submit:hover {
     color: var(--mainBlack);
@@ -91,19 +91,17 @@ const FormWrapper = styled.div`
   .contact__form .btn__submit {
     background: var(--primaryColor);
     width: 100%;
-    color: var(--darkGrey);
+    color: var(--mainWhite);
   }
   .contact__form .btn__submit:hover {
-    color: var(--mainWhite);
     box-shadow: var(--lightShadow);
   }
   .review__form .btn__submit {
     width: 100%;
     background: var(--primaryColor);
-    color: var(--darkGrey);
+    color: var(--mainWhite);
   }
   .review__form .btn__submit:hover {
-    color: var(--mainWhite);
     box-shadow: var(--lightShadow);
   }
 `

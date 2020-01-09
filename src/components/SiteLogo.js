@@ -16,7 +16,7 @@ const SiteLogoWrapper = styled.div`
 `
 const SiteLogo = ({ className }) => {
   const logo = useStaticQuery(graphql`
-    query GetLogo {
+    query Get_Logo {
       wpgraphql {
         logo: mediaItems(where: { title: "WmGreenRoofing" }) {
           edges {
@@ -42,7 +42,7 @@ const SiteLogo = ({ className }) => {
   const { node } = logo.wpgraphql.logo.edges[0]
   return (
     <SiteLogoWrapper>
-      <Link to="/">
+      <Link to="/" title="Home">
         <Img
           fluid={node.imageFile.childImageSharp.fluid}
           className={`${className}__logo`}

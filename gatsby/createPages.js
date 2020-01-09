@@ -4,7 +4,7 @@ module.exports = async ({ actions, graphql }, pluginOptions) => {
   const Get_Pages = await graphql(`
     query Get_Pages {
       page: wpgraphql {
-        pages(first: 11) {
+        pages(first: 20) {
           edges {
             node {
               id
@@ -23,9 +23,8 @@ module.exports = async ({ actions, graphql }, pluginOptions) => {
   `)
 
   if (Get_Pages.data.error) {
-    throw new Error(Get_Pages.errors)
+    throw new Error(Get_Pages.data.errors)
   }
-  console.log(Get_Pages.data)
 
   const { createPage } = actions
 
