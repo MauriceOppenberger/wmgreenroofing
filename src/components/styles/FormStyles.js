@@ -32,7 +32,7 @@ const FormWrapper = styled.div`
   }
 
   .error {
-    min-height: 0.5rem;
+    min-height: 0.2rem;
     margin: 0.5rem;
   }
   .error p {

@@ -30,7 +30,7 @@ const StyledInnerWrapper = styled.div`
 
     margin-bottom: 2rem;
   }
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 480px) {
     .landing__container {
       padding: 0px !important;
     }

@@ -2,15 +2,21 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Img from "gatsby-image"
-import StyledBackgroundSection from "../components/StyledBackground"
-import ContactForm from "../components/ContactForm"
+import StyledHeroSection from "../components/StyledHero"
 import LogoGallery from "../components/LogoGallery"
+import ContactForm from "../components/ContactForm"
 import contentParser from "gatsby-wpgraphql-inline-images"
 import TestemonySlider from "../components/TestemonySlider"
 import ContentWrapper from "./templateStyles/HomePageStyle"
 import SEO from "../components/Seo"
 
 const HomepageTemplate = props => {
+  const [deviceWidth, setDeviceWidth] = React.useState()
+
+  React.useEffect(() => {
+    const width = window.innerWidth
+    setDeviceWidth(width)
+  }, [])
   const {
     data: {
       wpgraphql: { currentPage },
@@ -18,16 +24,17 @@ const HomepageTemplate = props => {
     pageContext: { pluginOptions },
   } = props
 
+  console.log(deviceWidth)
   const { title, content } = currentPage
 
   return (
     <Layout>
       <SEO title={title} />
-      <StyledBackgroundSection
+      <StyledHeroSection
         imageData={currentPage.featuredImage.imageFile.childImageSharp.fluid}
         data={currentPage}
       >
-        <div className="landing__container">
+        {/* <div className="landing__container">
           <>
             <div className="badge__container">
               <Img
@@ -38,14 +45,15 @@ const HomepageTemplate = props => {
                 }
               />
             </div>
-
-            <div className="landing__submission">
-              <h2 className="title">Request an Estimate</h2>
-              <ContactForm className="landing" />
-            </div>
+            {deviceWidth > 667 && (
+              <div className="landing__submission">
+                <h2 className="title">Request an Estimate</h2>
+                <ContactForm className="landing" />
+              </div>
+            )}
           </>
-        </div>
-      </StyledBackgroundSection>
+        </div> */}
+      </StyledHeroSection>
       <ContentWrapper>
         {contentParser({ content }, pluginOptions)}
         <div className="testimony__container">

@@ -86,7 +86,7 @@ module.exports = {
         // trackingId: `UA-133562630-2`,
         trackingId: `G-1T0JCF8BXT`,
         // Puts tracking script in the head instead of the body
-        head: true,
+        head: false,
         // enable ip anonymization
         anonymize: true,
       },
