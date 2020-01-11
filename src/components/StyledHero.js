@@ -8,8 +8,12 @@ import ContactForm from "../components/ContactForm"
 import { useDeviceWidth } from "../hooks/useDeviceWidth"
 
 const HeroSection = ({ imageData, data }) => {
-  const isMobile = useDeviceWidth()
-
+  const isMobile;
+  
+  React.useEffect(()=>{
+    isMobile = useDeviceWidth()
+  },[])
+  
   return (
     <BackgroundImage
       Tag="section"
