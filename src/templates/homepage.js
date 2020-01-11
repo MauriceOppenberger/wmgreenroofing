@@ -11,12 +11,6 @@ import ContentWrapper from "./templateStyles/HomePageStyle"
 import SEO from "../components/Seo"
 
 const HomepageTemplate = props => {
-  const [deviceWidth, setDeviceWidth] = React.useState()
-
-  React.useEffect(() => {
-    const width = window.innerWidth
-    setDeviceWidth(width)
-  }, [])
   const {
     data: {
       wpgraphql: { currentPage },
@@ -24,7 +18,6 @@ const HomepageTemplate = props => {
     pageContext: { pluginOptions },
   } = props
 
-  console.log(deviceWidth)
   const { title, content } = currentPage
 
   return (
@@ -33,27 +26,7 @@ const HomepageTemplate = props => {
       <StyledHeroSection
         imageData={currentPage.featuredImage.imageFile.childImageSharp.fluid}
         data={currentPage}
-      >
-        {/* <div className="landing__container">
-          <>
-            <div className="badge__container">
-              <Img
-                className="badge"
-                fluid={
-                  currentPage.badge.emergencyBadge.imageFile.childImageSharp
-                    .fluid
-                }
-              />
-            </div>
-            {deviceWidth > 667 && (
-              <div className="landing__submission">
-                <h2 className="title">Request an Estimate</h2>
-                <ContactForm className="landing" />
-              </div>
-            )}
-          </>
-        </div> */}
-      </StyledHeroSection>
+      ></StyledHeroSection>
       <ContentWrapper>
         {contentParser({ content }, pluginOptions)}
         <div className="testimony__container">

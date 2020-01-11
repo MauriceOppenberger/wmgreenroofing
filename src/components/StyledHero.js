@@ -4,15 +4,13 @@ import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 import ContactForm from "../components/ContactForm"
 
 const HeroSection = ({ imageData, data }) => {
-  const [isMobile, setIsMobile] = React.useState(false)
-  React.useEffect(() => {
-    const deviceWidth = window.innerWidth
+  const isMobile =
+    typeof window !== `undefined` ? window.innerWidth < 480 : null
 
-    setIsMobile(deviceWidth > 480 ? false : true)
-  }, [])
   return (
     <BackgroundImage
       Tag="section"
@@ -39,17 +37,20 @@ const HeroSection = ({ imageData, data }) => {
               </div>
             ) : (
               <div className="landing__cta" style={{ margin: "auto" }}>
-                <button
-                  className="cta-btn btn"
-                  style={{
-                    fontSize: "1.5rem",
-                    lineHeight: "1.5",
-                    padding: "10px 20px",
-                    fontWeight: "600",
-                  }}
-                >
-                  Get an Estimate
-                </button>
+                <Link to="/contact-us">
+                  <button
+                    className="cta-btn btn"
+                    style={{
+                      fontSize: "1.5rem",
+                      lineHeight: "1.5",
+                      padding: "10px 20px",
+                      fontWeight: "600",
+                    }}
+                    name="call-to-action"
+                  >
+                    Get an Estimate
+                  </button>
+                </Link>
               </div>
             )}
           </>
