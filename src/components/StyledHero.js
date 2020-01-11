@@ -5,15 +5,14 @@ import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import ContactForm from "../components/ContactForm"
-import { useDeviceWidth } from "../hooks/useDeviceWidth"
 
 const HeroSection = ({ imageData, data }) => {
-  const isMobile;
-  
-  React.useEffect(()=>{
-    isMobile = useDeviceWidth()
-  },[])
-  
+  const [isMobile, setIsMobile] = React.useState(false)
+  React.useEffect(() => {
+    const deviceWidth = window.innerWidth
+
+    setIsMobile(deviceWidth > 480 ? false : true)
+  }, [])
   return (
     <BackgroundImage
       Tag="section"
