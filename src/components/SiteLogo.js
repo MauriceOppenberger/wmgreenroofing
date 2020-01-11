@@ -7,10 +7,10 @@ const SiteLogoWrapper = styled.div`
   flex: 1;
 
   .header__logo {
-    max-width: 250px;
+    max-width: 22vmax;
   }
   .footer__logo {
-    max-width: 350px;
+    max-width: 32vmax;
     margin: 1rem auto 0;
   }
 `

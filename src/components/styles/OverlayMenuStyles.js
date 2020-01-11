@@ -11,7 +11,7 @@ export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);
   left: 0px;
   padding: 0px;
-  transition: all 0s ease;
+  transition: all 0s ease-in-out;
 
   .inner {
     display: flex;
@@ -26,7 +26,7 @@ export const Overlay = styled.div`
     height: 100%;
     color: var(--mainWhite);
     padding: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
 
     .overlayMenu {
       text-align: left;

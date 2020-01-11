@@ -10,6 +10,7 @@ import ContactForm from "../components/ContactForm"
 const HeroSection = ({ imageData, data }) => {
   const isMobile =
     typeof window !== `undefined` ? window.innerWidth < 480 : null
+  console.log(isMobile)
 
   return (
     <BackgroundImage

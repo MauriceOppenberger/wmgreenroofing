@@ -110,9 +110,7 @@ const ContentWrapper = styled.div`
       flex: 1 100% !important;
       max-width: 100% !important;
     }
-    .service__item .item__icon img {
-      width: 75px;
-    }
+ 
   }
   .service__container .wp-block-group__inner-container {
     justify-content: center;
@@ -135,24 +133,27 @@ const ContentWrapper = styled.div`
   }
   .service__item .item__icon {
     flex: 1;
-    max-width: 125px;
-    /* margin: auto; */
+    max-width: 10vmax;
     text-align: end;
   }
   .service__item .item__icon img {
-    max-height: 75px;
-    max-width: 75px;
+    max-height: 55px;
+    max-width: 55px;
+    width: 6vmax;
+    height: auto
     margin: 0;
   }
   .service__item .item__content {
     flex: 1;
     max-width: 550px;
   }
+
   .service__item .item__content .title {
     margin: 0.5rem 0;
     flex: 1;
     min-height: 160px;
   }
+
   .service__item .item__content .blurb {
     padding-top: 1rem;
     border-top: 1px solid var(--primaryColor);
