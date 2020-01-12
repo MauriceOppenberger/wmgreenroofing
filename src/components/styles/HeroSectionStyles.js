@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const StyledInnerWrapper = styled.div`
   .landing__container {
-    min-height: 650px;
+    min-height: 80vh;
     display: flex;
     flex-flow: row wrap;
     padding: 1rem;
@@ -14,7 +14,7 @@ const StyledInnerWrapper = styled.div`
     .badge {
       width: 150px;
       position: absolute !important;
-      bottom: -100px;
+      bottom: -85px;
       left: 1rem;
     }
   }
