@@ -137,9 +137,9 @@ const ContentWrapper = styled.div`
     text-align: end;
   }
   .service__item .item__icon img {
-    max-height: 55px;
-    max-width: 55px;
-    width: 6vmax;
+    max-height: 75px;
+    max-width: 75px;
+    width: 10vmax;
     height: auto
     margin: 0;
   }

@@ -48,8 +48,11 @@ const PageWrapper = styled.div`
   }
   .page__content .list {
     margin-bottom: 1.45rem;
+    padding-left: 1.45rem;
   }
-
+  .page__content .list li {
+    list-style: inherit;
+  }
   .page__content .text a {
     color: -webkit-link;
   }
