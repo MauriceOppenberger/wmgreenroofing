@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const StyledInnerWrapper = styled.div`
   .landing__container {
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     flex-flow: row wrap;
     padding: 1rem;
