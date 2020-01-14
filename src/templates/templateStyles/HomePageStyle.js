@@ -110,7 +110,6 @@ const ContentWrapper = styled.div`
       flex: 1 100% !important;
       max-width: 100% !important;
     }
- 
   }
   .service__container .wp-block-group__inner-container {
     justify-content: center;
@@ -140,7 +139,7 @@ const ContentWrapper = styled.div`
     max-height: 75px;
     max-width: 75px;
     width: 10vmax;
-    height: auto
+    height: auto;
     margin: 0;
   }
   .service__item .item__content {

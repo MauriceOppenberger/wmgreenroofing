@@ -26,16 +26,23 @@ const StyledInnerWrapper = styled.div`
     padding: 1.5rem;
     max-width: 500px;
     min-width: 400px;
-
+    display: block;
     margin-bottom: 2rem;
+  }
+  .landing__cta {
+    display: none;
   }
   @media screen and (max-width: 480px) {
     .landing__container {
       padding: 0px !important;
     }
     .landing__submission {
+      display: none;
       max-width: 100% !important;
       margin: 0 auto !important;
+    }
+    .landing__cta {
+      display: block;
     }
     .badge__container {
       height: 0 !important;
