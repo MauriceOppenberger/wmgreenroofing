@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: "gatsby-wpgraphql-inline-images",
       options: {
-        wordPressUrl: `${process.env.API_URL}`,
-        uploadsUrl: `${process.env.API_URL}://${process.env.API_URL}/uploads/`,
+        wordPressUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}`,
+        uploadsUrl: `${process.env.API_PROTOCOL}://${process.env.API_URL}/uploads/`,
 
         processPostTypes: ["Page", "Post"],
         graphqlTypeName: "WPGraphQL",
@@ -65,7 +65,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraphql",
         // Url to query from
-        url: `${process.env.API_URL}://${process.env.API_URL}/graphql/`,
+        url: `${process.env.API_PROTOCOL}://${process.env.API_URL}/graphql/`,
       },
     },
     {
@@ -74,8 +74,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: `${process.env.API_URL}://${process.env.API_URL}`,
-        sitemap: `${process.env.API_URL}://${process.env.API_URL}/sitemap.xml`,
+        host: `${process.env.API_PROTOCOL}://${process.env.API_URL}`,
+        sitemap: `${process.env.API_PROTOCOL}://${process.env.API_URL}/sitemap.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
