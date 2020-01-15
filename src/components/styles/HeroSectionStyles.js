@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const StyledInnerWrapper = styled.div`
   .landing__container {
-    min-height: 650px;
+    min-height: 69vh;
     display: flex;
     flex-flow: row wrap;
     padding: 1rem;
@@ -14,29 +14,35 @@ const StyledInnerWrapper = styled.div`
     .badge {
       width: 150px;
       position: absolute !important;
-      bottom: -100px;
+      bottom: -85px;
       left: 1rem;
     }
   }
   .landing__submission {
     flex: 1;
-
     background: var(--mainBlack);
     box-shadow: var(--darkShadow);
     color: var(--mainWhite);
     padding: 1.5rem;
     max-width: 500px;
     min-width: 400px;
-
+    display: block;
     margin-bottom: 2rem;
+  }
+  .landing__cta {
+    display: none;
   }
   @media screen and (max-width: 480px) {
     .landing__container {
       padding: 0px !important;
     }
     .landing__submission {
+      display: none;
       max-width: 100% !important;
       margin: 0 auto !important;
+    }
+    .landing__cta {
+      display: block;
     }
     .badge__container {
       height: 0 !important;

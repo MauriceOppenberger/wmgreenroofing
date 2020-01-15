@@ -104,6 +104,9 @@ const FormWrapper = styled.div`
   .review__form .btn__submit:hover {
     box-shadow: var(--lightShadow);
   }
+  .grecaptcha-badge {
+    z-index: 1000;
+  }
 `
 
 export default FormWrapper
