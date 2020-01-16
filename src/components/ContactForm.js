@@ -67,6 +67,12 @@ const ContactForm = ({ className }) => {
             Don’t fill this out if you're human: <input name="bot-field" />
           </label>
         </p>
+        <input
+          type="text"
+          name="subject"
+          value={state.date.roofTyp}
+          class="hidden"
+        ></input>
         <p>
           <label className="required">
             Name:
