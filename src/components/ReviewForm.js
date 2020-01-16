@@ -93,7 +93,7 @@ const ReviewForm = () => {
           <div className="error">{useValidate(errors.email)}</div>
           <p>
             <label className="required">
-              Message:
+              Review:
               <textarea
                 type="text"
                 name="message"
