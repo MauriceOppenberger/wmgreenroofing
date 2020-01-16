@@ -70,7 +70,7 @@ const ContactForm = ({ className }) => {
         <input
           type="text"
           name="subject"
-          value={state.date.roofTyp}
+          value="New submisson from wmgreenroofing.ca"
           class="hidden"
         ></input>
         <p>
