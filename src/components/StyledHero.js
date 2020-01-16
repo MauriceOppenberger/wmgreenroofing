@@ -32,18 +32,9 @@ const HeroSection = ({ imageData, data }) => {
               <h2 className="title">Request an Estimate</h2>
               <ContactForm className="landing" />
             </div>
-            <div className="landing__cta" style={{ margin: "auto" }}>
+            <div className="landing__cta">
               <Link to="/contact-us">
-                <button
-                  className="cta-btn btn"
-                  style={{
-                    fontSize: "1.5rem",
-                    lineHeight: "1.5",
-                    padding: "10px 20px",
-                    fontWeight: "600",
-                  }}
-                  name="call-to-action"
-                >
+                <button className="cta-btn btn" name="call-to-action">
                   Get an Estimate
                 </button>
               </Link>

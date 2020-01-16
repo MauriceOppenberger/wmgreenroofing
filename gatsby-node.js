@@ -37,8 +37,8 @@ exports.createResolvers = ({
 }
 exports.createPages = async ({ graphql, actions }) => {
   const pluginOptions = {
-    wordPressUrl: "http://cms.wmgreenroofing.ca/",
-    uploadsUrl: "http://cms.wmgreenroofing.ca/wp-content/uploads/",
+    wordPressUrl: "https://cms.wmgreenroofing.ca/",
+    uploadsUrl: "https://cms.wmgreenroofing.ca/wp-content/uploads/",
   }
   await createPages({ actions, graphql }, pluginOptions)
 }

@@ -31,7 +31,15 @@ const StyledInnerWrapper = styled.div`
   }
   .landing__cta {
     display: none;
+    margin: auto;
   }
+  .cta-btn {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 10px 20px;
+    font-weight: 600;
+  }
+
   @media screen and (max-width: 480px) {
     .landing__container {
       padding: 0px !important;
