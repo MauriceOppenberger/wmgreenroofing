@@ -6,11 +6,11 @@ const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `Wm. Green Roofing Ldt.`,
-    description: `wordpress site remodeling`,
+    description: `Guelph Roofing Business`,
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",
     author: `Maurice Oppenberger`,
-    siteUrl: "https://wmgreenroofingv2.netlify.com/",
+    siteUrl: "https://wmgreenroofing.ca/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -43,7 +43,7 @@ module.exports = {
         theme_color: `#340610`,
         display: `standalone`,
         crossOrigin: `use-credentials`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon_wgr.png`, // This path is relative to the root of the site.
       },
     },
     {

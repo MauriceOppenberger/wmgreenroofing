@@ -6,8 +6,6 @@
 
 // You can delete this file if you're not using it
 const createPages = require("./gatsby/createPages")
-const path = require("path")
-const slash = require("slash")
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 exports.createResolvers = ({
@@ -39,8 +37,8 @@ exports.createResolvers = ({
 }
 exports.createPages = async ({ graphql, actions }) => {
   const pluginOptions = {
-    wordPressUrl: "https://wordpress.oppenberger.com/",
-    uploadsUrl: "https://wordpress.oppenberger.com/wp-content/uploads/",
+    wordPressUrl: "http://cms.wmgreenroofing.ca/",
+    uploadsUrl: "http://cms.wmgreenroofing.ca/wp-content/uploads/",
   }
   await createPages({ actions, graphql }, pluginOptions)
 }
