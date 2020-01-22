@@ -27,11 +27,13 @@ const FooterWrapper = styled.div`
   .footer__btn {
     background: var(--primaryColor);
 
+    color: var(--mainWhite);
+  }
+  .footer__btn a {
     font-weight: 600;
 
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: var(--mainWhite);
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
   .footer__btn:hover {
     box-shadow: var(--darkShadow);

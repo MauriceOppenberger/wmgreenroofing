@@ -25,6 +25,8 @@ export const NavWrapper = styled.div`
     }
     a,
     p {
+      font-size: 0.9rem;
+      font-weight: 600 !important;
       text-decoration: none;
       color: #fff;
     }
