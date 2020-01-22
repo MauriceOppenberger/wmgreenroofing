@@ -16,11 +16,11 @@ const HomepageTemplate = props => {
     pageContext: { pluginOptions },
   } = props
 
-  const { title, content } = currentPage
+  const { title, content, description } = currentPage
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description.siteDescription} />
       <StyledHeroSection
         imageData={currentPage.featuredImage.imageFile.childImageSharp.fluid}
         data={currentPage}
@@ -46,6 +46,9 @@ export const pageQuery = graphql`
       currentPage: pageBy(pageId: $pageId) {
         title
         content
+        description {
+          siteDescription
+        }
         badge {
           emergencyBadge {
             sourceUrl

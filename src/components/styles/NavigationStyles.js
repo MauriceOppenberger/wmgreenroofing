@@ -5,11 +5,14 @@ export const NavWrapper = styled.div`
     margin: 0;
     padding: 0;
   }
+  .primary__nav {
+    /* margin: 1rem 0!impotant; */
+  }
   .primary__nav,
   .footer__nav {
     display: flex;
     flex-wrap: nowrap;
-    margin: 0;
+    margin: 1rem 0;
     padding: 0;
   }
   .footer {

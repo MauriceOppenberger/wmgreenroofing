@@ -15,10 +15,10 @@ const ContactTemplate = props => {
       wpgraphql: { currentPage },
     },
   } = props
-  const { title } = currentPage
+  const { title, description } = currentPage
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description.siteDescription} />
       <div className="page__title">
         <h1 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
@@ -79,6 +79,9 @@ export const pageQuery = graphql`
     wpgraphql {
       currentPage: pageBy(pageId: $pageId) {
         title
+        description {
+          siteDescription
+        }
       }
     }
   }

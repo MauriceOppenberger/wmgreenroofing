@@ -15,11 +15,11 @@ const ReviewTemplate = props => {
     pageContext: { pluginOptions },
   } = props
 
-  const { title, content } = currentPage
+  const { title, content, description } = currentPage
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description.siteDescription} />
       <div className="page__title">
         <h1 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
@@ -45,6 +45,9 @@ export const pageQuery = graphql`
       currentPage: pageBy(pageId: $pageId) {
         title
         content
+        description {
+          siteDescription
+        }
       }
     }
   }

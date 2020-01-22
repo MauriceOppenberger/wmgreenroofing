@@ -12,11 +12,11 @@ const GalleryTemplate = props => {
     data: { wpgraphql },
   } = props
 
-  const { title } = wpgraphql.currentPage
+  const { title, description } = wpgraphql.currentPage
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description.siteDescription} />
       <div className="page__title">
         <h1 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
@@ -52,6 +52,9 @@ export const pageQuery = graphql`
     wpgraphql {
       currentPage: pageBy(pageId: $pageId) {
         title
+        description {
+          siteDescription
+        }
       }
       images: mediaItems(where: { title: "Gallery Image" }) {
         edges {
