@@ -37,30 +37,33 @@ const ContactTemplate = props => {
             </div>
             <div className="info__section">
               <div className="contact__info email">
-                <div className="contact__icon">
-                  <MdEmail size={44} color="#340610" />
-                </div>
                 <a href="mailto:info@wmgreenroofing.ca">
+                  <div className="contact__icon">
+                    <MdEmail size={44} color="#340610" />
+                  </div>
+
                   <p>info@wmgreenroofing.ca</p>
                 </a>
               </div>
               <div className="contact__info phone">
-                <div className="contact__icon">
-                  <MdPhone size={44} color="#340610" />
-                </div>
                 <a href="tel:(519) 822-6414">
+                  <div className="contact__icon">
+                    <MdPhone size={44} color="#340610" />
+                  </div>
+
                   <p>Tel: (519) 822-6414</p>
                 </a>
               </div>
               <div className="contact__info location">
-                <div className="contact__icon">
-                  <MdLocationOn size={44} color="#340610" />
-                </div>
                 <a
                   href="https://www.google.com/maps/place/Wm.+Green+Roofing+Ltd./@43.5464768,-80.2743878,15z/data=!4m2!3m1!1s0x0:0x5da98aafa77f1575?sa=X&ved=2ahUKEwj5tuWKi9TmAhWEg-AKHesrCvwQ_BIwE3oECA0QCA"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
+                  <div className="contact__icon">
+                    <MdLocationOn size={44} color="#340610" />
+                  </div>
+
                   <p>45 Dawson Rd, Guelph, ON N1H 1B1</p>
                 </a>
               </div>

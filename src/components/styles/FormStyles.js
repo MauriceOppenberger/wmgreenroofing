@@ -12,9 +12,11 @@ const FormWrapper = styled.div`
     /* margin: 0.75rem 0 0 0; */
   }
   .required::before {
-    display: contents;
+    /* display: contents; */
     content: "* ";
     color: #bf1650;
+    position: absolute;
+    margin-left: -10px;
   }
   label input {
     padding: 8px 16px;

@@ -28,6 +28,7 @@ export const HeaderWrapper = styled.header`
   .contact__info span {
     margin: 0 1rem;
     font-size: 0.9rem;
+    min-width: 120px;
   }
 
   @media screen and (max-width: 776px) {

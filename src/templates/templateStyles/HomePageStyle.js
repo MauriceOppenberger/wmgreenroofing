@@ -163,6 +163,14 @@ const ContentWrapper = styled.div`
       max-width: 1600px;
     }
   }
+  @media screen and (max-width: 480px) {
+    .service__item .item__content .title {
+      font-size: 1.5rem !important;
+
+      min-height: 0;
+      max-width: 200px;
+    }
+  }
 
   .testimony__container {
     background: var(--primaryColor);

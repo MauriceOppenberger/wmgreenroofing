@@ -20,12 +20,14 @@ const HeroSection = ({ imageData, data }) => {
         <div className="landing__container">
           <>
             <div className="badge__container">
-              <Img
-                className="badge"
-                fluid={
-                  data.badge.emergencyBadge.imageFile.childImageSharp.fluid
-                }
-              />
+              <a href="tel:(519) 822-6414">
+                <Img
+                  className="badge"
+                  fluid={
+                    data.badge.emergencyBadge.imageFile.childImageSharp.fluid
+                  }
+                />
+              </a>
             </div>
 
             <div className="landing__submission">
