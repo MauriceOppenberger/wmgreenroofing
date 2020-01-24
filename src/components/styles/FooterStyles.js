@@ -37,6 +37,7 @@ const FooterWrapper = styled.div`
   }
   .footer__btn:hover {
     box-shadow: var(--darkShadow);
+    color: #b79657;
   }
 `
 

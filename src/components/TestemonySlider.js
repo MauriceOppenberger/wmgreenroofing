@@ -39,7 +39,7 @@ const TestemonySlider = () => {
     testemonies,
     activeIndex: 0,
     autoSlide: true,
-    interval: 10000,
+    interval: 5000,
   })
 
   useInterval(

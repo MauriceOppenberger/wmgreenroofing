@@ -23,6 +23,11 @@ const PageWrapper = styled.div`
     margin: 0 1rem;
     padding: 0 1rem;
   }
+  a.obrien-link {
+    color: #350610 !important;
+    font-weight: 600;
+  }
+
   .page__gallery {
     flex: 1;
     margin: 2rem 1rem;

@@ -24,7 +24,7 @@ export const NavWrapper = styled.div`
     list-style: none;
     margin: 0 1rem 0 0;
     .active {
-      color: #d22e26;
+      color: #b79657;
     }
     a,
     p {
@@ -38,10 +38,10 @@ export const NavWrapper = styled.div`
       font-size: 13px;
     }
     a:hover {
-      color: #d22e26;
+      color: #b79657;
     }
     p:hover {
-      color: #d22e26;
+      color: #b79657;
       cursor: pointer;
     }
   }

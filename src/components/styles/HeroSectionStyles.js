@@ -14,7 +14,7 @@ const StyledInnerWrapper = styled.div`
     .badge {
       width: 150px;
       position: absolute !important;
-      bottom: -85px;
+      /* bottom: -85px; */
       left: 1rem;
     }
   }
@@ -57,6 +57,11 @@ const StyledInnerWrapper = styled.div`
       width: 0 !important;
       min-width: 0 !important;
       flex: 0 !important;
+      .badge {
+        /* bottom: 0px; */
+
+        left: 40%;
+      }
     }
   }
 
@@ -67,6 +72,8 @@ const StyledInnerWrapper = styled.div`
       .badge {
         width: 100px;
         margin: 2rem 0;
+        top: -100px;
+        left: 40%;
       }
     }
     .landing__submission {

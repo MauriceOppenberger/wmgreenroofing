@@ -6,7 +6,8 @@ const ContactWrapper = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    padding: 2rem 0;
+    margin: 0 1rem;
+    padding: 2rem 1rem;
   }
   .contact__info {
     /* margin: 2rem 0; */

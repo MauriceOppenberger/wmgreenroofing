@@ -120,7 +120,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.message)}</div>
 
         <div className="selection">
-          <p className="required">Choose your Roof-Typ:</p>
+          <p className="required">Choose your Roof-Type:</p>
           <span>
             <label htmlFor="sloped">
               {" "}

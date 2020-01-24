@@ -23,7 +23,7 @@ export const HeaderWrapper = styled.header`
     display: flex;
     color: #fff;
     justify-content: flex-end;
-    align-items: center;
+    align-items: baseline;
   }
   .contact__info span {
     margin: 0 1rem;

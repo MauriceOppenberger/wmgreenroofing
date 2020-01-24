@@ -151,6 +151,7 @@ const ContentWrapper = styled.div`
     margin: 0.5rem 0;
     flex: 1;
     min-height: 160px;
+    text-transform: capitalize;
   }
 
   .service__item .item__content .blurb {
