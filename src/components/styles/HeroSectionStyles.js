@@ -16,6 +16,7 @@ const StyledInnerWrapper = styled.div`
       position: absolute !important;
       /* bottom: -85px; */
       left: 1rem;
+      z-index: 1;
     }
   }
   .landing__submission {
@@ -38,28 +39,24 @@ const StyledInnerWrapper = styled.div`
     line-height: 1.5;
     padding: 10px 20px;
     font-weight: 600;
+    background: var(--mainWhite);
+    border-radius: 20px;
   }
 
   @media screen and (max-width: 480px) {
     .landing__container {
       padding: 0px !important;
     }
-    .landing__submission {
-      display: none;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-    }
-    .landing__cta {
-      display: block;
-    }
+
     .badge__container {
       height: 0 !important;
       width: 0 !important;
       min-width: 0 !important;
       flex: 0 !important;
       .badge {
-        /* bottom: 0px; */
-
+        width: 100px;
+        margin: 2rem 0;
+        bottom: -30px;
         left: 40%;
       }
     }
@@ -69,19 +66,14 @@ const StyledInnerWrapper = styled.div`
     .badge__container {
       flex: 1;
       min-width: 100%;
-      .badge {
-        width: 100px;
-        margin: 2rem 0;
-        top: -100px;
-        left: 40%;
-      }
     }
     .landing__submission {
-      flex: 1;
-      /* min-width: 100%; */
-      max-width: 500px;
-      min-width: 200px;
-      margin: auto;
+      display: none;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+    .landing__cta {
+      display: block;
     }
   }
 
