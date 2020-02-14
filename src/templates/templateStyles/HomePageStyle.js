@@ -57,6 +57,10 @@ const ContentWrapper = styled.div`
     text-align: left;
     margin: 0 1rem;
     padding: 0 1rem;
+
+    a {
+      text-decoration: underline;
+    }
   }
   .gaf__gallery {
     flex: 1;

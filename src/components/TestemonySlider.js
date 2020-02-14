@@ -40,19 +40,31 @@ const TestemonySlider = () => {
     activeIndex: 0,
     autoSlide: true,
     interval: 5000,
+    hover: false,
   })
 
   useInterval(
     () => {
-      if (state.testemonies.length > 1) {
-        setState(prev => ({
-          ...prev,
-          activeIndex: (prev.activeIndex + 1) % prev.testemonies.length,
-        }))
+      if (!state.hover) {
+        if (state.testemonies.length > 1) {
+          setState(prev => ({
+            ...prev,
+            activeIndex: (prev.activeIndex + 1) % prev.testemonies.length,
+          }))
+        }
       }
     },
     state.autoSlide ? state.interval : null
   )
+  const handleMouseOver = () => {
+    console.log("mousein")
+    setState(prevState => ({ ...prevState, hover: true }))
+  }
+  const handleMouseOut = () => {
+    console.log("mouseout")
+    setState(prevState => ({ ...prevState, hover: false }))
+  }
+  console.log(state)
 
   return (
     <SliderWrapper>
@@ -61,6 +73,8 @@ const TestemonySlider = () => {
           key={i}
           testemony={testemony.node}
           active={state.activeIndex === i}
+          mouseOver={handleMouseOver}
+          mouseOut={handleMouseOut}
         />
       ))}
     </SliderWrapper>
