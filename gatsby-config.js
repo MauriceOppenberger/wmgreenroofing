@@ -5,7 +5,7 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `Wm. Green Roofing Ldt.`,
+    title: `Wm. Green Roofing Ltd.`,
     description: `Guelph Roofing Business`,
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",

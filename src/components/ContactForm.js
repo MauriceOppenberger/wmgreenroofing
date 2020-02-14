@@ -112,7 +112,7 @@ const ContactForm = ({ className }) => {
             <textarea
               type="text"
               name="message"
-              placeholder="Let us know what we can help you with"
+              placeholder="What can we help with?"
               ref={register({ required: true, minLength: 25 })}
             />
           </label>

@@ -28,7 +28,7 @@ const HomepageTemplate = props => {
       <ContentWrapper>
         {contentParser({ content }, pluginOptions)}
         <div className="testimony__container">
-          <h2 className="title">Testimonies</h2>
+          <h2 className="title">Reviews</h2>
           <TestemonySlider />
         </div>
 
