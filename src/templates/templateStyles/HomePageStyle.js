@@ -32,6 +32,7 @@ const ContentWrapper = styled.div`
   }
   .intro__item * {
     flex: 1 100%;
+    margin-bottom: 1rem;
   }
   .intro__item .icon {
     max-width: 75px;
@@ -43,6 +44,12 @@ const ContentWrapper = styled.div`
   @media screen and (max-width: 667px) {
     .intro__item {
       min-width: 100%;
+    }
+    .intro__item * {
+      margin: 0.5rem 0;
+    }
+    .intro__container .wp-block-group__inner-container {
+      padding: 1rem;
     }
   }
   /* GAF SECTION  */
@@ -77,7 +84,7 @@ const ContentWrapper = styled.div`
   .gaf__gallery .logo {
     flex: 1;
     min-width: 40%;
-    margin: 1rem;
+    margin: auto 1rem;
     text-align: center;
   }
   .gaf__gallery .logo img {
@@ -106,6 +113,9 @@ const ContentWrapper = styled.div`
   @media screen and (max-width: 667px) {
     .service__item {
       min-width: 50% !important;
+      margin: 0 1rem 2rem !important;
+
+      height: 250px !important;
     }
     .service__item .item__icon {
       max-width: 100% !important;
@@ -117,6 +127,7 @@ const ContentWrapper = styled.div`
   }
   .service__container .wp-block-group__inner-container {
     justify-content: center;
+    padding-bottom: 0;
   }
   .service__list {
     max-width: 100%;
@@ -129,10 +140,12 @@ const ContentWrapper = styled.div`
     margin: 0 1rem;
     padding: 0 1rem;
     min-width: 400px;
+    height: 380px;
   }
   .service__item .wp-block-group__inner-container {
     justify-content: start;
     align-items: normal;
+    padding: 0;
   }
   .service__item .item__icon {
     flex: 1;

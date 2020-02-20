@@ -15,6 +15,14 @@ const PageWrapper = styled.div`
     padding: 2rem 0;
   }
   .page__content .wp-block-group__inner-container {
+    flex-direction: initial !important;
+  }
+  @media screen and (min-width: 776px) {
+    .roofing .wp-block-group__inner-container:first-child {
+      flex-direction: row-reverse;
+    }
+  }
+  .page__content .wp-block-group__inner-container {
     padding: 0;
   }
   .page__content {
@@ -65,6 +73,7 @@ const PageWrapper = styled.div`
   .page__gallery ul li {
     list-style: none;
     padding: 2rem 1rem;
+    text-align: center;
   }
   .page__content ul li {
     list-style: inside;

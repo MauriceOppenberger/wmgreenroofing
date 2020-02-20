@@ -14,6 +14,11 @@ const SiteLogoWrapper = styled.div`
     max-width: 32vmax;
     margin: 1rem auto 0;
   }
+  @media screen and (max-width: 480px) {
+    .header__logo {
+      margin: auto;
+    }
+  }
 `
 const SiteLogo = ({ className }) => {
   const logo = useStaticQuery(graphql`

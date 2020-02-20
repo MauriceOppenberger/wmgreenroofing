@@ -10,7 +10,8 @@ export const TestemonyWrapper = styled.div`
   background-size: cover !important;
   background-position: center !important;
   .testemony__card {
-    width: 400px;
+    width: 70vmax;
+    max-width: 550px;
     margin: auto;
     max-width: 100%;
     text-align: center;
@@ -20,6 +21,7 @@ export const TestemonyWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
   }
   .card__image {
     max-width: 25px;
@@ -30,7 +32,7 @@ export const TestemonyWrapper = styled.div`
 export const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 400px;
   margin: 0;
   padding: 0;
   overflow: hidden;

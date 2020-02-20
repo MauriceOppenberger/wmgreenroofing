@@ -54,10 +54,10 @@ const StyledInnerWrapper = styled.div`
       min-width: 0 !important;
       flex: 0 !important;
       .badge {
-        width: 100px;
+        width: 130px;
         margin: 2rem 0;
         bottom: -30px;
-        left: 40%;
+        left: 35%;
       }
     }
   }

@@ -8,8 +8,6 @@ const GalleryWrapper = styled.ul`
   .gallery__item {
     flex: 1 30%;
     list-style: none;
-    /* min-width: 350px;
-    max-width: 600px; */
     margin: 0.5rem;
   }
   .gallery__image {

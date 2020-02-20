@@ -37,7 +37,7 @@ const HeroSection = ({ imageData, data }) => {
             <div className="landing__cta">
               <Link to="/contact-us">
                 <button className="cta-btn btn" name="call-to-action">
-                  Get an Estimate
+                  Request an Estimate
                 </button>
               </Link>
             </div>

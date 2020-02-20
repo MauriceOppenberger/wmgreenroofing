@@ -11,7 +11,7 @@ const LogoGallery = () => {
   } = useStaticQuery(graphql`
     query {
       wpgraphql {
-        logos: mediaItems(where: { title: "logo" }) {
+        logos: mediaItems(where: { title: "logo" }, first: 20) {
           edges {
             node {
               sourceUrl
