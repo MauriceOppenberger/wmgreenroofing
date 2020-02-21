@@ -53,6 +53,7 @@ const ContactForm = ({ className }) => {
     <FormWrapper>
       <form
         name="contact"
+        noValidate
         method="POST"
         onSubmit={handleSubmit(onSubmit)}
         // action="#"
@@ -72,6 +73,7 @@ const ContactForm = ({ className }) => {
           <label className="required">
             Name:
             <input
+              placeholder="Jane Doe"
               type="text"
               name="name"
               ref={register({ required: true, minLength: 2 })}
@@ -85,6 +87,7 @@ const ContactForm = ({ className }) => {
             <input
               type="email"
               name="email"
+              placeholder="janedoe@gmail.com"
               ref={register({
                 required: true,
                 pattern: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i,
@@ -98,6 +101,7 @@ const ContactForm = ({ className }) => {
             Phone:
             <input
               type="number"
+              placeholder="(647)474-47474"
               name="phone"
               ref={register({
                 required: true,
