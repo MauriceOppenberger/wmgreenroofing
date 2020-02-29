@@ -21,8 +21,8 @@ const StyledInnerWrapper = styled.div`
   }
   .landing__submission {
     flex: 1;
-    background: var(--mainWhite);
-    color: var(--mainBlack);
+    background: var(--primaryColor);
+    color: var(--mainWhite);
     box-shadow: var(--darkShadow);
     padding: 1.5rem;
     max-width: 550px;
@@ -30,7 +30,6 @@ const StyledInnerWrapper = styled.div`
     display: block;
     margin-bottom: 2rem;
     border-radius: 5px;
-    border: 2px solid var(--primaryColor);
   }
   .landing__cta {
     display: none;

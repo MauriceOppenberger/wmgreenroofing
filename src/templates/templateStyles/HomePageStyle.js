@@ -91,6 +91,9 @@ const ContentWrapper = styled.div`
   }
 
   @media screen and (max-width: 776px) {
+    .gaf__container {
+      padding: 0 1rem;
+    }
     .gaf__gallery {
       flex: 1;
       min-width: 90%;
@@ -124,6 +127,9 @@ const ContentWrapper = styled.div`
       flex: 1 100% !important;
       max-width: 100% !important;
     }
+    /* .testimony__container {
+      padding: 1rem !important;
+    } */
   }
   .service__container .wp-block-group__inner-container {
     justify-content: center;
@@ -155,7 +161,7 @@ const ContentWrapper = styled.div`
     max-width: 5vmax;
     text-align: center;
     min-width: 100%;
-    margin: 1rem;
+    margin: 1rem 0;
   }
   .service__item .item__icon img {
     max-height: 75px;

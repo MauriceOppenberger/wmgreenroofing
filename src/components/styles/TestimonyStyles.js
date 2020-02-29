@@ -10,10 +10,8 @@ export const TestemonyWrapper = styled.div`
   background-size: cover !important;
   background-position: center !important;
   .testemony__card {
-    width: 70vmax;
-    /* max-width: 550px; */
     margin: auto;
-    /* max-width: 100%; */
+
     text-align: center;
     box-shadow: var(--darkShadow);
 
