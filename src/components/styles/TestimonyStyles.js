@@ -11,10 +11,17 @@ export const TestemonyWrapper = styled.div`
   background-position: center !important;
   .testemony__card {
     width: 70vmax;
-    max-width: 550px;
+    /* max-width: 550px; */
     margin: auto;
-    max-width: 100%;
+    /* max-width: 100%; */
     text-align: center;
+    box-shadow: var(--darkShadow);
+
+    max-width: 450px !important;
+    background: var(--offWhite);
+    color: #000;
+    padding: 1rem;
+    border-radius: 5px;
   }
   .card__content {
     min-height: 250px;
@@ -22,9 +29,24 @@ export const TestemonyWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    max-width: 400px;
+    margin: auto;
+
+    blockquote {
+      padding: 0;
+      display: flex;
+      margin: 0;
+      height: 300px !important;
+      align-items: center;
+      height: 400px;
+      overflow: scroll;
+    }
+  }
+  h3 {
+    margin: 0;
   }
   .card__image {
-    max-width: 25px;
+    max-width: 45px;
     margin: 0 auto;
   }
 `
@@ -32,12 +54,11 @@ export const TestemonyWrapper = styled.div`
 export const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 450px;
   margin: 0;
   padding: 0;
   overflow: hidden;
   display: flex;
-
   position: relative;
   align-items: center;
 

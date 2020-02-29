@@ -57,13 +57,12 @@ const ContentWrapper = styled.div`
   .gaf__container {
     background: var(--primaryColor);
     color: var(--mainWhite);
+    padding: 0 2rem;
   }
 
   .gaf__content {
     flex: 2;
     text-align: left;
-    margin: 0 1rem;
-    padding: 0 1rem;
 
     a {
       text-decoration: underline;
@@ -115,10 +114,11 @@ const ContentWrapper = styled.div`
       min-width: 50% !important;
       margin: 0 1rem 2rem !important;
 
-      height: 250px !important;
+      height: max-content !important;
     }
     .service__item .item__icon {
       max-width: 100% !important;
+      /* display: none; */
     }
     .service__item .item__content {
       flex: 1 100% !important;
@@ -137,10 +137,13 @@ const ContentWrapper = styled.div`
   }
   .service__item {
     flex: 1;
-    margin: 0 1rem;
+    margin: 1rem;
     padding: 0 1rem;
     min-width: 400px;
-    height: 380px;
+    height: 350px;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    text-align: center;
   }
   .service__item .wp-block-group__inner-container {
     justify-content: start;
@@ -149,8 +152,10 @@ const ContentWrapper = styled.div`
   }
   .service__item .item__icon {
     flex: 1;
-    max-width: 10vmax;
-    text-align: end;
+    max-width: 5vmax;
+    text-align: center;
+    min-width: 100%;
+    margin: 1rem;
   }
   .service__item .item__icon img {
     max-height: 75px;
@@ -161,32 +166,27 @@ const ContentWrapper = styled.div`
   }
   .service__item .item__content {
     flex: 1;
-    max-width: 550px;
   }
 
   .service__item .item__content .title {
     margin: 0.5rem 0;
     flex: 1;
-    min-height: 160px;
+
     text-transform: capitalize;
+    min-width: 100%;
+
+    font-size: 1.5rem;
   }
 
   .service__item .item__content .blurb {
     padding-top: 1rem;
     border-top: 1px solid var(--primaryColor);
+    width: 100%;
   }
 
   @media screen and (min-width: 2100px) {
     .wp-block-group__inner-container {
       max-width: 1600px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .service__item .item__content .title {
-      font-size: 1.5rem !important;
-
-      min-height: 0;
-      max-width: 200px;
     }
   }
 

@@ -6,7 +6,7 @@ const StyledInnerWrapper = styled.div`
     display: flex;
     flex-flow: row wrap;
     padding: 1rem;
-    max-width: 1400px;
+    max-width: 1800px;
     margin: auto;
   }
   .badge__container {
@@ -21,14 +21,16 @@ const StyledInnerWrapper = styled.div`
   }
   .landing__submission {
     flex: 1;
-    background: var(--mainBlack);
+    background: var(--mainWhite);
+    color: var(--mainBlack);
     box-shadow: var(--darkShadow);
-    color: var(--mainWhite);
     padding: 1.5rem;
-    max-width: 500px;
+    max-width: 550px;
     min-width: 400px;
     display: block;
     margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 2px solid var(--primaryColor);
   }
   .landing__cta {
     display: none;

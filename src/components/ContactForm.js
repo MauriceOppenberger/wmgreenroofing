@@ -43,10 +43,12 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
-    e.preventDefault()
-    recaptchaRef.current.execute()
-    setState({ ...data, "form-name": e.target.getAttribute("name") })
-    e.target.reset()
+    if (data) {
+      e.preventDefault()
+      recaptchaRef.current.execute()
+      setState({ ...data, "form-name": e.target.getAttribute("name") })
+      e.target.reset()
+    }
   }
 
   return (
@@ -71,7 +73,7 @@ const ContactForm = ({ className }) => {
 
         <p>
           <label className="required">
-            Name:
+            <p>Name:</p>
             <input
               placeholder="Jane Doe"
               type="text"
@@ -83,7 +85,8 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.name)} </div>
         <p>
           <label className="required">
-            Email:
+            <p>Email:</p>
+
             <input
               type="email"
               name="email"
@@ -98,7 +101,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.email)}</div>
         <p>
           <label className="required">
-            Phone:
+            <p>Phone:</p>
             <input
               type="number"
               placeholder="(647)474-47474"
@@ -112,7 +115,8 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.phone)}</div>
         <p>
           <label className="required">
-            Message:
+            <p> Message:</p>
+
             <textarea
               type="text"
               name="message"
@@ -123,8 +127,8 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.message)}</div>
 
-        <div className="selection">
-          <p className="required">Roof Type:</p>
+        <div className="selection required">
+          <p>Roof Type:</p>
           <span>
             <label htmlFor="sloped">
               {" "}
