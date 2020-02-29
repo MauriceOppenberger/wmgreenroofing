@@ -4,7 +4,7 @@ const PageWrapper = styled.div`
   .page__container {
     max-width: 1400px;
     margin: 2rem auto;
-    padding: 0 2rem;
+    width: 90vw;
   }
   .wp-block-group__inner-container,
   .inner-container {
@@ -81,7 +81,7 @@ const PageWrapper = styled.div`
 
   @media screen and (max-width: 776px) {
     .page__container {
-      padding: 0 1rem;
+      margin: 0 auto;
     }
 
     .page__content {
@@ -95,7 +95,7 @@ const PageWrapper = styled.div`
       margin: 0;
     }
     .wp-block-group__inner-container {
-      padding: 0;
+      /* padding: 0; */
     }
   }
 `

@@ -4,7 +4,10 @@ const GalleryWrapper = styled.ul`
   display: flex;
   flex-flow: row wrap;
   margin: 2rem;
-
+  @media screen and (max-width: 776px) {
+    margin: 0rem !important ;
+    padding: 2rem 0;
+  }
   .gallery__item {
     flex: 1 30%;
     list-style: none;

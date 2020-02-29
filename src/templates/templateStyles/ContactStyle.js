@@ -49,6 +49,10 @@ const ContactWrapper = styled.div`
       flex: 1 100%;
       margin: auto;
     }
+    .contact__section {
+      margin: 0 !important;
+      padding: 2rem 0 !important;
+    }
   }
   @media screen and (max-width: 480px) {
     .contact__info {

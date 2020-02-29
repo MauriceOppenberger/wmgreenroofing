@@ -27,7 +27,7 @@ const ContactTemplate = props => {
           <ContactWrapper>
             <div className="contact__section">
               <div className="form__container">
-                <h3>Contact us</h3>
+                <h3>Write us</h3>
                 <ContactForm className="contact" />
               </div>
               <div className="map__container">
