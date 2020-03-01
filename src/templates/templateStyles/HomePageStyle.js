@@ -71,6 +71,10 @@ const ContentWrapper = styled.div`
   .gaf__gallery {
     flex: 1;
     margin: 0 1rem;
+
+    .wp-block-group__inner-container {
+      padding: 0 !important;
+    }
   }
   @media screen and (min-width: 776px) {
     .gaf__gallery .logo:nth-child(1) {
@@ -82,8 +86,8 @@ const ContentWrapper = styled.div`
   }
   .gaf__gallery .logo {
     flex: 1;
-    min-width: 40%;
-    margin: auto 1rem;
+    min-width: 30%;
+    margin: 1rem;
     text-align: center;
   }
   .gaf__gallery .logo img {
@@ -127,9 +131,6 @@ const ContentWrapper = styled.div`
       flex: 1 100% !important;
       max-width: 100% !important;
     }
-    /* .testimony__container {
-      padding: 1rem !important;
-    } */
   }
   .service__container .wp-block-group__inner-container {
     justify-content: center;
@@ -147,7 +148,6 @@ const ContentWrapper = styled.div`
     padding: 0 1rem;
     min-width: 400px;
     height: 350px;
-    border: 2px solid #eee;
     border-radius: 5px;
     text-align: center;
   }
