@@ -38,11 +38,11 @@ const SocialNav = ({ className }) => {
                   title={node.label}
                 >
                   {node.label === "LinkedIn" ? (
-                    <FaLinkedin size={22} />
+                    <FaLinkedin size={25} />
                   ) : node.label === "Facebook" ? (
-                    <FaFacebook size={22} />
+                    <FaFacebook size={25} />
                   ) : node.label === "Instagram" ? (
-                    <FaInstagram size={22} />
+                    <FaInstagram size={25} />
                   ) : null}
                 </a>
               </li>
