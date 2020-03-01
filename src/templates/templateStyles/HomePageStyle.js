@@ -150,6 +150,7 @@ const ContentWrapper = styled.div`
     height: 350px;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);
   }
   .service__item .wp-block-group__inner-container {
     justify-content: start;
