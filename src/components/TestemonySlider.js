@@ -57,14 +57,11 @@ const TestemonySlider = () => {
     state.autoSlide ? state.interval : null
   )
   const handleMouseOver = () => {
-    console.log("mousein")
     setState(prevState => ({ ...prevState, hover: true }))
   }
   const handleMouseOut = () => {
-    console.log("mouseout")
     setState(prevState => ({ ...prevState, hover: false }))
   }
-  console.log(state)
 
   return (
     <SliderWrapper>

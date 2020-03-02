@@ -13,11 +13,13 @@ const Header = () => {
         <div className="nav__container">
           <div className="contact__info">
             <span>
-              <a href="tel:(519) 822-6414">(519) 822-6414</a>
+              <a href="tel:(519) 822-6414" alt="phone link">
+                (519) 822-6414
+              </a>
             </span>
 
             <span>
-              <a href="mailto:info@wmgreenroofing.ca">
+              <a href="mailto:info@wmgreenroofing.ca" alt="email link">
                 {" "}
                 info@wmgreenroofing.ca
               </a>

@@ -23,7 +23,6 @@ const SocialNav = ({ className }) => {
       }
     }
   `)
-  console.log(data.file.childImageSharp.fluid)
   return (
     <SocialNavWrapper>
       <div className={className}>

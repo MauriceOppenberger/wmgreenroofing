@@ -73,7 +73,7 @@ const ContactForm = ({ className }) => {
 
         <p>
           <label className="required">
-            <p>Name:</p>
+            <span>Name:</span>
             <input
               placeholder="Jane Doe"
               type="text"
@@ -85,7 +85,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.name)} </div>
         <p>
           <label className="required">
-            <p>Email:</p>
+            <span>Email:</span>
 
             <input
               type="email"
@@ -101,7 +101,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.email)}</div>
         <p>
           <label className="required">
-            <p>Phone:</p>
+            <span>Phone:</span>
             <input
               type="number"
               placeholder="(647)474-47474"
@@ -115,8 +115,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.phone)}</div>
         <p>
           <label className="required">
-            <p> Message:</p>
-
+            <span> Message:</span>
             <textarea
               type="text"
               name="message"
@@ -128,7 +127,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.message)}</div>
 
         <div className="selection required">
-          <p>Roof Type:</p>
+          <span>Roof Type:</span>
           <span>
             <label htmlFor="sloped">
               {" "}

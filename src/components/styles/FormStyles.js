@@ -9,7 +9,7 @@ const FormWrapper = styled.div`
 
   label {
     display: grid;
-    p {
+    span {
       padding-left: 10px;
     }
   }
@@ -78,6 +78,7 @@ const FormWrapper = styled.div`
   }
   .selection span {
     margin: 0.3rem;
+    padding-left: 10px;
   }
   .selection input {
     margin-right: 0.5rem;
