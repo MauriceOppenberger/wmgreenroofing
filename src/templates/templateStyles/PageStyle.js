@@ -94,6 +94,19 @@ const PageWrapper = styled.div`
       padding: 0;
       margin: 0;
     }
+    .page__gallery li:nth-child(1) {
+      padding: 0;
+      margin: -2rem;
+      margin-bottom: 0;
+    }
+    .page__gallery li:nth-child(2) {
+      float: left;
+      max-width: 50%;
+    }
+    .page__gallery li:nth-child(3) {
+      float: right;
+      max-width: 50%;
+    }
     .wp-block-group__inner-container {
       /* padding: 0; */
     }
