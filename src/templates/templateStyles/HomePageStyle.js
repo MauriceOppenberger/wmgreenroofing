@@ -63,6 +63,7 @@ const ContentWrapper = styled.div`
   .gaf__content {
     flex: 2;
     text-align: left;
+    max-width: 55vmax;
 
     a {
       text-decoration: underline;
@@ -70,7 +71,8 @@ const ContentWrapper = styled.div`
   }
   .gaf__gallery {
     flex: 1;
-    margin: 0 1rem;
+    margin: 1rem auto;
+    max-width: 25vmax;
 
     .wp-block-group__inner-container {
       padding: 0 !important;
@@ -97,6 +99,9 @@ const ContentWrapper = styled.div`
   @media screen and (max-width: 776px) {
     .gaf__container {
       padding: 0 1rem;
+    }
+    .gaf__content {
+      max-width: 100%;
     }
     .gaf__gallery {
       flex: 1;

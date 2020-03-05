@@ -25,8 +25,8 @@ const StyledInnerWrapper = styled.div`
     color: var(--mainWhite);
     box-shadow: var(--darkShadow);
     padding: 1.5rem;
-    max-width: 550px;
-    min-width: 400px;
+    max-width: 600px;
+    min-width: 600px;
     display: block;
     margin-bottom: 2rem;
     border-radius: 5px;

@@ -29,6 +29,10 @@ export const HeaderWrapper = styled.header`
     margin: 0 1rem;
     font-size: 0.9rem;
     min-width: 120px;
+    transition: all 0.2s ease-in-out;
+  }
+  .contact__info span:hover {
+    transform: scale(1.1);
   }
 
   @media screen and (max-width: 776px) {

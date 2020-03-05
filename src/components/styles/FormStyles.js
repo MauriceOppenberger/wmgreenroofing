@@ -6,6 +6,20 @@ const FormWrapper = styled.div`
   p {
     margin: 0;
   }
+  .address-info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .address {
+      flex: 2 auto;
+      margin-bottom: 0.5rem;
+    }
+    .postal {
+      flex: 1;
+      margin-left: 0.5rem;
+    }
+  }
 
   label {
     display: grid;
