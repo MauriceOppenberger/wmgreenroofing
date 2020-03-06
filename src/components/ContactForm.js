@@ -113,41 +113,21 @@ const ContactForm = ({ className }) => {
           </label>
         </p>
         <div className="error">{useValidate(errors.phone)}</div>
-        <div className="address-info">
-          <p className="address">
-            <label>
-              <span>
-                Address <small>(optional)</small>
-              </span>
-              <input
-                type="text"
-                placeholder=""
-                name="address"
-                ref={register({
-                  required: false,
-                })}
-              />
-            </label>
-          </p>
-
-          <p className="postal">
-            <label>
-              <span>
-                Postal Code <small>(optional)</small>
-              </span>
-              <input
-                type="text"
-                placeholder=""
-                name="postal"
-                ref={register({
-                  required: false,
-                  pattern: /^(?:[0-9 _]+[a-z _]|[a-z _]+[0-9 _])[a-z0-9 _]*$/i,
-                })}
-              />
-            </label>
-          </p>
-        </div>
-        <div className="error">{useValidate(errors.postal)} </div>
+        <p className="address">
+          <label>
+            <span>
+              Address <small>(optional)</small>
+            </span>
+            <input
+              type="text"
+              placeholder=""
+              name="address"
+              ref={register({
+                required: false,
+              })}
+            />
+          </label>
+        </p>
         <p>
           <label className="required">
             <span> Message:</span>
