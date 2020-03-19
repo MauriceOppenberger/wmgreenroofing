@@ -24,7 +24,6 @@ const ContactForm = ({ className }) => {
       once: true,
     })
   }, [])
-  console.log(state)
   const onResolved = value => {
     if (value) {
       fetch("/", {

@@ -52,6 +52,7 @@ const SocialNav = ({ className }) => {
               href="https://www.bbb.org/ca/on/guelph/profile/roofing-contractors/wm-green-roofing-ltd-0107-2071#sealclick"
               target="_blank"
               rel="noreferrer noopener"
+              title="Better Business Bureau"
             >
               <Img
                 className="bbb-icon"

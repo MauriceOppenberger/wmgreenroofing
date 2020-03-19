@@ -11,6 +11,7 @@ const Slide = ({ testemony, active, mouseOver, mouseOut }) => {
         onFocus={mouseOver}
         onBlur={mouseOut}
         onMouseOut={mouseOut}
+        role="button"
       >
         <h3>- {testemony.title} -</h3>
 
