@@ -52,6 +52,19 @@ body {
   margin: auto 0;
   display: none;
 }
+.status-banner {
+  background: #eee;
+  color: red;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+.status-banner h4 {
+  margin: 0;
+}
+.status-banner p {
+  margin: 0.5rem 0 0 0;
+}
 
 @media (min-width: 992px) {
   .nav__container {
