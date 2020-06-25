@@ -6,7 +6,7 @@ const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `Wm. Green Roofing Ltd.`,
-    description: `Guelph Roofing Business`,
+    description: `Wm. Green Roofing Ltd. is a professional flat and sloped roofing contractor specializing in roof repairs and roof replacements for residential and commercial clients. Free Estimates and 24/7 Emergency Service since 1986!`,
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",
     author: `Maurice Oppenberger`,
