@@ -14,7 +14,7 @@ const GalleryWrapper = styled.ul`
     margin: 0.5rem;
   }
   .gallery__image {
-    /* height: 350px; */
+    height: 25vmax;
     max-width: 500px;
     background: #000;
   }
@@ -22,6 +22,7 @@ const GalleryWrapper = styled.ul`
     transition: all 0.3s ease;
     opacity: 0.5;
   }
+
   @media screen and (max-width: 448px) {
     .gallery__item {
       flex: 1 100% !important ;
