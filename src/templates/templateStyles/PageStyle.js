@@ -17,6 +17,19 @@ const PageWrapper = styled.div`
   .page__content .wp-block-group__inner-container {
     flex-direction: initial !important;
   }
+
+  /* VIDEO CONTAINER GALLERY PAGE */
+  .video__container {
+    width: 100%;
+    height: auto;
+
+    margin-top: 2rem;
+    video {
+      max-width: 100%;
+      border-radius: 15px;
+    }
+  }
+
   @media screen and (min-width: 776px) {
     .roofing .wp-block-group__inner-container:first-child {
       flex-direction: row-reverse;

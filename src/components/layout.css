@@ -40,13 +40,13 @@ body {
 }
 .page__title {
   box-shadow: var(--lightShadow);
-  text-align: center;
   background: var(--primaryColor);
   color: var(--mainWhite);
-  padding: 0.5rem 0 1rem;
+  padding: 0.5rem 2rem 1rem;
+  max-width: 1400px;
 }
 .page__title h1 {
-  margin: 0;
+  margin: 0 auto;
 }
 .nav__container {
   margin: auto 0;

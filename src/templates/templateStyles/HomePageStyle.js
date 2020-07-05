@@ -40,6 +40,15 @@ const ContentWrapper = styled.div`
   .intro__item.installation {
     margin: 0 1rem;
   }
+  .video__container__homepage {
+    max-width: 75%;
+    margin: 0 auto 2rem;
+
+    video {
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
 
   @media screen and (max-width: 667px) {
     .intro__item {
@@ -50,6 +59,10 @@ const ContentWrapper = styled.div`
     }
     .intro__container .wp-block-group__inner-container {
       padding: 1rem;
+    }
+    .video__container__homepage {
+      max-width: 95%;
+      margin: 0 auto 2rem;
     }
   }
   /* GAF SECTION  */

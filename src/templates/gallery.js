@@ -23,19 +23,15 @@ const GalleryTemplate = props => {
       <PageWrapper>
         <div className="page__container" style={{ textAlign: "center" }}>
           {wpgraphql.video && (
-            <video
-              autoPlay
-              muted
-              controls
-              loop
-              style={{ width: "80%", height: "auto", borderRadius: "15px" }}
-            >
-              <source
-                src={wpgraphql.video.mediaItemUrl}
-                type="video/mp4"
-                alt={wpgraphql.video.title}
-              />
-            </video>
+            <div className="video__container">
+              <video autoPlay muted controls loop>
+                <source
+                  src={wpgraphql.video.mediaItemUrl}
+                  type="video/mp4"
+                  alt={wpgraphql.video.title}
+                />
+              </video>
+            </div>
           )}
           <GalleryWrapper>
             {wpgraphql.images.edges.map(({ node: image }) => (
