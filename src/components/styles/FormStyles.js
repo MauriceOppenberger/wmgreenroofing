@@ -6,28 +6,34 @@ const FormWrapper = styled.div`
   p {
     margin: 0;
   }
+  .address {
+    margin-bottom: 1rem;
+  }
 
   label {
     display: grid;
-    /* margin: 0.75rem 0 0 0; */
+    span {
+      padding-left: 10px;
+    }
   }
+
   .required::before {
-    /* display: contents; */
     content: "* ";
     color: #bf1650;
     position: absolute;
-    margin-left: -10px;
   }
   label input {
     padding: 8px 16px;
     border: 2px solid lightgray;
     border-radius: 10px;
+    background: var(--offWhite);
   }
   label textarea {
     padding: 8px 16px;
     min-height: 100px;
     border: 2px solid lightgray;
     border-radius: 10px;
+    background: var(--offWhite);
   }
   .hidden {
     display: none;
@@ -71,9 +77,11 @@ const FormWrapper = styled.div`
   .selection p {
     flex: 1;
     margin: auto;
+    padding-left: 10px;
   }
   .selection span {
     margin: 0.3rem;
+    padding-left: 10px;
   }
   .selection input {
     margin-right: 0.5rem;
@@ -82,7 +90,7 @@ const FormWrapper = styled.div`
     display: inline;
   }
   .landing__form .btn__submit {
-    background: var(--mainWhite);
+    background: var(--offWhite);
     width: 100%;
     color: var(--mainBlack);
   }

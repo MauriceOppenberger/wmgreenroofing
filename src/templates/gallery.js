@@ -21,7 +21,18 @@ const GalleryTemplate = props => {
         <h1 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
       <PageWrapper>
-        <div className="page__container">
+        <div className="page__container" style={{ textAlign: "center" }}>
+          {wpgraphql.video && (
+            <div className="video__container">
+              <video autoPlay muted controls loop>
+                <source
+                  src={wpgraphql.video.mediaItemUrl}
+                  type="video/mp4"
+                  alt={wpgraphql.video.title}
+                />
+              </video>
+            </div>
+          )}
           <GalleryWrapper>
             {wpgraphql.images.edges.map(({ node: image }) => (
               <li key={image.id} className="gallery__item">
@@ -72,6 +83,10 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+      video: mediaItemBy(slug: "BirdsView") {
+        title
+        mediaItemUrl
       }
     }
   }

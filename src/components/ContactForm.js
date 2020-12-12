@@ -24,7 +24,6 @@ const ContactForm = ({ className }) => {
       once: true,
     })
   }, [])
-
   const onResolved = value => {
     if (value) {
       fetch("/", {
@@ -43,10 +42,12 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
-    e.preventDefault()
-    recaptchaRef.current.execute()
-    setState({ ...data, "form-name": e.target.getAttribute("name") })
-    e.target.reset()
+    if (data) {
+      e.preventDefault()
+      recaptchaRef.current.execute()
+      setState({ ...data, "form-name": e.target.getAttribute("name") })
+      e.target.reset()
+    }
   }
 
   return (
@@ -71,7 +72,7 @@ const ContactForm = ({ className }) => {
 
         <p>
           <label className="required">
-            Name:
+            <span>Name:</span>
             <input
               placeholder="Jane Doe"
               type="text"
@@ -83,7 +84,8 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.name)} </div>
         <p>
           <label className="required">
-            Email:
+            <span>Email:</span>
+
             <input
               type="email"
               name="email"
@@ -98,7 +100,7 @@ const ContactForm = ({ className }) => {
         <div className="error">{useValidate(errors.email)}</div>
         <p>
           <label className="required">
-            Phone:
+            <span>Phone:</span>
             <input
               type="number"
               placeholder="(647)474-47474"
@@ -110,9 +112,24 @@ const ContactForm = ({ className }) => {
           </label>
         </p>
         <div className="error">{useValidate(errors.phone)}</div>
+        <p className="address">
+          <label>
+            <span>
+              Address <small>(optional)</small>
+            </span>
+            <input
+              type="text"
+              placeholder=""
+              name="address"
+              ref={register({
+                required: false,
+              })}
+            />
+          </label>
+        </p>
         <p>
           <label className="required">
-            Message:
+            <span> Message:</span>
             <textarea
               type="text"
               name="message"
@@ -123,8 +140,8 @@ const ContactForm = ({ className }) => {
         </p>
         <div className="error">{useValidate(errors.message)}</div>
 
-        <div className="selection">
-          <p className="required">Roof Type:</p>
+        <div className="selection required">
+          <span>Roof Type:</span>
           <span>
             <label htmlFor="sloped">
               {" "}

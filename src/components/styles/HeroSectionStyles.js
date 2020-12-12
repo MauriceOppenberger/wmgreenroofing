@@ -6,7 +6,7 @@ const StyledInnerWrapper = styled.div`
     display: flex;
     flex-flow: row wrap;
     padding: 1rem;
-    max-width: 1400px;
+    max-width: 1800px;
     margin: auto;
   }
   .badge__container {
@@ -22,13 +22,14 @@ const StyledInnerWrapper = styled.div`
   .landing__submission {
     flex: 1;
     background: var(--mainBlack);
-    box-shadow: var(--darkShadow);
     color: var(--mainWhite);
+    box-shadow: var(--darkShadow);
     padding: 1.5rem;
-    max-width: 500px;
-    min-width: 400px;
+    max-width: 600px;
+    min-width: 600px;
     display: block;
     margin-bottom: 2rem;
+    border-radius: 5px;
   }
   .landing__cta {
     display: none;

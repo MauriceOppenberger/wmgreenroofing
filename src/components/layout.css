@@ -40,17 +40,30 @@ body {
 }
 .page__title {
   box-shadow: var(--lightShadow);
-  text-align: center;
   background: var(--primaryColor);
   color: var(--mainWhite);
-  padding: 0.5rem 0 1rem;
+  padding: 0.5rem 2rem 1rem;
 }
 .page__title h1 {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 .nav__container {
   margin: auto 0;
   display: none;
+}
+.status-banner {
+  background: #eee;
+  color: red;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+.status-banner h4 {
+  margin: 0;
+}
+.status-banner p {
+  margin: 0.5rem 0 0 0;
 }
 
 @media (min-width: 992px) {

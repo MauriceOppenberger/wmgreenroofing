@@ -23,7 +23,6 @@ const SocialNav = ({ className }) => {
       }
     }
   `)
-  console.log(data.file.childImageSharp.fluid)
   return (
     <SocialNavWrapper>
       <div className={className}>
@@ -38,11 +37,11 @@ const SocialNav = ({ className }) => {
                   title={node.label}
                 >
                   {node.label === "LinkedIn" ? (
-                    <FaLinkedin size={22} />
+                    <FaLinkedin size={25} />
                   ) : node.label === "Facebook" ? (
-                    <FaFacebook size={22} />
+                    <FaFacebook size={25} />
                   ) : node.label === "Instagram" ? (
-                    <FaInstagram size={22} />
+                    <FaInstagram size={25} />
                   ) : null}
                 </a>
               </li>
@@ -53,6 +52,7 @@ const SocialNav = ({ className }) => {
               href="https://www.bbb.org/ca/on/guelph/profile/roofing-contractors/wm-green-roofing-ltd-0107-2071#sealclick"
               target="_blank"
               rel="noreferrer noopener"
+              title="Better Business Bureau"
             >
               <Img
                 className="bbb-icon"

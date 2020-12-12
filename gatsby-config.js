@@ -6,7 +6,7 @@ const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `Wm. Green Roofing Ltd.`,
-    description: `Guelph Roofing Business`,
+    description: `Wm. Green Roofing Ltd. is a professional flat and sloped roofing contractor specializing in roof repairs and roof replacements for residential and commercial clients. Free Estimates and 24/7 Emergency Service since 1986!`,
     keywords:
       "roofing contractor, guelph roofing, sloped roofing, flat roofing, commercial roofing guelph, residential roofing guelph",
     author: `Maurice Oppenberger`,
@@ -33,26 +33,33 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [
-              `300`,
-              `400`,
-              `400i`,
-              `500`,
-              `500i`,
-              `600`,
-              `700`,
-              `700i`,
-              `800`,
-              `900`,
-            ],
-            display: `swap`,
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: `Montserrat`,
+              variants: [
+                `300`,
+                `300i`,
+                `400`,
+                `400i`,
+                `500`,
+                `500i`,
+                `600`,
+                `600i`,
+                `700`,
+                `700i`,
+                `800`,
+                `800i`,
+              ],
+              fontDisplay: `swap`,
+            },
+          ],
+        },
+        useMinify: true,
+        usePreload: false,
+        usePreconnect: false,
       },
     },
 
@@ -97,8 +104,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: `${process.env.API_PROTOCOL}://${process.env.API_URL}`,
-        sitemap: `${process.env.API_PROTOCOL}://${process.env.API_URL}/sitemap.xml`,
+        host: "https://www.wmgreenroofing.netlify.com",
+        sitemap: "https://www.wmgreenroofing.netlify.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -106,8 +113,8 @@ module.exports = {
       resolve: `gatsby-plugin-gtag`,
       options: {
         // your google analytics tracking id
-        // trackingId: `UA-133562630-2`,
-        trackingId: `G-1T0JCF8BXT`,
+        trackingId: `UA-135291959-1`,
+        // trackingId: `G-1T0JCF8BXT`,
         // Puts tracking script in the head instead of the body
         head: false,
         // enable ip anonymization

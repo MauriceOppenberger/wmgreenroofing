@@ -10,7 +10,6 @@ const ContactWrapper = styled.div`
     padding: 2rem 1rem;
   }
   .contact__info {
-    /* margin: 2rem 0; */
     flex: 1;
     max-width: 30%;
     text-align: center;
@@ -18,7 +17,7 @@ const ContactWrapper = styled.div`
   .contact__icon {
     margin: 1rem auto;
     width: max-content;
-    /* background: var(--primaryColor); */
+
     padding: 1.5rem 2rem;
     border-radius: 20px;
     transition: all 0.2s ease-in-out;
@@ -50,10 +49,13 @@ const ContactWrapper = styled.div`
       flex: 1 100%;
       margin: auto;
     }
+    .contact__section {
+      margin: 0 !important;
+      padding: 2rem 0 !important;
+    }
   }
   @media screen and (max-width: 480px) {
     .contact__info {
-      /* margin: 2rem 0; */
       flex: 1 100%;
       max-width: 100%;
     }

@@ -11,16 +11,18 @@ const Slide = ({ testemony, active, mouseOver, mouseOut }) => {
         onFocus={mouseOver}
         onBlur={mouseOut}
         onMouseOut={mouseOut}
+        role="button"
       >
-        <Img
-          fluid={testemony.featuredImage.imageFile.childImageSharp.fluid}
-          className="card__image"
-        />
+        <h3>- {testemony.title} -</h3>
+
         <div
           className="card__content"
           dangerouslySetInnerHTML={{ __html: testemony.content }}
         />
-        <h3>- {testemony.title} -</h3>
+        <Img
+          fluid={testemony.featuredImage.imageFile.childImageSharp.fluid}
+          className="card__image"
+        />
       </div>
     </TestemonyWrapper>
   )

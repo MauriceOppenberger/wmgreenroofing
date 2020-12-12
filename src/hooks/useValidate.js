@@ -30,6 +30,12 @@ export const useValidate = errorField => {
           return <p className="err">this field is required</p>
         }
         break
+      case "postal":
+        console.log("postal")
+        if (type === "pattern") {
+          return <p className="warn">this is not a valid postal address</p>
+        }
+        break
       case "message":
         if (type === "required") {
           return <p className="err">this field is required</p>

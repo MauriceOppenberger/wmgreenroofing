@@ -29,7 +29,6 @@ const HeroSection = ({ imageData, data }) => {
                 />
               </a>
             </div>
-
             <div className="landing__submission">
               <h2 className="title">Request an Estimate</h2>
               <ContactForm className="landing" />
