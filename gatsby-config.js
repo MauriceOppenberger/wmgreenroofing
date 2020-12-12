@@ -33,26 +33,33 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [
-              `300`,
-              `400`,
-              `400i`,
-              `500`,
-              `500i`,
-              `600`,
-              `700`,
-              `700i`,
-              `800`,
-              `900`,
-            ],
-            display: `swap`,
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: `Montserrat`,
+              variants: [
+                `300`,
+                `300i`,
+                `400`,
+                `400i`,
+                `500`,
+                `500i`,
+                `600`,
+                `600i`,
+                `700`,
+                `700i`,
+                `800`,
+                `800i`,
+              ],
+              fontDisplay: `swap`,
+            },
+          ],
+        },
+        useMinify: true,
+        usePreload: false,
+        usePreconnect: false,
       },
     },
 
