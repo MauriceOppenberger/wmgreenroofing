@@ -33,7 +33,7 @@ const HomepageTemplate = props => {
           <TestemonySlider />
         </div>
         <div className="socialMedia__container">
-          <h2 className="title">Recent Project</h2>
+          <h2 className="title">Recent Projects</h2>
           <Instagram />
         </div>
         <LogoGallery />
