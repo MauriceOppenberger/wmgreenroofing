@@ -7,6 +7,7 @@ import contentParser from "gatsby-wpgraphql-inline-images"
 import TestemonySlider from "../components/TestemonySlider"
 import ContentWrapper from "./templateStyles/HomePageStyle"
 import SEO from "../components/Seo"
+import Instagram from "../components/instagram"
 
 const HomepageTemplate = props => {
   const {
@@ -17,6 +18,7 @@ const HomepageTemplate = props => {
   } = props
 
   const { title, content, description } = currentPage
+  console.log(content)
   return (
     <Layout>
       <SEO title={title} description={description.siteDescription} />
@@ -30,7 +32,10 @@ const HomepageTemplate = props => {
           <h2 className="title">Reviews</h2>
           <TestemonySlider />
         </div>
-
+        <div className="socialMedia__container">
+          <h2 className="title">Our most recent work</h2>
+          <Instagram />
+        </div>
         <LogoGallery />
       </ContentWrapper>
     </Layout>

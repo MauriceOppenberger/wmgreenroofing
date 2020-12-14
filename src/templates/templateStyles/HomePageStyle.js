@@ -72,6 +72,10 @@ const ContentWrapper = styled.div`
     color: var(--mainWhite);
     padding: 0 2rem;
   }
+  .socialMedia__container {
+    margin: 2rem;
+    text-align: center;
+  }
 
   .gaf__content {
     flex: 2;

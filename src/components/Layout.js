@@ -34,7 +34,6 @@ const Layout = ({ children }) => {
         </p>
       </div>
       <Header />
-
       <main>{children}</main>
       <Footer />
     </>
