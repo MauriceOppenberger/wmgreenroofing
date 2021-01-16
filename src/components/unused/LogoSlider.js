@@ -76,7 +76,6 @@ const LogoSlider = () => {
       }
     }
   `)
-  console.log(slides)
 
   const [state, setState] = useState({
     slides,

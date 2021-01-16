@@ -58,7 +58,7 @@ export default function Instagram() {
     <InstagramWrapper>
       {gramz.map(gram => (
         <li key={gram.id} className="gallery__item">
-          <a href={gram.url} target="_blank" rel="noreferrer">
+          <a href={gram.url} target="_blank" rel="noopener noreferrer">
             <div className="gallery__image">
               <img src={gram.thumbnail} alt={gram.caption} />
             </div>
