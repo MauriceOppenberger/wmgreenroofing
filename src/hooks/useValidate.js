@@ -31,7 +31,6 @@ export const useValidate = errorField => {
         }
         break
       case "postal":
-        console.log("postal")
         if (type === "pattern") {
           return <p className="warn">this is not a valid postal address</p>
         }
