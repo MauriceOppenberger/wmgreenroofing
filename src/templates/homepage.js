@@ -18,7 +18,6 @@ const HomepageTemplate = props => {
   } = props
 
   const { title, content, description } = currentPage
-  console.log(description.siteDescription)
   return (
     <Layout>
       <SEO title={title} description={description.siteDescription} />
