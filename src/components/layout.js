@@ -25,14 +25,14 @@ const Layout = ({ children }) => {
     <>
       <Hamburger handleOverlayMenu={handleOverlayMenu} />
       <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
-      <div className="status-banner">
+      {/* <div className="status-banner">
         <h4>COVID-19 Update:</h4>
         <p>
           We are closely monitoring the situation and are continuing to operate
           with extra precautions in place at this time. Please contact our
           office to get in touch, no walk-ins. Stay safe!{" "}
         </p>
-      </div>
+      </div> */}
       <Header />
       <main>{children}</main>
       <Footer />
