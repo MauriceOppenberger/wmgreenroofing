@@ -16,7 +16,11 @@ function encode(data) {
 const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, errors } = useForm({
+    reValidateMode: "onChange",
+    mode: "all",
+    validateCriteriaMode: "all",
+  })
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => setLoadRecaptcha(true), {
@@ -102,31 +106,31 @@ const ContactForm = ({ className }) => {
           <label className="required">
             <span>Phone:</span>
             <input
-              type="number"
-              placeholder="(647)474-47474"
+              type="text"
+              placeholder="(647)474-7474"
               name="phone"
+              ref={register({
+                required: true,
+                pattern: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i,
+              })}
+            />
+          </label>
+        </p>
+        <div className="error">{useValidate(errors.phone)}</div>
+        <p>
+          <label className="required">
+            <span>Address</span>
+            <input
+              type="text"
+              placeholder=""
+              name="address"
               ref={register({
                 required: true,
               })}
             />
           </label>
         </p>
-        <div className="error">{useValidate(errors.phone)}</div>
-        <p className="address">
-          <label>
-            <span>
-              Address <small>(optional)</small>
-            </span>
-            <input
-              type="text"
-              placeholder=""
-              name="address"
-              ref={register({
-                required: false,
-              })}
-            />
-          </label>
-        </p>
+        <div className="error">{useValidate(errors.address)}</div>
         <p>
           <label className="required">
             <span> Message:</span>
@@ -134,7 +138,7 @@ const ContactForm = ({ className }) => {
               type="text"
               name="message"
               placeholder="What can we help with?"
-              ref={register({ required: true, minLength: 25 })}
+              ref={register({ required: true })}
             />
           </label>
         </p>
