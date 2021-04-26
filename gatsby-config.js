@@ -87,6 +87,7 @@ module.exports = {
         generateWebp: true,
       },
     },
+
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -96,6 +97,14 @@ module.exports = {
         fieldName: "wpgraphql",
         // Url to query from
         url: `${process.env.API_PROTOCOL}://${process.env.API_URL}/graphql`,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token:
+        process.env.INSTAGRAM_TOKEN
+
       },
     },
     {

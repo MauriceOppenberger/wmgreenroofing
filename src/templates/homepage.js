@@ -17,6 +17,8 @@ const HomepageTemplate = props => {
     pageContext: { pluginOptions },
   } = props
 
+  
+ 
   const { title, content, description } = currentPage
   return (
     <Layout>
@@ -31,10 +33,10 @@ const HomepageTemplate = props => {
           <h2 className="title">Reviews</h2>
           <TestemonySlider />
         </div>
-        {/* <div className="socialMedia__container">
+        <div className="socialMedia__container">
           <h2 className="title">Recent Projects</h2>
           <Instagram />
-        </div> */}
+        </div>
         <LogoGallery />
       </ContentWrapper>
     </Layout>
