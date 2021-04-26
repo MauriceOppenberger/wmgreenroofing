@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import _get from "lodash/get"
- 
+
+
 
 const InstagramWrapper = styled.ul`
   display: flex;
@@ -22,9 +23,8 @@ const InstagramWrapper = styled.ul`
   }
   .gallery__image {
     /* height: 18vmax; */
-    height: 380px;
+    max-height: 380px;
     max-width: 384px;
-    background: #000;
     overflow: hidden;
 
     img {
@@ -37,21 +37,25 @@ const InstagramWrapper = styled.ul`
     transition: all 0.3s ease;
     opacity: 0.5;
   }
-  .btn_load-more {
-    border-radius: 5px;
-    background: var(--primaryColor);
-    border: honeydew;
-    color: #fff;
-    opacity: .5;
-    padding: 5px 10px;
-  }
-  .btn_load-more:hover {
-    opacity: 1;
-  }
+ 
   @media screen and (max-width: 448px) {
     .gallery__item {
       flex: 1 100% !important ;
     }
+  }
+
+`
+const StyledButton = styled.button`
+  
+    border-radius: 5px;
+    background: var(--primaryColor);
+    border: honeydew;
+    color: #fff;
+    opacity: 0.5;
+    padding: 5px 10px;
+  
+  :hover {
+    opacity: 1;
   }
 `
 
@@ -80,7 +84,7 @@ export default function Instagram() {
 
   return (
     
-    
+    <>
     <InstagramWrapper>
 
       {arrayOfInstaImages?.slice(0, limit).map(({ node }) => (
@@ -102,7 +106,8 @@ export default function Instagram() {
           </a>
         </li>
       ))}
-      <button className="btn_load-more" onClick={() => updateLimit((prev) => prev + 9)}>load more</button>
     </InstagramWrapper>
+      <StyledButton className="btn_load-more" onClick={() => updateLimit((prev) => prev + 9)}>load more</StyledButton>
+      </>
   )
 }
