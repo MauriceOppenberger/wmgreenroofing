@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import _get from "lodash/get"
 
-const url = `/.netlify/functions/instagram`
 
-function useInstagram() {
-  const [posts, setPosts] = useState([])
-  useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data)
-      })
-  }, [])
-  return posts
-}
 
 const InstagramWrapper = styled.ul`
   display: flex;
   flex-flow: row wrap;
   margin: 2rem auto;
   max-width: 1200px;
+  justify-content: center;
 
   @media screen and (max-width: 776px) {
     margin: 0rem !important ;
@@ -34,9 +25,11 @@ const InstagramWrapper = styled.ul`
     /* height: 18vmax; */
     max-height: 380px;
     max-width: 384px;
-    background: #000;
+    overflow: hidden;
 
     img {
+      height: 100%;
+      width: 100%;
       object-fit: cover;
     }
   }
@@ -44,27 +37,77 @@ const InstagramWrapper = styled.ul`
     transition: all 0.3s ease;
     opacity: 0.5;
   }
-
+ 
   @media screen and (max-width: 448px) {
     .gallery__item {
       flex: 1 100% !important ;
     }
   }
+
+`
+const StyledButton = styled.button`
+  
+    border-radius: 5px;
+    background: var(--primaryColor);
+    border: honeydew;
+    color: #fff;
+    opacity: 0.5;
+    padding: 5px 10px;
+  
+  :hover {
+    opacity: 1;
+  }
 `
 
 export default function Instagram() {
-  const gramz = useInstagram()
+  const [limit, updateLimit] = useState(9)
+  const data = useStaticQuery(graphql`
+    query InstagramQuery {
+      allInstagramContent {
+        edges {
+          node {
+            media_id
+            permalink
+            username
+            media_type
+            caption
+            localImage {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  let arrayOfInstaImages = _get(data, "allInstagramContent.edges")
+
   return (
+    
+    <>
     <InstagramWrapper>
-      {gramz.map(gram => (
-        <li key={gram.id} className="gallery__item">
-          <a href={gram.url} target="_blank" rel="noopener noreferrer">
+
+      {arrayOfInstaImages?.slice(0, limit).map(({ node }) => (
+        <li key={node.media_id} className="gallery__item">
+          <a href={node.permalink} target="_blank" rel="noopener noreferrer">
             <div className="gallery__image">
-              <img src={gram.thumbnail} alt={gram.caption} />
+              {node.media_type !== "VIDEO" ? (
+                <img src={node.localImage?.publicURL} alt={node.caption} />
+              ) : (
+                <video
+                muted={true}
+                  src={node.localImage?.publicURL}
+                  alt={node.caption}
+                  controls={true}
+                  autoPlay={false}
+                />
+              )}
             </div>
           </a>
         </li>
       ))}
     </InstagramWrapper>
+      <StyledButton className="btn_load-more" onClick={() => updateLimit((prev) => prev + 9)}>load more</StyledButton>
+      </>
   )
 }
