@@ -102,9 +102,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram-all`,
       options: {
-        access_token:
-        process.env.INSTAGRAM_TOKEN
-
+        access_token: process.env.INSTAGRAM_TOKEN,
       },
     },
     {
@@ -113,8 +111,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.wmgreenroofing.netlify.com",
-        sitemap: "https://www.wmgreenroofing.netlify.com/sitemap.xml",
+        host: "https://www.wmgreenroofing.ca/",
+        sitemap: "https://www.wmgreenroofing.ca/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
