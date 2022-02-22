@@ -97,6 +97,9 @@ const ContentWrapper = styled.div`
     .wp-block-group__inner-container {
       padding: 0 !important;
     }
+    .logo img{
+      height: auto;
+    }
   }
   @media screen and (min-width: 776px) {
     .gaf__gallery .logo:nth-child(1) {
