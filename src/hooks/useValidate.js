@@ -29,24 +29,31 @@ export const useValidate = errorField => {
         if (type === "required") {
           return <p className="err">this field is required</p>
         }
+        if (type === "pattern") {
+          return <p className="warn">this is not a valid phone number</p>
+        }
         break
       case "postal":
-        console.log("postal")
         if (type === "pattern") {
           return <p className="warn">this is not a valid postal address</p>
+        }
+        break
+      case "address":
+        if (type === "required") {
+          return <p className="err">this field is required</p>
         }
         break
       case "message":
         if (type === "required") {
           return <p className="err">this field is required</p>
         }
-        if (type === "minLength") {
-          return (
-            <p className="warn">
-              this field requires a minimum of 25 characters
-            </p>
-          )
-        }
+        // if (type === "minLength") {
+        //   return (
+        //     <p className="warn">
+        //       this field requires a minimum of 25 characters
+        //     </p>
+        //   )
+        // }
         break
       case "roofTyp":
         if (type === "required") {

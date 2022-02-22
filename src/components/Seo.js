@@ -41,16 +41,16 @@ function SEO({ description, lang, meta, title }) {
           content: "siHqLxpEs1LzLlZGtp-jvrISCCdsigplVV4XSvuMmZs",
         },
         {
-          name: `description`,
           content: metaDescription,
+          name: `description`,
         },
         {
-          property: `keyworks`,
+          property: `keywords`,
           content: site.siteMetadata.keywords,
         },
         {
-          property: `og:title`,
           content: title,
+          property: `og:title`,
         },
         {
           property: `og:description`,

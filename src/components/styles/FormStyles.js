@@ -59,7 +59,7 @@ const FormWrapper = styled.div`
   .success {
     text-align: center;
     padding: 0.5rem;
-    border: 1px solid green;
+    background: darkgreen;
     border-radius: 10px;
   }
   .success .pass {

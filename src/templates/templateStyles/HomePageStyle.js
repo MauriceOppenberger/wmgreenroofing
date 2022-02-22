@@ -37,6 +37,9 @@ const ContentWrapper = styled.div`
   .intro__item .icon {
     max-width: 75px;
   }
+  .intro__item .icon img{
+    max-height: 75px;
+  }
   .intro__item.installation {
     margin: 0 1rem;
   }
@@ -71,6 +74,10 @@ const ContentWrapper = styled.div`
     background: var(--primaryColor);
     color: var(--mainWhite);
     padding: 0 2rem;
+  }
+  .socialMedia__container {
+    margin: 2rem;
+    text-align: center;
   }
 
   .gaf__content {
