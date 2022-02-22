@@ -6,6 +6,9 @@ const PageWrapper = styled.div`
     margin: 2rem auto;
     width: 90vw;
   }
+  .page__gallery img {
+    height: auto;
+  }
   .wp-block-group__inner-container,
   .inner-container {
     display: flex;
@@ -16,6 +19,9 @@ const PageWrapper = styled.div`
   }
   .page__content .wp-block-group__inner-container {
     flex-direction: initial !important;
+  }
+  .wp-block-group__inner-container img {
+    height: auto;
   }
 
   /* VIDEO CONTAINER GALLERY PAGE */
@@ -70,6 +76,7 @@ const PageWrapper = styled.div`
     padding: 0;
   }
   .logo img {
+    height: auto;
     max-width: 200px;
   }
   .page__content .list {
