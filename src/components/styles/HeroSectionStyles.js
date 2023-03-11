@@ -12,7 +12,9 @@ const StyledInnerWrapper = styled.div`
   .badge__container {
     flex: 1;
     .badge {
-      width: 150px;
+      //For Emergency badge
+      /* width: 150px; */
+      width: 300px ;
       position: absolute !important;
       /* bottom: -85px; */
       left: 1rem;
