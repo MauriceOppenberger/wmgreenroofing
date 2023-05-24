@@ -10,6 +10,7 @@ export const NavWrapper = styled.div`
   }
   .primary__nav,
   .footer__nav {
+    justify-content: end;
     display: flex;
     flex-wrap: nowrap;
     margin: 1rem 0;
