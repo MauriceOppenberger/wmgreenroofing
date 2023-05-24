@@ -5,7 +5,7 @@ import contentParser from "gatsby-wpgraphql-inline-images"
 import ReviewForm from "../components/ReviewForm"
 import SEO from "../components/Seo"
 
-import PageWrapper from "./templateStyles/PageStyle"
+import PageWrapper from "../templates/templateStyles/PageStyle"
 
 const ReviewTemplate = props => {
   const {
