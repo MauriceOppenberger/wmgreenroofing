@@ -13,8 +13,9 @@ const StyledInnerWrapper = styled.div`
     flex: 1;
     .badge {
       //For Emergency badge
-      /* width: 150px; */
-      width: 300px ;
+      // /* width: 150px; */
+      //For Spring maintenance package
+      // width: 300px ;
       position: absolute !important;
       /* bottom: -85px; */
       left: 1rem;
