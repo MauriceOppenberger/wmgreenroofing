@@ -17,9 +17,20 @@ const Nav = ({ className }) => {
           ({ node: { label, menuItemId, url, childItems } }) => (
             <li key={menuItemId} className={`${className}__nav__item`}>
               {url !== null ? (
-                <Link to={`${getSlug(url, wpurl)}`} activeClassName="active">
-                  {label}
-                </Link>
+                childItems.edges.length > 0 ? (
+                  <p>
+                    <Link
+                      to={`${getSlug(url, wpurl)}`}
+                      activeClassName="active"
+                    >
+                      {label}
+                    </Link>
+                  </p>
+                ) : (
+                  <Link to={`${getSlug(url, wpurl)}`} activeClassName="active">
+                    {label}
+                  </Link>
+                )
               ) : (
                 <p>{label}</p>
               )}
