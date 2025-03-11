@@ -34,7 +34,10 @@ const HomepageTemplate = props => {
         <div className="socialMedia__container">
           <h2 className="title">Recent Projects</h2>
           {/* <Instagram /> */}
-          <a href="https://www.instagram.com/wmgreenroofing/">
+          <a
+            href="https://www.instagram.com/wmgreenroofing/"
+            rel="noopener noreferrer"
+          >
             <button className="btn__instagram btn">
               Follow us on Instagram
             </button>

@@ -232,7 +232,7 @@ const ContentWrapper = styled.div`
     padding: 2rem;
   }
 
-  .btn_instagram {
+  .btn__instagram {
     background: var(--primaryColor);
     color: var(--mainWhite);
     text-align: center;
