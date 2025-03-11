@@ -99,12 +99,12 @@ module.exports = {
         url: `${process.env.API_PROTOCOL}://${process.env.API_URL}/graphql`,
       },
     },
-    {
-      resolve: `gatsby-source-instagram-all`,
-      options: {
-        access_token: process.env.INSTAGRAM_TOKEN,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram-all`,
+    //   options: {
+    //     access_token: process.env.INSTAGRAM_TOKEN,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-styled-components`,
     },
