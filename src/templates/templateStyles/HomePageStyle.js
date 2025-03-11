@@ -37,7 +37,7 @@ const ContentWrapper = styled.div`
   .intro__item .icon {
     max-width: 75px;
   }
-  .intro__item .icon img{
+  .intro__item .icon img {
     max-height: 75px;
   }
   .intro__item.installation {
@@ -97,7 +97,7 @@ const ContentWrapper = styled.div`
     .wp-block-group__inner-container {
       padding: 0 !important;
     }
-    .logo img{
+    .logo img {
       height: auto;
     }
   }
@@ -230,6 +230,15 @@ const ContentWrapper = styled.div`
     color: var(--mainWhite);
     text-align: center;
     padding: 2rem;
+  }
+
+  .btn_instagram {
+    background: var(--primaryColor);
+    color: var(--mainWhite);
+    text-align: center;
+  }
+  .btn__instagram:hover {
+    box-shadow: var(--lightShadow);
   }
 `
 export default ContentWrapper

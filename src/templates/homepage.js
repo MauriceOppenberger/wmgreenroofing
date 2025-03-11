@@ -35,7 +35,9 @@ const HomepageTemplate = props => {
           <h2 className="title">Recent Projects</h2>
           {/* <Instagram /> */}
           <a href="https://www.instagram.com/wmgreenroofing/">
-            <button>Follow us on Instagram</button>
+            <button className="btn__instagram btn">
+              Follow us on Instagram
+            </button>
           </a>
         </div>
         <LogoGallery />
