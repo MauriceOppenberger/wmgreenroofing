@@ -31,10 +31,13 @@ const HomepageTemplate = props => {
           <h2 className="title">Reviews</h2>
           <TestemonySlider />
         </div>
-        {/* <div className="socialMedia__container">
+        <div className="socialMedia__container">
           <h2 className="title">Recent Projects</h2>
-          <Instagram />
-        </div> */}
+          {/* <Instagram /> */}
+          <a href="https://www.instagram.com/wmgreenroofing/">
+            <button>Follow us on Instagram</button>
+          </a>
+        </div>
         <LogoGallery />
       </ContentWrapper>
     </Layout>
