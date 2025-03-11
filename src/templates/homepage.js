@@ -7,7 +7,7 @@ import contentParser from "gatsby-wpgraphql-inline-images"
 import TestemonySlider from "../components/TestemonySlider"
 import ContentWrapper from "./templateStyles/HomePageStyle"
 import SEO from "../components/Seo"
-import Instagram from "../components/instagram"
+// import Instagram from "../components/instagram"
 
 const HomepageTemplate = props => {
   const {
