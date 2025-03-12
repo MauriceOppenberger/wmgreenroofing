@@ -15,6 +15,7 @@ function encode(data) {
 
 const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
+  const [otherReferral, setOtherReferral] = React.useState(false)
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
   const { register, handleSubmit, errors } = useForm({
     reValidateMode: "onChange",
@@ -29,6 +30,8 @@ const ContactForm = ({ className }) => {
     })
   }, [])
   const onResolved = value => {
+    console.log(value)
+    return
     if (value) {
       fetch("/", {
         method: "POST",
@@ -46,6 +49,7 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
+    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -171,6 +175,33 @@ const ContactForm = ({ className }) => {
               Flat
             </label>
           </span>
+        </div>
+
+        <div className="selection required">
+          <span>How did you hear about us:</span>
+
+          <select
+            ref={register({ required: true })}
+            name="referral"
+            id="referral"
+            onChange={e => setOtherReferral(e.target.value === "other")}
+          >
+            <option value="google">Google</option>
+            <option value="facebook">Referral</option>
+            <option value="returning customer">Returning Customer</option>
+            <option value="saw our truck">Saw our Truck</option>
+            <option value="guelph today">Guelph Today</option>
+            <option value="social media">Social Media</option>
+            <option value="other">Other</option>
+          </select>
+          {otherReferral && (
+            <input
+              type="text"
+              name="otherReferral"
+              placeholder="Please specify"
+              ref={register({ required: true })}
+            />
+          )}
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
