@@ -117,6 +117,13 @@ const FormWrapper = styled.div`
   .grecaptcha-badge {
     z-index: 1000;
   }
+
+  .disclaimer {
+    margin: 1rem 0 0;
+    font-size: 13px;
+    font-style: italic;
+    text-align: end;
+  }
 `
 
 export default FormWrapper
