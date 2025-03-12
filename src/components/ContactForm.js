@@ -205,6 +205,9 @@ const ContactForm = ({ className }) => {
           Submit
         </button>
       </form>
+      <p className="disclaimer">
+        For Emergency After Hours Service Please Call 519-822-6414
+      </p>
     </FormWrapper>
   )
 }
