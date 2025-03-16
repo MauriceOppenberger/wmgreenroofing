@@ -206,7 +206,7 @@ const ContactForm = ({ className }) => {
             autoFocus={otherReferral}
             name="otherReferral"
             placeholder="Please specify"
-            ref={register({ required: true })}
+            ref={register({ required: otherReferral })}
           />
         </div>
 
