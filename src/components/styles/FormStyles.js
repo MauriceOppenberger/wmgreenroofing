@@ -18,6 +18,8 @@ const FormWrapper = styled.div`
   }
 
   .referral {
+    display: flex;
+    flex-flow: row wrap;
     flex-direction: column;
     gap: 10px;
     width: fit-content;
@@ -31,11 +33,13 @@ const FormWrapper = styled.div`
       border: 2px solid lightgray;
       border-radius: 10px;
       background: var(--offWhite);
+      width: max-content;
     }
 
-    textarea {
+    input {
       padding: 8px 16px;
       min-height: 100px;
+      min-width: 200px;
       border: 2px solid lightgray;
       border-radius: 10px;
       background: var(--offWhite);
@@ -60,7 +64,6 @@ const FormWrapper = styled.div`
     border-radius: 10px;
     background: var(--offWhite);
   }
-
   label select {
     padding: 8px 16px;
     border: 2px solid lightgray;

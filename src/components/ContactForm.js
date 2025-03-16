@@ -30,8 +30,6 @@ const ContactForm = ({ className }) => {
     })
   }, [])
   const onResolved = value => {
-    console.log(value)
-    return
     if (value) {
       fetch("/", {
         method: "POST",
@@ -49,7 +47,6 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
-    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -193,7 +190,7 @@ const ContactForm = ({ className }) => {
             <option value="other">Other</option>
           </select>
           {otherReferral && (
-            <textarea
+            <input
               type="text"
               name="otherReferral"
               placeholder="Please specify"
