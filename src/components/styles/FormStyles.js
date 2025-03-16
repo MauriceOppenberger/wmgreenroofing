@@ -21,6 +21,25 @@ const FormWrapper = styled.div`
     flex-direction: column;
     gap: 10px;
     width: fit-content;
+
+    span {
+      padding-left: 15px;
+    }
+
+    select {
+      padding: 8px 16px;
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      background: var(--offWhite);
+    }
+
+    textarea {
+      padding: 8px 16px;
+      min-height: 100px;
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      background: var(--offWhite);
+    }
   }
 
   .required::before {
@@ -41,6 +60,7 @@ const FormWrapper = styled.div`
     border-radius: 10px;
     background: var(--offWhite);
   }
+
   label select {
     padding: 8px 16px;
     border: 2px solid lightgray;
