@@ -17,7 +17,7 @@ const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
   const [otherReferral, setOtherReferral] = React.useState(false)
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, setValue } = useForm({
     reValidateMode: "onChange",
     mode: "all",
     validateCriteriaMode: "all",
@@ -30,6 +30,7 @@ const ContactForm = ({ className }) => {
     })
   }, [])
   const onResolved = value => {
+    console.log(state)
     if (value) {
       fetch("/", {
         method: "POST",
@@ -47,6 +48,7 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
+    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -55,6 +57,15 @@ const ContactForm = ({ className }) => {
     }
   }
 
+  const handleReferral = e => {
+    setOtherReferral(e.target.value === "other")
+    if (e.target.value === "other") {
+      setOtherReferral(true)
+    } else {
+      setValue(otherReferral, "")
+      setOtherReferral(false)
+    }
+  }
   return (
     <FormWrapper>
       <form
@@ -180,7 +191,7 @@ const ContactForm = ({ className }) => {
             ref={register({ required: true })}
             name="referral"
             id="referral"
-            onChange={e => setOtherReferral(e.target.value === "other")}
+            onChange={e => handleReferral(e)}
           >
             <option value="google">Google</option>
             <option value="returning customer">Returning Customer</option>
@@ -189,10 +200,10 @@ const ContactForm = ({ className }) => {
             <option value="social media">Social Media</option>
             <option value="other">Other</option>
           </select>
-
           <input
             disabled={!otherReferral}
             type="text"
+            autoFocus={otherReferral}
             name="otherReferral"
             placeholder="Please specify"
             ref={register({ required: true })}

@@ -22,7 +22,7 @@ const FormWrapper = styled.div`
     flex-flow: row wrap;
     flex-direction: column;
     gap: 10px;
-    width: fit-content;
+    width: 100%;
 
     span {
       padding-left: 15px;
@@ -37,7 +37,6 @@ const FormWrapper = styled.div`
     }
 
     input {
-      min-width: 200px;
       padding: 8px 16px;
       border: 2px solid lightgray;
       border-radius: 10px;
