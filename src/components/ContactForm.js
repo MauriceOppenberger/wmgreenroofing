@@ -177,31 +177,30 @@ const ContactForm = ({ className }) => {
           </span>
         </div>
 
-        <div className="selection required">
-          <span>How did you hear about us:</span>
-
-          <select
-            ref={register({ required: true })}
-            name="referral"
-            id="referral"
-            onChange={e => setOtherReferral(e.target.value === "other")}
-          >
-            <option value="google">Google</option>
-            <option value="facebook">Referral</option>
-            <option value="returning customer">Returning Customer</option>
-            <option value="saw our truck">Saw our Truck</option>
-            <option value="guelph today">Guelph Today</option>
-            <option value="social media">Social Media</option>
-            <option value="other">Other</option>
-          </select>
-          {otherReferral && (
-            <input
-              type="text"
-              name="otherReferral"
-              placeholder="Please specify"
+        <div className="selection required referral">
+          <label htmlFor="How did you hear about us:">
+            <select
               ref={register({ required: true })}
-            />
-          )}
+              name="referral"
+              id="referral"
+              onChange={e => setOtherReferral(e.target.value === "other")}
+            >
+              <option value="google">Google</option>
+              <option value="returning customer">Returning Customer</option>
+              <option value="saw our truck">Saw our Truck</option>
+              <option value="guelph today">Guelph Today</option>
+              <option value="social media">Social Media</option>
+              <option value="other">Other</option>
+            </select>
+            {otherReferral && (
+              <textarea
+                type="text"
+                name="otherReferral"
+                placeholder="Please specify"
+                ref={register({ required: true })}
+              />
+            )}
+          </label>
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>

@@ -17,6 +17,12 @@ const FormWrapper = styled.div`
     }
   }
 
+  .referral {
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+  }
+
   .required::before {
     content: "* ";
     color: #bf1650;
@@ -35,6 +41,13 @@ const FormWrapper = styled.div`
     border-radius: 10px;
     background: var(--offWhite);
   }
+  label select {
+    padding: 8px 16px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    background: var(--offWhite);
+  }
+
   .hidden {
     display: none;
   }
