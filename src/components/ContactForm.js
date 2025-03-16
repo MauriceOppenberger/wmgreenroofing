@@ -189,14 +189,14 @@ const ContactForm = ({ className }) => {
             <option value="social media">Social Media</option>
             <option value="other">Other</option>
           </select>
-          {otherReferral && (
-            <input
-              type="text"
-              name="otherReferral"
-              placeholder="Please specify"
-              ref={register({ required: true })}
-            />
-          )}
+
+          <input
+            disabled={!otherReferral}
+            type="text"
+            name="otherReferral"
+            placeholder="Please specify"
+            ref={register({ required: true })}
+          />
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
