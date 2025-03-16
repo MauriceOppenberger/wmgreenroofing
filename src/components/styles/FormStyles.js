@@ -37,9 +37,8 @@ const FormWrapper = styled.div`
     }
 
     input {
-      padding: 8px 16px;
-      min-height: 100px;
       min-width: 200px;
+      padding: 8px 16px;
       border: 2px solid lightgray;
       border-radius: 10px;
       background: var(--offWhite);
