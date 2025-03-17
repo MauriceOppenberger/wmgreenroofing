@@ -15,8 +15,15 @@ function encode(data) {
 
 const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
+  const [otherReferral, setOtherReferral] = React.useState(false)
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
-  const { register, handleSubmit, errors } = useForm({
+  const {
+    register,
+    handleSubmit,
+    errors,
+    setValue,
+    triggerValidation,
+  } = useForm({
     reValidateMode: "onChange",
     mode: "all",
     validateCriteriaMode: "all",
@@ -54,6 +61,17 @@ const ContactForm = ({ className }) => {
     }
   }
 
+  const handleReferral = e => {
+    setOtherReferral(e.target.value === "other")
+    if (e.target.value === "other") {
+      setOtherReferral(true)
+    } else {
+      setValue(otherReferral, "")
+      setOtherReferral(false)
+      unregister("referral")
+      triggerValidation()
+    }
+  }
   return (
     <FormWrapper>
       <form
@@ -171,6 +189,32 @@ const ContactForm = ({ className }) => {
               Flat
             </label>
           </span>
+        </div>
+
+        <div className="required referral">
+          <span>How did you hear about us:</span>
+          <select
+            ref={register({ required: true })}
+            name="referral"
+            id="referral"
+            onChange={e => handleReferral(e)}
+          >
+            <option value="google">Google</option>
+            <option value="returning customer">Returning Customer</option>
+            <option value="saw our truck">Saw our Truck</option>
+            <option value="guelph today">Guelph Today</option>
+            <option value="social media">Social Media</option>
+            <option value="other">Other</option>
+          </select>
+          {otherReferral ? (
+            <input
+              type="text"
+              autoFocus={otherReferral}
+              name="otherReferral"
+              placeholder="Please specify"
+              ref={register({ required: otherReferral })}
+            />
+          ) : null}
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>

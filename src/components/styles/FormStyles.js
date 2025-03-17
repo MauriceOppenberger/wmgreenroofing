@@ -17,6 +17,33 @@ const FormWrapper = styled.div`
     }
   }
 
+  .referral {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    span {
+      padding-left: 15px;
+    }
+
+    select {
+      padding: 8px 16px;
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      background: var(--offWhite);
+      width: max-content;
+    }
+
+    input {
+      padding: 8px 16px;
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      background: var(--offWhite);
+    }
+  }
+
   .required::before {
     content: "* ";
     color: #bf1650;
@@ -35,6 +62,13 @@ const FormWrapper = styled.div`
     border-radius: 10px;
     background: var(--offWhite);
   }
+  label select {
+    padding: 8px 16px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    background: var(--offWhite);
+  }
+
   .hidden {
     display: none;
   }
