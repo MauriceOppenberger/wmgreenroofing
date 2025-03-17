@@ -200,14 +200,15 @@ const ContactForm = ({ className }) => {
             <option value="social media">Social Media</option>
             <option value="other">Other</option>
           </select>
-          <input
-            disabled={!otherReferral}
-            type="text"
-            autoFocus={otherReferral}
-            name="otherReferral"
-            placeholder="Please specify"
-            ref={register({ required: otherReferral })}
-          />
+          {otherReferral ? (
+            <input
+              type="text"
+              autoFocus={otherReferral}
+              name="otherReferral"
+              placeholder="Please specify"
+              ref={register({ required: otherReferral })}
+            />
+          ) : null}
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
