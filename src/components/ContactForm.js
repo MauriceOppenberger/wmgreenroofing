@@ -21,7 +21,6 @@ const ContactForm = ({ className }) => {
     register,
     handleSubmit,
     errors,
-    setValue,
     triggerValidation,
     unregister,
   } = useForm({
@@ -68,8 +67,7 @@ const ContactForm = ({ className }) => {
       register("otherReferral", { required: true })
     } else {
       setOtherReferral(false)
-      setValue("otherReferral", "")
-      unregister("referral")
+      unregister("otherReferral")
       triggerValidation()
     }
   }
