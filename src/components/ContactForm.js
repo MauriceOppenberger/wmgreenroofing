@@ -40,7 +40,8 @@ const ContactForm = ({ className }) => {
         }),
       })
         .then(() => {
-          setState({ submitted: "true" }), setOtherReferral(false)
+          setState({ submitted: "true" })
+          setOtherReferral(false)
           unregister("otherReferral")
         })
         .then(() => recaptchaRef.current.reset())
