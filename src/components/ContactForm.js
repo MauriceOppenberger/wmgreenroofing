@@ -17,13 +17,7 @@ const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
   const [otherReferral, setOtherReferral] = React.useState(false)
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
-  const {
-    register,
-    handleSubmit,
-    errors,
-    triggerValidation,
-    unregister,
-  } = useForm({
+  const { register, handleSubmit, errors, unregister } = useForm({
     reValidateMode: "onChange",
     mode: "all",
     validateCriteriaMode: "all",
@@ -45,7 +39,10 @@ const ContactForm = ({ className }) => {
           "g-recaptcha-response": value,
         }),
       })
-        .then(() => setState({ submitted: "true" }))
+        .then(() => {
+          setState({ submitted: "true" }), setOtherReferral(false)
+          unregister("otherReferral")
+        })
         .then(() => recaptchaRef.current.reset())
         .catch(error => alert(error))
     } else {
@@ -64,10 +61,10 @@ const ContactForm = ({ className }) => {
   const handleReferral = e => {
     if (e.target.value === "other") {
       setOtherReferral(true)
+      register("otherReferral", { required: true })
     } else {
       setOtherReferral(false)
       unregister("otherReferral")
-      triggerValidation()
     }
   }
   return (
