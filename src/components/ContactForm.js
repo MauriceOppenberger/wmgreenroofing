@@ -17,7 +17,13 @@ const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
   const [otherReferral, setOtherReferral] = React.useState(false)
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
-  const { register, handleSubmit, errors, unregister } = useForm({
+  const {
+    register,
+    handleSubmit,
+    errors,
+    unregister,
+    triggerValidation,
+  } = useForm({
     reValidateMode: "onChange",
     mode: "all",
     validateCriteriaMode: "all",
@@ -63,9 +69,11 @@ const ContactForm = ({ className }) => {
     if (e.target.value === "other") {
       setOtherReferral(true)
       register("otherReferral", { required: true })
+      triggerValidation()
     } else {
       setOtherReferral(false)
       unregister("otherReferral")
+      triggerValidation()
     }
   }
   return (
