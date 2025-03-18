@@ -64,7 +64,6 @@ const ContactForm = ({ className }) => {
   const handleReferral = e => {
     if (e.target.value === "other") {
       setOtherReferral(true)
-      register("otherReferral", { required: true })
     } else {
       setOtherReferral(false)
       unregister("otherReferral")
