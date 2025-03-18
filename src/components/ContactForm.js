@@ -65,6 +65,7 @@ const ContactForm = ({ className }) => {
     setOtherReferral(e.target.value === "other")
     if (e.target.value === "other") {
       setOtherReferral(true)
+      register("otherReferral", { required: true })
     } else {
       setValue(otherReferral, "")
       setOtherReferral(false)
@@ -209,10 +210,10 @@ const ContactForm = ({ className }) => {
           {otherReferral ? (
             <input
               type="text"
-              autoFocus={otherReferral}
+              autoFocus={true}
               name="otherReferral"
               placeholder="Please specify"
-              ref={register({ required: otherReferral })}
+              ref={register({ required: true })}
             />
           ) : null}
         </div>
