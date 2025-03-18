@@ -48,7 +48,6 @@ const ContactForm = ({ className }) => {
         .then(() => {
           setState({ submitted: "true" })
           setOtherReferral(false)
-          unregister("otherReferral")
         })
         .then(() => recaptchaRef.current.reset())
         .catch(error => alert(error))
@@ -68,12 +67,8 @@ const ContactForm = ({ className }) => {
   const handleReferral = e => {
     if (e.target.value === "other") {
       setOtherReferral(true)
-      register("otherReferral", { required: true })
-      triggerValidation()
     } else {
       setOtherReferral(false)
-      unregister("otherReferral")
-      triggerValidation()
     }
   }
   return (
@@ -210,15 +205,14 @@ const ContactForm = ({ className }) => {
             <option value="social media">Social Media</option>
             <option value="other">Other</option>
           </select>
-          {otherReferral ? (
-            <input
-              type="text"
-              autoFocus={true}
-              name="otherReferral"
-              placeholder="Please specify"
-              ref={register({ required: true })}
-            />
-          ) : null}
+          <input
+            type="text"
+            autoFocus={true}
+            name="otherReferral"
+            disabled={!otherReferral}
+            placeholder="Please specify"
+            ref={register({ required: otherReferral })}
+          />
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
