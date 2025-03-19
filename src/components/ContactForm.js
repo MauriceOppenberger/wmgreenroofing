@@ -216,7 +216,10 @@ const ContactForm = ({ className }) => {
               autoFocus={true}
               name="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear!"
-              onChange={e => setValue("otherReferral", e.target.value)}
+              onChange={
+                (e => setValue("otherReferral", e.target.value),
+                triggerValidation("otherReferral"))
+              }
             />
           ) : null}
         </div>
