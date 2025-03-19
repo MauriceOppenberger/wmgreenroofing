@@ -76,6 +76,11 @@ const ContactForm = ({ className }) => {
     }
   }
 
+  const handleOtherReferralChange = e => {
+    const { value } = e.target
+    setValue("otherReferral", value)
+    triggerValidation("otherReferral")
+  }
   return (
     <FormWrapper>
       <form
@@ -216,10 +221,7 @@ const ContactForm = ({ className }) => {
               autoFocus={true}
               name="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear!"
-              onChange={
-                (e => setValue("otherReferral", e.target.value),
-                triggerValidation("otherReferral"))
-              }
+              onChange={handleOtherReferralChange}
             />
           ) : null}
         </div>
