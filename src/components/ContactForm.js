@@ -1,4 +1,4 @@
-import React, { use } from "react"
+import React, { useEffect } from "react"
 import FormWrapper from "./styles/FormStyles"
 import PropTypes from "prop-types"
 import ReCAPTCHA from "react-google-recaptcha"
@@ -66,17 +66,15 @@ const ContactForm = ({ className }) => {
   }
 
   const handleReferral = e => {
-    if (e.target.value === "other") {
-      register({ name: "otherReferral", type: "text", required: true })
-      setOtherReferral(true)
+    const value = e.target.value
+    setOtherReferral(value === "other")
+    if (value === "other") {
+      register({ name: "otherReferral", required: true, type: "text" })
+      triggerValidation("otherReferral")
     } else {
-      setOtherReferral(false)
       unregister("otherReferral")
     }
   }
-  useEffect(() => {
-    triggerValidation()
-  }, [otherReferral])
 
   return (
     <FormWrapper>
@@ -218,6 +216,7 @@ const ContactForm = ({ className }) => {
               autoFocus={true}
               name="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear!"
+              onChange={e => setValue("otherReferral", e.target.value)}
             />
           ) : null}
         </div>
