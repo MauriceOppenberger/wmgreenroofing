@@ -1,4 +1,4 @@
-import React from "react"
+import React, { use } from "react"
 import FormWrapper from "./styles/FormStyles"
 import PropTypes from "prop-types"
 import ReCAPTCHA from "react-google-recaptcha"
@@ -67,14 +67,17 @@ const ContactForm = ({ className }) => {
 
   const handleReferral = e => {
     if (e.target.value === "other") {
-      setOtherReferral(true)
       register({ name: "otherReferral", type: "text", required: true })
-      triggerValidation()
+      setOtherReferral(true)
     } else {
       setOtherReferral(false)
       unregister("otherReferral")
     }
   }
+  useEffect(() => {
+    triggerValidation()
+  }, [otherReferral])
+
   return (
     <FormWrapper>
       <form
