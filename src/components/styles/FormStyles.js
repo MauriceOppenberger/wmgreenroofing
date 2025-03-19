@@ -36,6 +36,7 @@ const FormWrapper = styled.div`
       width: max-content;
     }
 
+    textarea,
     input {
       padding: 8px 16px;
       border: 2px solid lightgray;

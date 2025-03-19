@@ -65,11 +65,7 @@ const ContactForm = ({ className }) => {
   }
 
   const handleReferral = e => {
-    if (e.target.value === "other") {
-      setOtherReferral(true)
-    } else {
-      setOtherReferral(false)
-    }
+    setOtherReferral(e.target.value === "other")
   }
   return (
     <FormWrapper>
@@ -196,7 +192,7 @@ const ContactForm = ({ className }) => {
             ref={register({ required: true })}
             name="referral"
             id="referral"
-            onChange={e => handleReferral(e)}
+            onChange={handleReferral}
           >
             <option value="google">Google</option>
             <option value="returning customer">Returning Customer</option>
@@ -205,14 +201,15 @@ const ContactForm = ({ className }) => {
             <option value="social media">Social Media</option>
             <option value="other">Other</option>
           </select>
-          <input
-            type="text"
-            autoFocus={true}
-            name="otherReferral"
-            disabled={!otherReferral}
-            placeholder="Please specify"
-            ref={register({ required: otherReferral })}
-          />
+          {otherReferral ? (
+            <textarea
+              type="text"
+              autoFocus={true}
+              name="otherReferral"
+              placeholder="Please tell us more about how you heard about us. We would love to hear!"
+              ref={register({ required: true })}
+            />
+          ) : null}
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
