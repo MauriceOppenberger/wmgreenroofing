@@ -69,7 +69,7 @@ const ContactForm = ({ className }) => {
     if (e.target.value === "other") {
       setOtherReferral(true)
       register({ name: "otherReferral", type: "text", required: true })
-      triggerValidation("otherReferral")
+      triggerValidation()
     } else {
       setOtherReferral(false)
       unregister("otherReferral")
