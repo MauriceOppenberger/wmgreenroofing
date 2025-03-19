@@ -66,7 +66,14 @@ const ContactForm = ({ className }) => {
   }
 
   const handleReferral = e => {
-    setOtherReferral(e.target.value === "other")
+    if (e.target.value === "other") {
+      setOtherReferral(true)
+      register({ name: "otherReferral", type: "text", required: true })
+      triggerValidation("otherReferral")
+    } else {
+      setOtherReferral(false)
+      unregister("otherReferral")
+    }
   }
   return (
     <FormWrapper>
@@ -208,7 +215,6 @@ const ContactForm = ({ className }) => {
               autoFocus={true}
               name="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear!"
-              ref={register({ required: true })}
             />
           ) : null}
         </div>
