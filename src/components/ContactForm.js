@@ -56,6 +56,7 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
+    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
