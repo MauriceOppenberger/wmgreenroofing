@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import FormWrapper from "./styles/FormStyles"
 import PropTypes from "prop-types"
 import ReCAPTCHA from "react-google-recaptcha"
@@ -22,6 +22,7 @@ const ContactForm = ({ className }) => {
     handleSubmit,
     errors,
     unregister,
+    setValue,
     triggerValidation,
   } = useForm({
     reValidateMode: "onChange",
@@ -56,6 +57,7 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
+    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -65,11 +67,20 @@ const ContactForm = ({ className }) => {
   }
 
   const handleReferral = e => {
-    if (e.target.value === "other") {
-      setOtherReferral(true)
+    const value = e.target.value
+    setOtherReferral(value === "other")
+    if (value === "other") {
+      register({ name: "otherReferral", required: true, type: "text" })
+      triggerValidation("otherReferral")
     } else {
-      setOtherReferral(false)
+      unregister("otherReferral")
     }
+  }
+
+  const handleOtherReferralChange = e => {
+    const { value } = e.target
+    setValue("otherReferral", value)
+    triggerValidation("otherReferral")
   }
   return (
     <FormWrapper>
@@ -196,7 +207,7 @@ const ContactForm = ({ className }) => {
             ref={register({ required: true })}
             name="referral"
             id="referral"
-            onChange={e => handleReferral(e)}
+            onChange={handleReferral}
           >
             <option value="google">Google</option>
             <option value="returning customer">Returning Customer</option>
@@ -205,14 +216,15 @@ const ContactForm = ({ className }) => {
             <option value="social media">Social Media</option>
             <option value="other">Other</option>
           </select>
-          <input
-            type="text"
-            autoFocus={true}
-            name="otherReferral"
-            disabled={!otherReferral}
-            placeholder="Please specify"
-            ref={register({ required: otherReferral })}
-          />
+          {otherReferral ? (
+            <textarea
+              type="text"
+              autoFocus={true}
+              name="otherReferral"
+              placeholder="Please tell us more about how you heard about us. We would love to hear!"
+              onChange={handleOtherReferralChange}
+            />
+          ) : null}
         </div>
 
         <div className="error">{useValidate(errors.roofTyp)}</div>
