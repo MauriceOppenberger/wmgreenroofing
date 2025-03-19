@@ -22,6 +22,7 @@ const ContactForm = ({ className }) => {
     handleSubmit,
     errors,
     unregister,
+    setValue,
     triggerValidation,
   } = useForm({
     reValidateMode: "onChange",
