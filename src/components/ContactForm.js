@@ -201,29 +201,34 @@ const ContactForm = ({ className }) => {
           </span>
         </div>
         <div className="error">{useValidate(errors.roofTyp)}</div>
-        <div className="required referral">
-          <span>How did you hear about us:</span>
-          <select
-            ref={register({ required: true })}
-            name="referral"
-            id="referral"
-            onChange={handleReferral}
-          >
-            <option value="google">Google</option>
-            <option value="returning customer">Returning Customer</option>
-            <option value="saw our truck">Saw our Truck</option>
-            <option value="guelph today">Guelph Today</option>
-            <option value="social media">Social Media</option>
-            <option value="other">Other</option>
-          </select>
+        <div className="referral">
+          <label className="required">
+            <span>How did you hear about us:</span>
+            <select
+              ref={register({ required: true })}
+              name="referral"
+              id="referral"
+              onChange={handleReferral}
+            >
+              <option value="google">Google</option>
+              <option value="returning customer">Returning Customer</option>
+              <option value="saw our truck">Saw our Truck</option>
+              <option value="guelph today">Guelph Today</option>
+              <option value="social media">Social Media</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
           {otherReferral ? (
-            <textarea
-              type="text"
-              autoFocus={true}
-              name="otherReferral"
-              placeholder="Please tell us more about how you heard about us. We would love to hear!"
-              onChange={handleOtherReferralChange}
-            />
+            <label className="required">
+              <span>Tell us more:</span>
+              <textarea
+                type="text"
+                autoFocus={true}
+                name="otherReferral"
+                placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
+                onChange={handleOtherReferralChange}
+              />
+            </label>
           ) : null}
         </div>
         <div className="error">{useValidate(errors.referral)}</div>
