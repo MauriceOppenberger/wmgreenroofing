@@ -217,13 +217,16 @@ const ContactForm = ({ className }) => {
             <option value="other">Other</option>
           </select>
           {otherReferral ? (
-            <textarea
-              type="text"
-              autoFocus={true}
-              name="otherReferral"
-              placeholder="Please tell us more about how you heard about us. We would love to hear!"
-              onChange={handleOtherReferralChange}
-            />
+            <label className="required">
+              <span>How did you hear about us:</span>
+              <textarea
+                type="text"
+                autoFocus={true}
+                name="otherReferral"
+                placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
+                onChange={handleOtherReferralChange}
+              />
+            </label>
           ) : null}
         </div>
         <div className="error">{useValidate(errors.referral)}</div>
