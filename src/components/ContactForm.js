@@ -48,6 +48,7 @@ const ContactForm = ({ className }) => {
       })
         .then(() => {
           setState({ submitted: "true" })
+          unregister("otherReferral")
           setOtherReferral(false)
         })
         .then(() => recaptchaRef.current.reset())
@@ -57,7 +58,6 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
-    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -200,7 +200,7 @@ const ContactForm = ({ className }) => {
             </label>
           </span>
         </div>
-
+        <div className="error">{useValidate(errors.roofTyp)}</div>
         <div className="required referral">
           <span>How did you hear about us:</span>
           <select
@@ -226,8 +226,9 @@ const ContactForm = ({ className }) => {
             />
           ) : null}
         </div>
+        <div className="error">{useValidate(errors.referral)}</div>
+        <div className="error">{useValidate(errors.otherReferral)}</div>
 
-        <div className="error">{useValidate(errors.roofTyp)}</div>
         {loadRecaptcha ? (
           <ReCAPTCHA
             ref={recaptchaRef}
