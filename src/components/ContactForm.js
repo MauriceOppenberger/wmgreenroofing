@@ -17,14 +17,7 @@ const ContactForm = ({ className }) => {
   const [state, setState] = React.useState({})
   const [otherReferral, setOtherReferral] = React.useState(false)
   const [loadRecaptcha, setLoadRecaptcha] = React.useState(false)
-  const {
-    register,
-    handleSubmit,
-    errors,
-    unregister,
-    setValue,
-    triggerValidation,
-  } = useForm({
+  const { register, handleSubmit, errors } = useForm({
     reValidateMode: "onChange",
     mode: "all",
     validateCriteriaMode: "all",
@@ -57,7 +50,6 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
-    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -70,15 +62,6 @@ const ContactForm = ({ className }) => {
     const value = e.target.value
     setOtherReferral(value === "other")
   }
-
-  useEffect(() => {
-    if (otherReferral) {
-      register({ name: "otherReferral", required: true })
-    } else {
-      register({ name: "otherReferral", required: false })
-    }
-    triggerValidation("otherReferral")
-  }, [otherReferral])
 
   return (
     <FormWrapper>
@@ -226,7 +209,7 @@ const ContactForm = ({ className }) => {
               id="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
               // onChange={handleOtherReferralChange}
-              ref={register({ name: "otherReferral" })}
+              ref={register({ name: "otherReferral", required: true })}
             />
           </label>
         </div>
