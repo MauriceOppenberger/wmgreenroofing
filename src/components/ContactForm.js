@@ -69,8 +69,11 @@ const ContactForm = ({ className }) => {
   const handleReferral = e => {
     const value = e.target.value
     setOtherReferral(value === "other")
-    triggerValidation("otherReferral")
   }
+
+  useEffect(() => {
+    triggerValidation("otherReferral")
+  }, [otherReferral])
 
   return (
     <FormWrapper>
