@@ -61,6 +61,12 @@ export const useValidate = errorField => {
         }
         break
 
+      case "referralDetails":
+        if (type === "required") {
+          return <p className="err">this field is required</p>
+        }
+        break
+
       default:
         break
     }
