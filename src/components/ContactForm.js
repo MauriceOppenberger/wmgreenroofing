@@ -72,6 +72,11 @@ const ContactForm = ({ className }) => {
   }
 
   useEffect(() => {
+    if (otherReferral) {
+      register({ name: "otherReferral", required: true })
+    } else {
+      register({ name: "otherReferral", required: false })
+    }
     triggerValidation("otherReferral")
   }, [otherReferral])
 
@@ -221,7 +226,7 @@ const ContactForm = ({ className }) => {
               id="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
               // onChange={handleOtherReferralChange}
-              ref={register({ name: "otherReferral", required: otherReferral })}
+              ref={register({ name: "otherReferral" })}
             />
           </label>
         </div>
