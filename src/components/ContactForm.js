@@ -209,7 +209,7 @@ const ContactForm = ({ className }) => {
               id="otherReferral"
               placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
               // onChange={handleOtherReferralChange}
-              ref={register({ name: "otherReferral", required: true })}
+              ref={register({ required: true })}
             />
           </label>
         </div>
