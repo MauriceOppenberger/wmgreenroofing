@@ -48,7 +48,6 @@ const ContactForm = ({ className }) => {
       })
         .then(() => {
           setState({ submitted: "true" })
-          unregister("otherReferral")
           setOtherReferral(false)
         })
         .then(() => recaptchaRef.current.reset())
@@ -58,6 +57,7 @@ const ContactForm = ({ className }) => {
     }
   }
   const onSubmit = (data, e) => {
+    console.log(data)
     if (data) {
       e.preventDefault()
       recaptchaRef.current.execute()
@@ -69,19 +69,9 @@ const ContactForm = ({ className }) => {
   const handleReferral = e => {
     const value = e.target.value
     setOtherReferral(value === "other")
-    if (value === "other") {
-      register({ name: "otherReferral", required: true, type: "text" })
-      triggerValidation("otherReferral")
-    } else {
-      unregister("otherReferral")
-    }
-  }
-
-  const handleOtherReferralChange = e => {
-    const { value } = e.target
-    setValue("otherReferral", value)
     triggerValidation("otherReferral")
   }
+
   return (
     <FormWrapper>
       <form
@@ -218,18 +208,19 @@ const ContactForm = ({ className }) => {
               <option value="other">Other</option>
             </select>
           </label>
-          {otherReferral ? (
-            <label className="required">
-              <span>Tell us more:</span>
-              <textarea
-                type="text"
-                autoFocus={true}
-                name="otherReferral"
-                placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
-                onChange={handleOtherReferralChange}
-              />
-            </label>
-          ) : null}
+
+          <label className={`${otherReferral ? "required" : "hidden"}`}>
+            <span>Tell us more:</span>
+            <textarea
+              type="text"
+              autoFocus={otherReferral}
+              name="otherReferral"
+              id="otherReferral"
+              placeholder="Please tell us more about how you heard about us. We would love to hear from you!"
+              // onChange={handleOtherReferralChange}
+              ref={register({ name: "otherReferral", required: otherReferral })}
+            />
+          </label>
         </div>
         <div className="error">{useValidate(errors.referral)}</div>
         <div className="error">{useValidate(errors.otherReferral)}</div>
