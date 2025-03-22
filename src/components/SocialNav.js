@@ -1,8 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import { useNavQuery } from "../hooks/useQuery"
-import Img from "gatsby-image"
-
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
 
 import SocialNavWrapper from "./styles/SocialNavStyles"
